@@ -1,7 +1,7 @@
 const form = document.getElementById('signin-form');
 
 const users = [
-  { username: "superAdmin", password: "superAdmin1" },
+  { username: "A", password: "AA" },
   { username: "alon", password: "ronen" },
   { username: "user3", password: "password3" },
 ];
