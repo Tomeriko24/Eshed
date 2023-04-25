@@ -46,5 +46,5 @@ for (let i = 0; i < navLinks.length; i++) {home_page.html
 function signOut() {
   // perform sign out operations here
   alert('Signed out successfully!');
-  location.href = "index.html";
+  location.href = "sign_in_page.html";
 }
