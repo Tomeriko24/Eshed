@@ -41,3 +41,10 @@ for (let i = 0; i < navLinks.length; i++) {first.html
     location.href = link;
   });
 }
+
+
+function signOut() {
+  // perform sign out operations here
+  alert('Signed out successfully!');
+  location.href = "index.html";
+}
