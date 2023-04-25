@@ -45,18 +45,3 @@ function handleClick(event) {
   // Add the "active" class to the link
   link.classList.add("active");
 }
-
-    });
-
-
-   
-  
-
-  // if (isValidUser) {
-  //   alert('Signed in successfully!');
-  //   form.reset();
-  //   // window.open("first.html", "_blank");
-  //   location.href = "first.html";
-  //   } else {
-  //   alert('Invalid username or password');
-  //   form.reset();
