@@ -1,4 +1,5 @@
 const form = document.getElementById('signin-form');
+const navLinks = document.querySelectorAll('.sidenav a');
 
 const users = [
   { username: "A", password: "AA" },
@@ -30,18 +31,13 @@ form.addEventListener('submit', (event) => {
     alert('Invalid username or password');
     form.reset();
 }
+});
 
-function handleClick(event) {
-  // Prevent default link behavior
-  event.preventDefault();
-
-  // Get the link and section elements
-  const link = document.getElementById(event.target.id);
-  const section = document.querySelector(link.hash);
-
-  // Scroll to the section
-  section.scrollIntoView();
-
-  // Add the "active" class to the link
-  link.classList.add("active");
+// Handle click on nav links
+for (let i = 0; i < navLinks.length; i++) {first.html
+  navLinks[i].addEventListener('click', (event) => {
+    event.preventDefault();
+    const link = event.target.getAttribute('href');
+    location.href = link;
+  });
 }

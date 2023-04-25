@@ -64,8 +64,7 @@ body {
       font-size: 16px;
       margin-bottom: 10px;
     }
-    input[type="text"],
-    input[type="password"] {
+    input[type="text"],input[type="password"] {
       font-size: 16px;
       margin-bottom: 20px;
     }
@@ -99,16 +98,7 @@ body {
     font-size: 20px;
   }
   
-  /* Style the form submit button */
-  form button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 20px;
-  }
+
   
   /* Style the form submit button on hover */
   form button[type="submit"]:hover {
@@ -127,21 +117,45 @@ body {
   padding-top: 20px;
 }
 
-.sidenav a {
-  padding: 6px 40px 6px 1px;
-  margin: 10px 50px 20px 0;
-  text-decoration: none;
-  font-size: 25px;
-  color: #00eaff;
-  display: block;
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
-
-.sidenav a:hover {
-  color: #000000;
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0cf;
+  border-radius: 10rem;
+  z-index: -2;
 }
-
-a.active {
-  font-weight: bold;
-  color: red;
+.button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #008fb3;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
 }
-
+.button:hover {
+  color: #fff;
+}
+.button:hover:before {
+  width: 100%;
+}
