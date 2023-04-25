@@ -30,6 +30,22 @@ form.addEventListener('submit', (event) => {
     alert('Invalid username or password');
     form.reset();
 }
+
+function handleClick(event) {
+  // Prevent default link behavior
+  event.preventDefault();
+
+  // Get the link and section elements
+  const link = document.getElementById(event.target.id);
+  const section = document.querySelector(link.hash);
+
+  // Scroll to the section
+  section.scrollIntoView();
+
+  // Add the "active" class to the link
+  link.classList.add("active");
+}
+
     });
 
 

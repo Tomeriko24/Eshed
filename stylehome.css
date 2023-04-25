@@ -6,48 +6,21 @@ body {
     background-size: 75% auto;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: start;
     height: 100vh;
     margin: 0;
   }
-  
-  /* Style the navigation bar */
-  header nav {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  header nav ul li {
-    margin-right: 20px;
-  }
-  
-  header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  header nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
+    
   /* Style the main content area */
   main {
-    padding: 40px;
-    margin-right: 40px;
+    padding: 0px;
+    margin-right: 200px;
     width: 60%;
   }
   
   main h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 50px;
+    margin: 0%;
   }
   
   main p {
@@ -58,7 +31,7 @@ body {
   
   /* Style the footer */
   footer {
-    background-color: #f8f9fa;
+    background-color: #1a84ed;
     padding: 10px;
     text-align: center;
   }
@@ -142,26 +115,6 @@ body {
     background-color: #0063;
   }
 
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    }
-    
-    th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    }
-    
-    th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    }
-    
-    tr:hover {
-    background-color: #f5f5f5;
-    }
-  
 .sidenav {
   height: 100%;
   width: 200px;
@@ -169,26 +122,26 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #579efb;
   overflow-x: hidden;
   padding-top: 20px;
 }
 
 .sidenav a {
-  padding: 6px 6px 6px 32px;
+  padding: 6px 40px 6px 1px;
+  margin: 10px 50px 20px 0;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #00eaff;
   display: block;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #000000;
 }
 
-.sidenav 
-
-
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
+a.active {
+  font-weight: bold;
+  color: red;
 }
+
