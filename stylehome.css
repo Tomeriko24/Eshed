@@ -154,9 +154,10 @@ body {
   z-index: -1;
 }
 .button:hover {
-  color: #fff;
+  color: #000000;
 }
 .button:hover:before {
   width: 100%;
 }
 
+      <button class="scroll-to-top-button">Scroll to Top</button>
