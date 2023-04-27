@@ -288,9 +288,30 @@ tbody:hover tr:hover td {
     border-color: #0d6efd;
 
 }
+img {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  
+}
+img .zoom {
+  padding: 50px;
+  background-color: green;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
 
-
-
+img.zoom:hover {
+  -ms-transform: scale(2); /* IE 9 */
+  -webkit-transform: scale(2); /* Safari 3-8 */
+  transform: scale(2); 
+}
 /* CSS */
 .button-1 {
   background-color: #EA4C89;
@@ -322,3 +343,4 @@ tbody:hover tr:hover td {
 .button-1:hover,.button-1:focus {
   background-color: #F082AC;
 }
+
