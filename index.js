@@ -27,14 +27,15 @@ form.addEventListener('submit', (event) => {
     alert('Signed in successfully!');
     form.reset();
     location.href = "NavBarPages/home_page.html";
-} else {
+  } else {
     alert('Invalid username or password');
     form.reset();
-}
+  }
 });
 
 // Handle click on nav links
-for (let i = 0; i < navLinks.length; i++) {NavBarPages/home_page.html
+for (let i = 0; i < navLinks.length; i++) {
+  NavBarPages / home_page.html
   navLinks[i].addEventListener('click', (event) => {
     event.preventDefault();
     const link = event.target.getAttribute('href');
@@ -46,5 +47,6 @@ for (let i = 0; i < navLinks.length; i++) {NavBarPages/home_page.html
 function signOut() {
   // perform sign out operations here
   alert('Signed out successfully!');
-  location.href ="C:\Users\Tomer\Documents\GitHub\New\sign_in_page.html";
+  // location.href ="sign_in_page.html";
+  location.href = "../sign_in_page.html";
 }
