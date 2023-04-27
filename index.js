@@ -26,7 +26,7 @@ form.addEventListener('submit', (event) => {
   if (isValidUser) {
     alert('Signed in successfully!');
     form.reset();
-    location.href = "home_page.html";
+    location.href = "NavBarPages/home_page.html";
 } else {
     alert('Invalid username or password');
     form.reset();
@@ -34,7 +34,7 @@ form.addEventListener('submit', (event) => {
 });
 
 // Handle click on nav links
-for (let i = 0; i < navLinks.length; i++) {home_page.html
+for (let i = 0; i < navLinks.length; i++) {NavBarPages/home_page.html
   navLinks[i].addEventListener('click', (event) => {
     event.preventDefault();
     const link = event.target.getAttribute('href');
@@ -46,5 +46,5 @@ for (let i = 0; i < navLinks.length; i++) {home_page.html
 function signOut() {
   // perform sign out operations here
   alert('Signed out successfully!');
-  location.href = "sign_in_page.html";
+  location.href ="C:\Users\Tomer\Documents\GitHub\New\sign_in_page.html";
 }
