@@ -5,6 +5,35 @@
   <meta charset="UTF-8">
   <title>My Home Page</title>
   <link rel="stylesheet" href="../stylehome.css">
+  <style>
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    img.zoom {
+      padding: 30px;
+      background-color: rgb(135, 222, 244);
+      opacity:0.8;
+      transition: transform 0.2s;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    img.zoom:hover {
+      -ms-transform: scale(2);
+      /* IE 9 */
+      -webkit-transform: scale(2);
+      /* Safari 3-8 */
+      transform: scale(2);
+    }
+  </style>
 </head>
 
 <body>
@@ -13,12 +42,13 @@
   <main>
     <h1>Cons1</h1>
     <div>
-      <p>Hey! My name is Cons 1. <br>I will be happy to join your project. </p>
+      <p>Hey! My name is Cons 1. <br>I will be happy to join your project.
       <ul>
         <li>Coffee</li>
         <li>Tea</li>
         <li>Milk</li>
-      </ul>  
+      </ul>
+      </p>
     </div>
     <div class="sidenav">
       <a href="../home_page.html" class="button">Home page</a>
@@ -30,11 +60,10 @@
       <button onclick="history.back()" class="button">Previous page</button>
     </div>
     <div style="width:300px; text-align:right;">
-      <img src="../../CleanPicsOfConso/const1.jpeg" class="zoom" alt="My Profile Photo: const1">
+      <img src="../../CleanPicsOfConso/const1.jpeg" 
+      class="zoom" alt="My Profile Photo: const1">
     </div>
   </main>
-  <p style="background-image: url('https://github.com/Tomeriko24/New/blob/master/bgimg.jpg');">
-
   <footer>
     <script src="../index.js"></script>
     <!-- <div class="sign-out">
@@ -43,5 +72,5 @@
     <button class="button-1" role="button" onclick="history.back()">Back To Consultants List</button>
     <p> Signed in to the system</p>
   </footer>
-</body> 
+</body>
 </html>
