@@ -1,108 +1,114 @@
 /* Set default styles for the page */
 body {
-    font-family: Arial, sans-serif;
-    /* background-image: url("BackgroundImage.png"); */
-    background-repeat: no-repeat;
-    background-size: 75% auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: start;
-    height: 100vh;
-    margin: 0;
-  background-image: url();
-  }
-    
-  /* Style the main content area */
-  main {
-    width: 75%;
-  }
-  
-  main h1 {
-    font-size: 50px;
-    margin: 0%;
-  }
-  
-  main p {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
-  /* Style the footer */
-  footer {
-    background-color: #1a84ed;
-    padding: 10px;
-    text-align: center;
-    }
-  
-  /* Style the form */
-  form {
-    background-color: #ffdb13;
-    padding: 40px;
-    border-radius: 110px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-right: 0;
-    width: calc(25% - 20px);
-    height: calc(75vh - 80px);
-  }
-  
-  /* Style the form for smaller screens */
-  @media (max-width: 768px) {
-    form {
-      margin: 0 auto;
-      padding: 20px;
-      width: calc(100% - 40px);
-      height: auto;
-      border-radius: 30px;
-    }
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    label {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    input[type="text"],input[type="password"] {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-    button[type="submit"] {
-      font-size: 16px;
-    }
-  }
-  
-  /* Style the form heading */
-  form h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  /* Style the form labels */
-  form label {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  /* Style the form inputs */
-  form input[type="text"],
-  form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  /* background-image: url("BackgroundImage.png"); */
+  background-repeat: no-repeat;
+  background-size: 75% auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 11%, rgba(0,212,255,1) 79%);}
 
-  
-  /* Style the form submit button on hover */
-  form button[type="submit"]:hover {
-    background-color: rgba(0, 0, 255, 0.2);
+/* Style the main content area */
+main {
+  width: 75%;
+}
+
+main h1 {
+  font-size: 50px;
+  margin: 0%;
+}
+
+main p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #00ffff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 110px;
+
+}
+
+/* Style the form */
+form {
+  background-color: #ffdb13;
+  padding: 40px;
+  border-radius: 110px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-right: 0;
+  width: calc(25% - 20px);
+  height: calc(75vh - 80px);
+}
+
+/* Style the form for smaller screens */
+@media (max-width: 768px) {
+  form {
+    margin: 0 auto;
+    padding: 20px;
+    width: calc(100% - 40px);
+    height: auto;
+    border-radius: 30px;
   }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  button[type="submit"] {
+    font-size: 16px;
+  }
+}
+
+/* Style the form heading */
+form h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Style the form labels */
+form label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style the form inputs */
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+
+
+/* Style the form submit button on hover */
+form button[type="submit"]:hover {
+  background-color: rgba(0, 0, 255, 0.2);
+}
 
 .sidenav {
   height: 100%;
@@ -118,6 +124,8 @@ body {
 
 .button {
   display: inline-block;
+  display: sticky;
+
   padding: 0.75rem 1.25rem;
   border-radius: 10rem;
   color: #fff;
@@ -128,6 +136,7 @@ body {
   overflow: hidden;
   z-index: 1;
 }
+
 .button:after {
   content: "";
   position: absolute;
@@ -139,6 +148,7 @@ body {
   border-radius: 10rem;
   z-index: -2;
 }
+
 .button:before {
   content: "";
   position: absolute;
@@ -151,120 +161,122 @@ body {
   border-radius: 10rem;
   z-index: -1;
 }
+
 .button:hover {
   color: #000000;
 }
+
 .button:hover:before {
   width: 100%;
 }
 
 
 strong {
-	font-weight: bold; 
+  font-weight: bold;
 }
 
 em {
-	font-style: italic; 
+  font-style: italic;
 }
 
 table {
-	background: #f5f5f5;
-	border-collapse: separate;
-	box-shadow: inset 0 1px 0 #fff;
-	font-size: 12px;
-	line-height: 24px;
-	margin: 30px auto;
-	text-align: left;
-	width: 800px;
-}	
+  background: #f5f5f5;
+  border-collapse: separate;
+  box-shadow: inset 0 1px 0 #fff;
+  font-size: 12px;
+  line-height: 24px;
+  margin: 30px auto;
+  text-align: left;
+  width: 800px;
+}
 
 th {
-	background: url(https://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
-	border-left: 1px solid #555;
-	border-right: 1px solid #777;
-	border-top: 1px solid #555;
-	border-bottom: 1px solid #333;
-	box-shadow: inset 0 1px 0 #999;
-	color: #fff;
+  background: url(https://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
+  border-left: 1px solid #555;
+  border-right: 1px solid #777;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #333;
+  box-shadow: inset 0 1px 0 #999;
+  color: #fff;
   font-weight: bold;
-	padding: 10px 15px;
-	position: relative;
-	text-shadow: 0 1px 0 #000;	
+  padding: 10px 15px;
+  position: relative;
+  text-shadow: 0 1px 0 #000;
   text-align: center;
 }
 
 th:after {
-	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
-	content: '';
-	display: block;
-	height: 25%;
-	left: 0;
-	margin: 1px 0 0 0;
-	position: absolute;
-	top: 25%;
-	width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .08));
+  content: '';
+  display: block;
+  height: 25%;
+  left: 0;
+  margin: 1px 0 0 0;
+  position: absolute;
+  top: 25%;
+  width: 100%;
 }
 
 th:first-child {
-	border-left: 1px solid #777;	
-	box-shadow: inset 1px 1px 0 #999;
+  border-left: 1px solid #777;
+  box-shadow: inset 1px 1px 0 #999;
 }
 
 th:last-child {
-	box-shadow: inset -1px 1px 0 #999;
+  box-shadow: inset -1px 1px 0 #999;
 }
 
 td {
-	border-right: 1px solid #fff;
-	border-left: 1px solid #e8e8e8;
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #e8e8e8;
-	padding: 10px 15px;
-	position: relative;
-	transition: all 200ms;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #e8e8e8;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 200ms;
 }
 
 td:first-child {
-	box-shadow: inset 1px 0 0 #fff;
-}	
+  box-shadow: inset 1px 0 0 #fff;
+}
 
 td:last-child {
-	border-right: 1px solid #e8e8e8;
-	box-shadow: inset -1px 0 0 #fff;
-}	
+  border-right: 1px solid #e8e8e8;
+  box-shadow: inset -1px 0 0 #fff;
+}
 
 tr {
-	background: url(https://jackrugile.com/images/misc/noise-diagonal.png);	
+  background: url(https://jackrugile.com/images/misc/noise-diagonal.png);
 }
 
 tr:nth-child(odd) td {
-	background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);	
+  background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
 }
 
 tr:last-of-type td {
-	box-shadow: inset 0 -1px 0 #fff; 
+  box-shadow: inset 0 -1px 0 #fff;
 }
 
 tr:last-of-type td:first-child {
-	box-shadow: inset 1px -1px 0 #fff;
-}	
+  box-shadow: inset 1px -1px 0 #fff;
+}
 
 tr:last-of-type td:last-child {
-	box-shadow: inset -1px -1px 0 #fff;
-}	
+  box-shadow: inset -1px -1px 0 #fff;
+}
 
 tbody:hover td {
-	color: transparent;
-	text-shadow: 0 0 3px #aaa;
+  color: transparent;
+  text-shadow: 0 0 3px #aaa;
 }
 
 tbody:hover tr:hover td {
-	color: #444;
-	text-shadow: 0 1px 0 #fff;
+  color: #444;
+  text-shadow: 0 1px 0 #fff;
 }
 
 
-.btnLink{
+.btnLink {
   cursor: pointer;
   outline: 0;
   display: inline-block;
@@ -276,17 +288,18 @@ tbody:hover tr:hover td {
   padding: 6px 12px;
   font-size: 1rem;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   color: #000;
   border-color: #7c8491;
-  }
-  .btnLink:hover
-{
-    color: #fff;
-    background-color: #0dfda5;
-    border-color: #0d6efd;
+}
+
+.btnLink:hover {
+  color: #fff;
+  background-color: #0dfda5;
+  border-color: #0d6efd;
 
 }
+
 /* img {
   display: block;
   margin: 0 auto;
@@ -303,14 +316,17 @@ img .zoom {
   width: 400px;
   height: 400px;
   margin: 0 auto;
-  float:right;
+  float: right;
 }
 
 img.zoom:hover {
-  -ms-transform: scale(2); /* IE 9 */
-  -webkit-transform: scale(2); /* Safari 3-8 */
-  transform: scale(2); 
+  -ms-transform: scale(2);
+  /* IE 9 */
+  -webkit-transform: scale(2);
+  /* Safari 3-8 */
+  transform: scale(2);
 }
+
 /* CSS */
 .button-1 {
   background-color: #F082AC;
@@ -339,8 +355,8 @@ img.zoom:hover {
   touch-action: manipulation;
 }
 
-.button-1:hover,.button-1:focus {
+.button-1:hover,
+.button-1:focus {
   background-color: #fd0061;
   color: #000000;
 }
-
