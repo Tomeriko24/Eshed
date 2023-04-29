@@ -14,9 +14,7 @@ body {
     
   /* Style the main content area */
   main {
-    padding: 0px;
-    margin-right: 400px;
-    width: 60%;
+    width: 75%;
   }
   
   main h1 {

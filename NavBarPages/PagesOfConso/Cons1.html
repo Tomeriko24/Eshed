@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="../stylehome.css">
   <style>
     img {
-      display: block;
+
       margin: 0 auto;
       width: 200px;
       height: 200px;
       object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 10px rgba(8, 0, 255, 0.3);
     }
 
     img.zoom {
@@ -28,9 +28,7 @@
 
     img.zoom:hover {
       -ms-transform: scale(2);
-      /* IE 9 */
       -webkit-transform: scale(2);
-      /* Safari 3-8 */
       transform: scale(2);
     }
   </style>
@@ -59,16 +57,13 @@
       <a href="../reports.html" class="button">Reports</a>
       <button onclick="history.back()" class="button">Previous page</button>
     </div>
-    <div style="width:300px; text-align:right;">
+    <div style="width:50%; text-align:right;">
       <img src="../../CleanPicsOfConso/const1.jpeg" 
-      class="zoom" alt="My Profile Photo: const1">
+      class="zoom" alt="My Profile Photo: const1" >
     </div>
   </main>
   <footer>
     <script src="../index.js"></script>
-    <!-- <div class="sign-out">
-        <button onclick="signOut()" class="button">Sign Out</button>
-      </div> -->
     <button class="button-1" role="button" onclick="history.back()">Back To Consultants List</button>
     <p> Signed in to the system</p>
   </footer>
