@@ -52,3 +52,44 @@ function signOut() {
 }
 
 
+
+// fetching data?
+// const csvFilePath = 'dataOfConst.csv';
+// const listContainer = document.querySelector('#list-container');
+
+// Papa.parse(csvFilePath, {
+//   download: true,
+//   header: true,
+//   complete: function(results) {
+//     const data = results.data;
+
+//     // Get an array of column names
+//     const columnNames = Object.keys(data[0]);
+
+//     // Create an object to store the arrays for each column
+//     const columnArrays = {};
+
+//     // Loop through each column
+//     columnNames.forEach(function(columnName) {
+//       columnArrays[columnName] = [];
+
+//       // Loop through each row and add the value for the current column to the array
+//       data.forEach(function(row) {
+//         columnArrays[columnName].push(row[columnName]);
+//       });
+
+//       // Create a new HTML list container for the current column
+//       const columnContainer = document.createElement('div');
+//       columnContainer.innerHTML = '<h2>' + columnName + '</h2><ul><li>' + columnArrays[columnName].join('</li><li>') + '</li></ul>';
+
+//       // Add the HTML list container to the main list container
+//       listContainer.appendChild(columnContainer);
+//     });
+
+//     // Log the arrays for each column to the console
+//     console.log(columnArrays);
+//   }
+// });
+
+
+
