@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Home Page</title>
+    <link rel="stylesheet" href="../stylehome.css">
+    <style>
+        img {
+
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(8, 0, 255, 0.3);
+        }
+
+        img.zoom {
+            padding: 30px;
+            background-color: rgb(135, 222, 244);
+            opacity: 0.8;
+            transition: transform 0.2s;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        img.zoom:hover {
+            -ms-transform: scale(2);
+            -webkit-transform: scale(2);
+            transform: scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <h1>The Northern District</h1>
+        <div>
+            <p>The Northern District is one of the seven administrative districts of Israel.
+                <br>The district extends from the Golan Heights and Upper Galilee in the north to the Beit She'an Valley and Ramot Menashe in the south.
+            <br>Its capital is Nazareth, and the largest city in the district is also Nazareth. The district borders the Mediterranean Sea to the west, Lebanon to the north, Syria and Jordan to the east, and the Judean and Samarian hill country to the south.
+            <br>The size of the Northern District is 4,473 square kilometers. Many of the major tourism sites in Israel, including those around the Sea of Galilee and Mount Hermon, are located within the boundaries of the Northern District.
+            <br>The district also overlaps to some extent with the Galilee region in its broader sense, in addition to the Golan Heights.</p>
+            <b><span style="font-size: larger;">My expertises</span></b>
+            <ul>
+                <li>Standard movement and safety procedures</li>
+                <li>Quality control</li>
+                <li>Performance measurement</li>
+                <li>Traffic and safety regulations - other</li>
+                <li>Transportation checks - pedestrians</li>
+            </ul>
+        </div>
+        <div class="sidenav">
+            <a href="../home_page.html" class="button">Home page</a>
+            <a href="../project_page.html" class="button">Projects</a>
+            <a href="../consultants.html" class="button">Consultants</a>
+            <a href="../approval_authorities.html" class="button">Approval Authorities</a>
+            <a href="../permissions.html" class="button">Permissions</a>
+            <a href="../reports.html" class="button">Reports</a>
+            <button onclick="history.back()" class="button">Previous page</button>
+        </div>
+        <div style="width: 90%; text-align:right; margin-top: -170px;">
+            <img src="../../CleanPicsOfDists/DIST7.png" class="zoom" alt="My Profile Photo: const1">
+        </div>
+    </main>
+    <footer>
+        <script src="../index.js"></script>
+        <button class="button-1" role="button" onclick="history.back()">Back To Authorities List</button>
+        <p> Signed in to the system</p>
+    </footer>
+</body>
+
+</html>
+
+
+
