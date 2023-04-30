@@ -322,9 +322,7 @@ img .zoom {
 
 img.zoom:hover {
   -ms-transform: scale(1.5);
-  /* IE 9 */
   -webkit-transform: scale(1.5);
-  /* Safari 3-8 */
   transform: scale(2);
 }
 
@@ -360,4 +358,13 @@ img.zoom:hover {
 .button-1:focus {
   background-color: #fd0061;
   color: #000000;
+}
+
+
+#area-chart,
+#line-chart,
+#bar-chart,
+#stacked,
+#pie-chart{
+  min-height: 250px;
 }
