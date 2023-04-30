@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Home Page</title>
+    <link rel="stylesheet" href="../stylehome.css">
+    <style>
+        img {
+
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(8, 0, 255, 0.3);
+        }
+
+        img.zoom {
+            padding: 30px;
+            background-color: rgb(135, 222, 244);
+            opacity: 0.8;
+            transition: transform 0.2s;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        img.zoom:hover {
+            -ms-transform: scale(2);
+            -webkit-transform: scale(2);
+            transform: scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <h1>South District</h1>
+        <div>
+            <p>The Southern District is the largest of the seven administrative districts of Israel, covering 14,185 square kilometers and including the Negev Desert, southern coastal plain, and Arava Valley.
+                It has the lowest population density among all districts, at around 90 people per square kilometer.
+                The district has access to three seas, including the Mediterranean Sea, Red Sea, and Dead Sea.
+                Its capital is Beersheba, and the most populated city is Ashdod.
+                Academic institutions like Ashkelon Academic College, Ben-Gurion University, and the Open University operate within the district.</p>
+            <b><span style="font-size: larger;">My expertises</span></b>
+            <ul>
+                <li>Standard movement and safety procedures</li>
+                <li>Quality control</li>
+                <li>Performance measurement</li>
+                <li>Traffic and safety regulations - other</li>
+                <li>Transportation checks - pedestrians</li>
+            </ul>
+        </div>
+        <div class="sidenav">
+            <a href="../home_page.html" class="button">Home page</a>
+            <a href="../project_page.html" class="button">Projects</a>
+            <a href="../consultants.html" class="button">Consultants</a>
+            <a href="../approval_authorities.html" class="button">Approval Authorities</a>
+            <a href="../permissions.html" class="button">Permissions</a>
+            <a href="../reports.html" class="button">Reports</a>
+            <button onclick="history.back()" class="button">Previous page</button>
+        </div>
+        <div style="width: 90%; text-align:right; margin-top: -170px;">
+            <img src="../../CleanPicsOfDists/DIST3.png" class="zoom" alt="My Profile Photo: const1">
+        </div>
+    </main>
+    <footer>
+        <script src="../index.js"></script>
+        <button class="button-1" role="button" onclick="history.back()">Back To Authorities List</button>
+        <p> Signed in to the system</p>
+    </footer>
+</body>
+
+</html>

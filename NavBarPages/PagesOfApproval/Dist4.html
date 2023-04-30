@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Home Page</title>
+    <link rel="stylesheet" href="../stylehome.css">
+    <style>
+        img {
+
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(8, 0, 255, 0.3);
+        }
+
+        img.zoom {
+            padding: 30px;
+            background-color: rgb(135, 222, 244);
+            opacity: 0.8;
+            transition: transform 0.2s;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        img.zoom:hover {
+            -ms-transform: scale(2);
+            -webkit-transform: scale(2);
+            transform: scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <h1>Judea and Samaria District</h1>
+        <div>
+            <p>Judea and Samaria District is an unofficial district managed by the Ministry of the Interior in addition to Israel's six official districts.
+                <br>The district is only responsible for the settlements in areas C of Judea and Samaria, which are not part of Israel but are under its control.
+                <br>The district manager in the Ministry of the Interior is also referred to as "the overseer of the Jewish settlements in Judea and Samaria" and "the manager of the Israeli settlements department in Judea and Samaria".
+                <br>The planning and construction in the district are under the authority of the Civil Administration's Higher Planning Council (Mata"a) in the Civilian Administration of the Israel Defense Forces.</p>
+            <b><span style="font-size: larger;">My expertises</span></b>
+            <ul>
+                <li>Standard movement and safety procedures</li>
+                <li>Quality control</li>
+                <li>Performance measurement</li>
+                <li>Traffic and safety regulations - other</li>
+                <li>Transportation checks - pedestrians</li>
+            </ul>
+        </div>
+        <div class="sidenav">
+            <a href="../home_page.html" class="button">Home page</a>
+            <a href="../project_page.html" class="button">Projects</a>
+            <a href="../consultants.html" class="button">Consultants</a>
+            <a href="../approval_authorities.html" class="button">Approval Authorities</a>
+            <a href="../permissions.html" class="button">Permissions</a>
+            <a href="../reports.html" class="button">Reports</a>
+            <button onclick="history.back()" class="button">Previous page</button>
+        </div>
+        <div style="width: 90%; text-align:right; margin-top: -170px;">
+            <img src="../../CleanPicsOfDists/DIST4.png" class="zoom" alt="My Profile Photo: const1">
+        </div> 
+    </main>
+    <footer>
+        <script src="../index.js"></script>
+        <button class="button-1" role="button" onclick="history.back()">Back To Authorities List</button>
+        <p> Signed in to the system</p>
+    </footer>
+</body>
+
+</html>

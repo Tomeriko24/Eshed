@@ -44,6 +44,7 @@ for (let i = 0; i < navLinks.length; i++) {
 }
 
 
+
 function signOut() {
   // perform sign out operations here
   alert('Signed out successfully!');
@@ -52,6 +53,10 @@ function signOut() {
 }
 
 
+
+// function Back2Conso(){
+//   location.href = "https://github.com/Tomeriko24/New/blob/b3ecc49e66d770f7370125e21dd1be792cea3ad8/NavBarPages/consultants.html";
+// }
 
 // fetching data?
 // const csvFilePath = 'dataOfConst.csv';
