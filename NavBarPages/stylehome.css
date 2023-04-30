@@ -9,7 +9,8 @@ body {
   align-items: start;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 11%, rgba(0,212,255,1) 79%);}
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 1) 11%, rgba(0, 212, 255, 1) 79%);
+}
 
 /* Style the main content area */
 main {
@@ -364,13 +365,21 @@ img.zoom:hover {
 /* 
 ul {
   list-style-type: disc; /* sets the bullet style to a filled circle */
-  margin-left: 10px; /* adds some left margin to the list */
-  padding-left: 10; /* removes default padding */
+margin-left: 10px;
+/* adds some left margin to the list */
+padding-left: 10;
+/* removes default padding */
 }
 
 li {
-  font-family: Arial, sans-serif; /* sets the font */
-  font-size: 15px; /* sets the font size */
-  line-height: 1.5; /* sets the line height to improve readability */
-  padding: 10px 0; /* adds some top and bottom padding to the list items */
-} */
+  font-family: Arial, sans-serif;
+  /* sets the font */
+  font-size: 15px;
+  /* sets the font size */
+  line-height: 1.5;
+  /* sets the line height to improve readability */
+  padding: 10px 0;
+  /* adds some top and bottom padding to the list items */
+}
+
+*/

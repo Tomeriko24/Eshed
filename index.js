@@ -48,7 +48,7 @@ function signOut() {
   // perform sign out operations here
   alert('Signed out successfully!');
   // location.href ="sign_in_page.html";
-  location.href ="../sign_in_page.html";
+  location.href = "../sign_in_page.html";
 }
 
 
