@@ -158,7 +158,9 @@ form button[type="submit"]:hover {
   width: 0%;
   height: 100%;
   background-color: #005c9e;
-  transition: all 0.5s;
+  /* time duration of fiiling */
+  transition: all 0.2s;
+  /* time duration of fiiling */
   border-radius: 10rem;
   z-index: -1;
 }
@@ -368,3 +370,5 @@ img.zoom:hover {
 #pie-chart{
   min-height: 250px;
 }
+
+
