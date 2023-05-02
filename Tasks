@@ -35,7 +35,8 @@ Noy: add data to every consultants from 2-10, all buttons types.
                 <a href="../../Approval/approval_authorities.html" class="button">Approval Authorities</a>
                 <a href="../../Permissions/permissions.html" class="button">Permissions</a>
                 <a href="../../Reports/reports.html" class="button">Reports</a>
-                <button onclick="history.back()" class="button">Previous page</button>
+                <button onclick="history.back()" class="button">Go Back</button>
+                <button onclick="ask4Help()" class="button">Support</button>
             </div>
 
             <div>
@@ -55,7 +56,8 @@ Noy: add data to every consultants from 2-10, all buttons types.
                 <a href="../../../Approval/approval_authorities.html" class="button">Approval Authorities</a>
                 <a href="../../../Permissions/permissions.html" class="button">Permissions</a>
                 <a href="../../../Reports/reports.html" class="button">Reports</a>
-                <button onclick="history.back()" class="button">Previous page</button>
+                <button onclick="history.back()" class="button">Go Back</button>
+                <button onclick="ask4Help()" class="button">Support</button>
               </div>
 
               and the CSS:
