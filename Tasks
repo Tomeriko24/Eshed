@@ -63,6 +63,12 @@ Noy: add data to every consultants from 2-10, all buttons types.
 
 
 
+              adjust the CSS in all dist pages:
+              <link rel="stylesheet" href="../../stylehome.css">
+
+
+
+
 
 
 
