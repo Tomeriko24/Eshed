@@ -1,3 +1,5 @@
+1/05
+
 1.create 3 new pages for each consoltant.page in active projects(AP),
 page in Past Projects(PP)
 page in All projects(AL_P) enter this buttons and make sure it is towards the right 
@@ -13,3 +15,9 @@ the buttons to enter:
     </div>
 }
 
+
+
+2/05
+
+Tomer: creating script to combine tables from different html pages
+Noy: add data to every consultants from 2-10, all buttons types.
