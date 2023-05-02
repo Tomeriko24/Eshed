@@ -27,6 +27,7 @@ form.addEventListener('submit', (event) => {
     alert('Signed in successfully!');
     form.reset();
     location.href ="NavBarPages/Home_Page/home_page.html";
+    // location.href ="Test_import.html";
   } else {
     alert('Invalid username or password');
     form.reset();

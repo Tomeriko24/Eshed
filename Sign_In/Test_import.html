@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Import CSV to HTML table using JavaScript</title>
+</head>
+
+<body>
+  <table id="myTable">
+    <thead>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script>
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        const data = parseCSV(this.responseText);
+        const table = createTable(data);
+        const tbody = document.querySelector('#myTable tbody');
+        tbody.appendChild(table);
+      }
+    };
+    xhttp.open("GET", "import_data.csv", true);
+    xhttp.send();
+
+    function parseCSV(csv) {
+      const lines = csv.split('\n');
+      const headers = lines[0].split(',');
+      const data = [];
+      for (let i = 1; i < lines.length; i++) {
+        const values = lines[i].split(',');
+        if (values.length == headers.length) {
+          const row = {};
+          for (let j = 0; j < headers.length; j++) {
+            row[headers[j]] = values[j];
+          }
+          data.push(row);
+        }
+      }
+      return data;
+    }
+
+    function createTable(data) {
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      const tbody = document.createElement('tbody');
+      const headers = Object.keys(data[0]);
+
+      // create table headers
+      const tr = document.createElement('tr');
+      headers.forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header;
+        tr.appendChild(th);
+      });
+      thead.appendChild(tr);
+
+      // create table rows
+      data.forEach(row => {
+        const tr = document.createElement('tr');
+        headers.forEach(header => {
+          const td = document.createElement('td');
+          td.textContent = row[header];
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(thead);
+      table.appendChild(tbody);
+      return table;
+    }
+  </script>
+</body>
+
+</html>
