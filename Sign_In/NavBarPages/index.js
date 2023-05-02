@@ -2,14 +2,8 @@ function signOut() {
   // perform sign out operations here
   alert('Signed out successfully!');
   // location.href ="sign_in_page.html";
-  location.href = "../sign_in_page.html";
+  location.href = "../../../Sign_In/sign_in_page.html";
 }
-
-
-
-
-
-
 
 function filterList() {
   var input, filter, ul, li, txtValue;
@@ -28,8 +22,6 @@ function filterList() {
 }
 
 
-
-
 function getTableRows() {
   const table = document.getElementsByTagName('table')[0];
   const tbody = table.getElementsByTagName('tbody')[0];
@@ -44,12 +36,8 @@ function getTableRows() {
 
 
 
-
-
-
-
-
-
+// add this as "support" button:
+// location.href = "mailto:someone@example.com";
 
 
 
