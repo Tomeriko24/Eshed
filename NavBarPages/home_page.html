@@ -3,8 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>My Home Page</title>
+  <title id="page-title">My Home Page</title>
   <link rel="stylesheet" href="stylehome.css">
+  <script>
+    // Set the title based on the H1 tag
+    const pageTitle = document.querySelector('h1').textContent;
+    document.title = pageTitle + ' - Home Page';
+  </script>
 </head>
 
 <body>
