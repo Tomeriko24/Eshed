@@ -26,7 +26,7 @@ form.addEventListener('submit', (event) => {
   if (isValidUser) {
     alert('Signed in successfully!');
     form.reset();
-    location.href = "NavBarPages/home_page.html";
+    location.href ="/NavBarPages/home_page.html";
   } else {
     alert('Invalid username or password');
     form.reset();
@@ -42,12 +42,3 @@ for (let i = 0; i < navLinks.length; i++) {
     location.href = link;
   });
 }
-
-
-
-
-
-
-
-
-
