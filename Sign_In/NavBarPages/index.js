@@ -34,7 +34,9 @@ function getTableRows() {
   return rows;
 }
 
-
+function ask4Help() {
+  location.href = "mailto:Eshed_Support@Eshed.com";
+}
 
 // add this as "support" button:
 // location.href = "mailto:someone@example.com";

@@ -110,6 +110,7 @@ form input[type="password"] {
 form button[type="submit"]:hover {
   background-color: rgba(0, 0, 255, 0.2);
 }
+
 .sidenav {
   height: 100%;
   width: 150px;
@@ -366,6 +367,7 @@ img.zoom:hover {
 #line-chart,
 #bar-chart,
 #stacked,
-#pie-chart{
+#pie-chart {
   min-height: 250px;
 }
+
