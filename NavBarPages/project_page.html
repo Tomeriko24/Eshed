@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>My Home Page</title>
   <link rel="stylesheet" href="stylehome.css">
 </head>
-
 <body>
   <header>
   </header>
   <main>
-    <h1>Projects page</h1>
-    <p>This is some sample text for the home page.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <h1 id="main-heading">Projects page</h1>
+    <p id="sample-text">This is some sample text for the home page.</p>
+    <p id="lorem-ipsum">Lorem ipsum dolor sit amet consectetur adipisicing elit.
       Dolorem, cupiditate, quos harum reiciendis laborum totam dolore necessitatibus
       ipsum voluptates eum fuga ea soluta assumenda exercitationem provident debitis
       perferendis dolores molestiae?
@@ -27,15 +25,38 @@
       <a href="reports.html" class="button">Reports</a>
       <button onclick="history.back()" class="button">Previous page</button>
     </div>
+
+
+    <script>      
+      fetch('NavBarPages/home_page.html')
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const element = doc.querySelector('#home-link');
+        console.log(element);
+        // do something with the selected element
+      })
+      .catch(error => console.log(error));
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
   </main>
   <footer>
     <script src="../index.js"></script>
     <div class="sign-out">
       <button onclick="signOut()" class="button">Sign Out</button>
     </div>
-    <p> Signed in to the system</p>
+    <p id="signed-in-text"> Signed in to the system</p>
   </footer>
-
 </body>
-
 </html>

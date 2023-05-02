@@ -1,50 +1,3 @@
-const form = document.getElementById('signin-form');
-const navLinks = document.querySelectorAll('.sidenav a');
-
-const users = [
-  { username: "A", password: "A" },
-  { username: "alon", password: "ronen" },
-  { username: "user3", password: "password3" },
-];
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  let isValidUser = false;
-
-  // Check if username and password match a user in the database
-  for (let i = 0; i < users.length; i++) {
-    if (users[i].username === username && users[i].password === password) {
-      isValidUser = true;
-      break;
-    }
-  }
-
-  if (isValidUser) {
-    alert('Signed in successfully!');
-    form.reset();
-    location.href = "NavBarPages/home_page.html";
-  } else {
-    alert('Invalid username or password');
-    form.reset();
-  }
-});
-
-// Handle click on nav links
-for (let i = 0; i < navLinks.length; i++) {
-  NavBarPages / home_page.html
-  navLinks[i].addEventListener('click', (event) => {
-    event.preventDefault();
-    const link = event.target.getAttribute('href');
-    location.href = link;
-  });
-}
-
-
-
 function signOut() {
   // perform sign out operations here
   alert('Signed out successfully!');
@@ -52,53 +5,6 @@ function signOut() {
   location.href = "../sign_in_page.html";
 }
 
-
-
-//visualization data - home page
-var data = [
-  { y: '2014', a: 50, b: 90},
-  { y: '2015', a: 65,  b: 75},
-  { y: '2016', a: 50,  b: 50},
-  { y: '2017', a: 75,  b: 60},
-  { y: '2018', a: 80,  b: 65},
-  { y: '2019', a: 90,  b: 70},
-  { y: '2020', a: 100, b: 75},
-  { y: '2021', a: 115, b: 75},
-  { y: '2022', a: 120, b: 85},
-  { y: '2023', a: 145, b: 85},
-  { y: '2024', a: 160, b: 95}
-],
-config = {
-  data: data,
-  xkey: 'y',
-  ykeys: ['a', 'b'],
-  labels: ['Total Income', 'Total Outcome'],
-  fillOpacity: 0.6,
-  hideHover: 'auto',
-  behaveLikeLine: true,
-  resize: true,
-  pointFillColors:['#ffffff'],
-  pointStrokeColors: ['black'],
-  lineColors:['gray','red']
-};
-config.element = 'area-chart';
-Morris.Area(config);
-config.element = 'line-chart';
-Morris.Line(config);
-config.element = 'bar-chart';
-Morris.Bar(config);
-config.element = 'stacked';
-config.stacked = true;
-Morris.Bar(config);
-Morris.Donut({
-element: 'pie-chart',
-data: [
-{label: "Friends", value: 30},
-{label: "Allies", value: 15},
-{label: "Enemies", value: 45},
-{label: "Neutral", value: 10}
-]
-});
 
 
 
@@ -122,6 +28,56 @@ function filterList() {
 }
 
 
+
+
+function getTableRows() {
+  const table = document.getElementsByTagName('table')[0];
+  const tbody = table.getElementsByTagName('tbody')[0];
+  const rows = [];
+
+  for (let i = 0; i < tbody.rows.length; i++) {
+    rows.push(tbody.rows[i]);
+  }
+
+  return rows;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Wait for the DOM to finish loading before running the code
+// document.addEventListener('DOMContentLoaded', function() {
+  
+//   // Use fetch to load the contents of the second HTML page
+//   fetch('second-page.html')
+//     .then(response => response.text())
+//     .then(data => {
+      
+//       // Create a new DOM parser
+//       const parser = new DOMParser();
+//       const html = parser.parseFromString(data, 'text/html');
+      
+//       // Find the table in the second HTML page
+//       const table = html.querySelector('table');
+      
+//       // Insert the table into the first HTML page
+//       const tableContainer = document.getElementById('table-container');
+//       tableContainer.appendChild(table);
+      
+//     });
+  
+// });
 
 
 
