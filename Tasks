@@ -1,4 +1,4 @@
-1/05
+<!-- 1/05
 
 1.create 3 new pages for each consoltant.page in active projects(AP),
 page in Past Projects(PP)
@@ -13,7 +13,7 @@ the buttons to enter:
         <a href="Past_Projects/P_P_1.html" class="btnLink">Past Projects</a>
         <a href="All_Projects/AL_P_1.html" class="btnLink">All Projects</a>
     </div>
-}
+} -->
 
 
 
@@ -26,58 +26,50 @@ Noy: add data to every consultants from 2-10, all buttons types.
 
 
 
-            - adjust the  componants to be alligned to DIRECTORY: in all consoltants
+- adjust the componants to be alligned to DIRECTORY: in all consoltants
 
-            <div class="sidenav">
-                <a href="../../Home_Page/home_page.html" class="button" id="home-link">Home page</a>
-                <a href="../../Projects/project_page.html" class="button">Projects</a>
-                <a href="../../Consultants/consultants.html" class="button">Consultants</a>
-                <a href="../../Approval/approval_authorities.html" class="button">Approval Authorities</a>
-                <a href="../../Permissions/permissions.html" class="button">Permissions</a>
-                <a href="../../Reports/reports.html" class="button">Reports</a>
-                <button onclick="history.back()" class="button">Go Back</button>
-                <button onclick="ask4Help()" class="button">Support</button>
-            </div>
+<div class="sidenav">
+    <a href="../../Home_Page/home_page.html" class="button" id="home-link">Home page</a>
+    <a href="../../Projects/project_page.html" class="button">Projects</a>
+    <a href="../../Consultants/consultants.html" class="button">Consultants</a>
+    <a href="../../Approval/approval_authorities.html" class="button">Approval Authorities</a>
+    <a href="../../Permissions/permissions.html" class="button">Permissions</a>
+    <a href="../../Reports/reports.html" class="button">Reports</a>
+    <button onclick="history.back()" class="button">Go Back</button>
+    <button onclick="ask4Help()" class="button">Support</button>
+</div>
 
-            <div>
-                <a href="../PagesOfConso/Active_Projects/A_P_1.html" class="btnLink">Active Projects</a>
-                <a href="../PagesOfConso/Past_Projects/P_P_1.html" class="btnLink">Past Projects</a>
-                <a href="../PagesOfConso/All_Projects/AL_P_1.html" class="btnLink">All Projects</a>
-              </div>
+<div>
+    <a href="../PagesOfConso/Active_Projects/A_P_1.html" class="btnLink">Active Projects</a>
+    <a href="../PagesOfConso/Past_Projects/P_P_1.html" class="btnLink">Past Projects</a>
+    <a href="../PagesOfConso/All_Projects/AL_P_1.html" class="btnLink">All Projects</a>
+</div>
 
-            <img src="../PagesOfConso/CleanPicsOfConso/const1.jpeg" class="zoom" alt="My Profile Photo: const1">
-
-
-            in every A_P, P_P, All_P:
-            <div class="sidenav">
-                <a href="../../../Home_Page/home_page.html" class="button">Home page</a>
-                <a href="../../../Projects/project_page.html" class="button">Projects</a>
-                <a href="../../../Consultants/consultants.html" class="button">Consultants</a>
-                <a href="../../../Approval/approval_authorities.html" class="button">Approval Authorities</a>
-                <a href="../../../Permissions/permissions.html" class="button">Permissions</a>
-                <a href="../../../Reports/reports.html" class="button">Reports</a>
-                <button onclick="history.back()" class="button">Go Back</button>
-                <button onclick="ask4Help()" class="button">Support</button>
-              </div>
-
-              and the CSS:
-              <link rel="stylesheet" href="../../../stylehome.css">
+<img src="../New/Sign_In/NavBarPages/Consultants/PagesOfConso/CleanPicsOfConso/const2.jpeg" class="zoom"
+    alt="My Profile Photo: const1">
 
 
+in every A_P, P_P, All_P:
+<div class="sidenav">
+    <a href="../../../Home_Page/home_page.html" class="button">Home page</a>
+    <a href="../../../Projects/project_page.html" class="button">Projects</a>
+    <a href="../../../Consultants/consultants.html" class="button">Consultants</a>
+    <a href="../../../Approval/approval_authorities.html" class="button">Approval Authorities</a>
+    <a href="../../../Permissions/permissions.html" class="button">Permissions</a>
+    <a href="../../../Reports/reports.html" class="button">Reports</a>
+    <button onclick="history.back()" class="button">Go Back</button>
+    <button onclick="ask4Help()" class="button">Support</button>
+</div>
 
-              adjust the CSS in all dist pages:
-              <link rel="stylesheet" href="../../stylehome.css">
-
-
-              - adjust the  componants to be alligned to DIRECTORY: in all consoltants
+and the CSS:
+<link rel="stylesheet" href="../../../stylehome.css">
 
 
 
+adjust the CSS in all dist pages:
+<link rel="stylesheet" href="../../stylehome.css">
 
 
+- adjust the componants to be alligned to DIRECTORY: in all consoltants
 
-
-
-
-
-
+look at const 8 : little about me 
