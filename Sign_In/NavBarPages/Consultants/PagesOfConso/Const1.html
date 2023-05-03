@@ -33,6 +33,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
   </header>
@@ -42,7 +43,8 @@
       <p>Hey! My name is Nick Cordova. I will be happy to join your project.</p>
       <p><b>
           little about me:
-        </b>Dedicated project manager with over 10 years of experience delivering successful projects in various industries.
+        </b>Dedicated project manager with over 10 years of experience delivering successful projects in various
+        industries.
         <br>
         Skilled in project planning, execution, and monitoring, with a focus on quality and customer satisfaction.
         <br>
@@ -61,14 +63,22 @@
         <li>Transportation checks - pedestrians</li>
       </ul>
     </div>
-    <div class="sidenav">
-      <a href="../../Home_Page/home_page.html" class="button" id="home-link">Home page</a>
-      <a href="../../Projects/project_page.html" class="button">Projects</a>
-      <a href="../../Consultants/consultants.html" class="button">Consultants</a>
-      <a href="../../Approval/approval_authorities.html" class="button">Approval Authorities</a>
-      <a href="../../Permissions/permissions.html" class="button">Permissions</a>
-      <a href="../../Reports/reports.html" class="button">Reports</a>
-      <button onclick="history.back()" class="button">Previous page</button>
+
+    </div>
+    <div class="sidebar">
+      <!-- Include the sidebar -->
+      <iframe src="../../../../Components/sidebar.html"></iframe>
+      <style>
+        iframe {
+          height: 100vh;
+          width: 12.5%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          border: none;
+        }
+      </style>
+
     </div>
     <div>
       <a href="../PagesOfConso/Active_Projects/A_P_1.html" class="btnLink">Active Projects</a>
