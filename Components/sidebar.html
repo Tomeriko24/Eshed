@@ -1,3 +1,4 @@
+
 <div class="sidenav">
   <a href="../Sign_In/NavBarPages/Home_Page/home_page.html" class="button" id="home-link" target="_parent">Home page</a>
   <a href="../Sign_In/NavBarPages/Projects/project_page.html" class="button" target="_parent">Projects</a>
@@ -5,89 +6,115 @@
   <a href="../Sign_In/NavBarPages/Approval/approval_authorities.html" class="button" target="_parent">Approval Authorities</a>
   <a href="../Sign_In/NavBarPages/Permissions/permissions.html" class="button" target="_parent">Permissions</a>
   <a href="../Sign_In/NavBarPages/Reports/reports.html" class="button" target="_parent">Reports</a>
-  <button onclick="history.back()" class="button">Go Back</button>
-  <button onclick="ask4Help()" class="button">Support</button></div>
-
+  <a href="javascript:void(0)" onclick="history.back()" class="button" target="_parent">Go Back</a>
+  <a href="javascript:void(0)" onclick="location.href='mailto:Eshed_Support@Eshed.com';" class="button" target="_parent">Support</a>
 <style>
+
   /* Set default styles for the page */
-  body {
-    font-family: Arial, sans-serif;
-    /* background-image: url("BackgroundImage.png"); */
-    background-size: 75% auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: start;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  /* Style the main content area */
-  main {
-    width: 75%;
-  }
-  
-  main h1 {
-    font-size: 50px;
-    margin: 0%;
-  }
-  
-  main p {
-    font-size: 20px;
-    line-height: 1.5;
+body {
+  font-family: Arial, sans-serif;
+  /* background-image: url("BackgroundImage.png"); */
+  background-repeat: no-repeat;
+  background-size: 75% auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 1) 11%, rgba(0, 212, 255, 1) 79%);
+}
+
+/* Style the main content area */
+main {
+  width: 75%;
+}
+
+main h1 {
+  font-size: 50px;
+  margin: 0%;
+}
+
+main p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #00ffff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 110px;
+
+}
+
+
+
+  h2 {
+    font-size: 24px;
     margin-bottom: 20px;
   }
-  
-  /* Style the footer */
-  footer {
-    background-color: #00ffff;
-    padding: 20px;
-    text-align: center;
-    border-radius: 110px;
 
+  label {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 
-  
-  
-  .sidenav {
-    height: 100%;
-    width: 150px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0; /* added */
-    background-color: #12b0ff;
-    overflow-x: hidden;
-    padding-top: 20px;
+  input[type="text"],  input[type="password"] {
+    font-size: 16px;
+    margin-bottom: 20px;
   }
-  
-  .button {
-    display: inline-block;
-    display: sticky;
 
-    padding: 0.75rem 1.25rem;
-    border-radius: 10rem;
-    color: #fff;
-    font-size: 1em;
-    letter-spacing: 0.15rem;
-    transition: all 0.5s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+  button[type="submit"] {
+    font-size: 16px;
   }
-  
-  .button:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0cf;
-    border-radius: 10rem;
-    z-index: -2;
-  }
-  
-  .button:before {
+
+/* Style the form submit button on hover */
+form button[type="submit"]:hover {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+.sidenav {
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #12b0ff;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  display: sticky;
+  margin-top: 10px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: 0.15rem;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0cf;
+  border-radius: 10rem;
+  z-index: -2;
+}
+
+.button:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -102,10 +129,47 @@
   z-index: -1;
 }
 
-    .button:hover {
+.button:hover {
   color: #000000;
 }
 
 .button:hover:before {
   width: 100%;
 }
+
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+
+.btnLink {
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  color: #000;
+  border-color: #7c8491;
+}
+
+.btnLink:hover {
+  color: #fff;
+  background-color: #0dfda5;
+  border-color: #0d6efd;
+
+}
+
+</style>
+</div>

@@ -27,18 +27,21 @@
 
     <!-- //להכניס כאן מעבר לפרוייקטים פעילים? מה אנחנו רוצים לראות במסך הבית שלנו, זה בעצם כמו המסך של הדוחות? -->
     <!-- <div> -->
-    <div class="sidenav">
-      <a href="../Home_Page/home_page.html" class="button" id="home-link">Home page</a>
-      <a href="../Projects/project_page.html" class="button">Projects</a>
-      <a href="../Consultants/consultants.html" class="button">Consultants</a>
-      <a href="../Approval/approval_authorities.html" class="button">Approval Authorities</a>
-      <a href="../Permissions/permissions.html" class="button">Permissions</a>
-      <a href="../Reports/reports.html" class="button">Reports</a>
-      <button onclick="" class="button">Go Back</button>
-      <button onclick="ask4Help()" class="button">Support</button>
-
-    </div>
-    <!-- searching list below -->
+      <div class="sidebar">
+        <!-- Include the sidebar -->
+        <iframe src="../../../Components/sidebar.html"></iframe>
+        <style>
+          iframe {
+            height: 100vh;
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border: none;
+          }
+        </style>
+      </div>
+      <!-- searching list below -->
     <!-- <input type="text" id="myInput" onkeyup="filterList()" placeholder="Search for Consultants...">
     <ul id="myList">
       <li>John <a><a href="PagesOfConso/Const1.html" class="btnLink">more</a></a></li>
