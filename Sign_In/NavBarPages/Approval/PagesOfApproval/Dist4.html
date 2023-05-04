@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My Home Page</title>
-    <link rel="stylesheet" href="../stylehome.css">
+    <link rel="stylesheet" href="../../stylehome.css">
     <style>
         img {
 
@@ -53,16 +53,20 @@
                 <li>Transportation checks - pedestrians</li>
             </ul>
         </div>
-        <div class="sidenav">
-            <a href="../home_page.html" class="button">Home page</a>
-            <a href="../project_page.html" class="button">Projects</a>
-            <a href="../consultants.html" class="button">Consultants</a>
-            <a href="../approval_authorities.html" class="button">Approval Authorities</a>
-            <a href="../permissions.html" class="button">Permissions</a>
-            <a href="../reports.html" class="button">Reports</a>
-            <button onclick="history.back()" class="button">Previous page</button>
-        </div>
-        <div style="width: 90%; text-align:right; margin-top: -170px;">
+        <div class="sidebar">
+            <!-- Include the sidebar -->
+            <iframe src="../../../../../Components/sidebar.html"></iframe>
+            <style>
+              iframe {
+                height: 100vh;
+                width: 150px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                border: none;
+              }
+            </style>
+          </div>        <div style="width: 90%; text-align:right; margin-top: -170px;">
             <img src="../CleanPicsOfDists/DIST4.png" class="zoom" alt="My Profile Photo: const1">
         </div> 
     </main>
