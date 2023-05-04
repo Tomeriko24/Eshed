@@ -37,27 +37,6 @@ footer {
 
 }
 
-/* Style the form */
-form {
-  background-color: #ffdb13;
-  padding: 40px;
-  border-radius: 110px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-right: 0;
-  width: calc(25% - 20px);
-  height: calc(75vh - 80px);
-}
-
-/* Style the form for smaller screens */
-@media (max-width: 768px) {
-  form {
-    margin: 0 auto;
-    padding: 20px;
-    width: calc(100% - 40px);
-    height: auto;
-    border-radius: 30px;
-  }
-
   h2 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -77,39 +56,8 @@ form {
   button[type="submit"] {
     font-size: 16px;
   }
-}
-
-/* Style the form heading */
-form h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-/* Style the form labels */
-form label {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-/* Style the form inputs */
-form input[type="text"],
-form input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 20px;
-}
 
 
-
-/* Style the form submit button on hover */
-form button[type="submit"]:hover {
-  background-color: rgba(0, 0, 255, 0.2);
-}
 
 .sidenav {
   height: 100%;
@@ -303,28 +251,34 @@ tbody:hover tr:hover td {
 
 }
 
-/* img {
-  display: block;
+
+
+
+
+
+img {
+
   margin: 0 auto;
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  } */
-img .zoom {
-  padding: 50px;
-  background-color: green;
-  transition: transform .2s;
-  width: 400px;
-  height: 400px;
+  box-shadow: 0 0 10px rgba(8, 0, 255, 0.3);
+}
+
+img.zoom {
+  padding: 30px;
+  background-color: rgb(135, 222, 244);
+  opacity: 0.8;
+  transition: transform 0.2s;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
-  float: right;
 }
 
 img.zoom:hover {
-  -ms-transform: scale(1.5);
-  -webkit-transform: scale(1.5);
+  -ms-transform: scale(2);
+  -webkit-transform: scale(2);
   transform: scale(2);
 }
 
