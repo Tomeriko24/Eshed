@@ -47,24 +47,28 @@ function showTable() {
   var selectElement = document.getElementById("permission");
   var basicTable = document.getElementById("basicTable");
   var highTable = document.getElementById("highTable");
-  var BasicshowH2 = document.getElementById("BasicshowH2");
-  var HighShowH2 = document.getElementById("HighShowH2");
+  var selectedPermission = document.getElementById("selectedPermission");
   var permissionSubContainer = document.getElementById("permissionSubContainer");
 
   basicTable.style.display = "none";
   highTable.style.display = "none";
-  BasicshowH2.style.display = "none";
-  HighShowH2.style.display = "none";
   permissionSubContainer.style.display = "none";
 
   if (selectElement.value === "BasicLevel") {
     basicTable.style.display = "table";
-    BasicshowH2.style.display = "block";
     permissionSubContainer.style.display = "block";
   } else if (selectElement.value === "HighLevel") {
     highTable.style.display = "table";
-    HighShowH2.style.display = "block";
   }
+
+  selectedPermission.textContent = "";
+}
+
+function updateSelectedPermission() {
+  var permissionSubElement = document.getElementById("permissionSub");
+  var selectedPermission = document.getElementById("selectedPermission");
+
+  selectedPermission.textContent = "Selected Const: " + permissionSubElement.value;
 }
 
 

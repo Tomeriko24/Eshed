@@ -22,20 +22,30 @@
     </div>
 
     <h2>Choose Permissions Level</h2>
-    <select id="permission" name="permission" onchange="showTable()">
-      <option value="none" disabled selected hidden>Select permissions level</option>
-      <option value="BasicLevel">Basic Level</option>
-      <option value="HighLevel">High Level</option>
-    </select>
-
-    <div id="permissionSubContainer" style="display: none;">
-      <select id="permissionSub" name="permissionSub">
-        <option value="none" disabled selected hidden>Select Specific Role</option>
-        <option value="Role1">Role X</option>
-        <option value="Role1">Role X</option>
-        <option value="Role1">Role X</option>
-        <option value="Role1">Role X</option>
+    <div id="permissionContainer">
+      <select id="permission" name="permission" onchange="showTable()">
+        <option value="none" disabled selected hidden>Select Permission Level</option>
+        <option value="BasicLevel">Basic Level</option>
+        <option value="HighLevel">High Level</option>
       </select>
+    </div>
+    
+    <div id="permissionSubContainer" style="display: none;">
+      <select id="permissionSub" name="permissionSub" onchange="updateSelectedPermission()">
+        <option value="none" disabled selected hidden>Select Specific Role</option>
+        <option value="Const 1">Const 1</option>
+        <option value="Const 2">Const 2</option>
+        <option value="Const 3">Const 3</option>
+        <option value="Const 4">Const 4</option>
+        <option value="Const 5">Const 5</option>
+        <option value="Const 6">Const 6</option>
+        <option value="Const 7">Const 7</option>
+        <option value="Const 8">Const 8</option>
+        <option value="Const 9">Const 9</option>
+        <option value="Const 10">Const 10</option>
+      </select>
+      <h2 id="selectedPermission"></h2>
+
     </div>
 
     <table id="basicTable" style="display: none;">
