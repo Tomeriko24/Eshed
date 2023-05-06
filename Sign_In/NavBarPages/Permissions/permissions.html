@@ -20,14 +20,64 @@
     <div class="sidebar">
       <iframe src="../../../Components/sidebar.html"></iframe>
     </div>
-    <h2>בחר את מי לערוך:</h2>
-    <select>
-      <option value="option1" selected>Admin</option>
-      <option value="option2">Consultant</option>
-      <option value="option3">Approval District</option>
+
+    <h2>Choose Permissions Level</h2>
+    <select id="permission" name="permission" onchange="showTable()">
+      <option value="none" disabled selected hidden>Select permissions level</option>
+      <option value="BasicLevel">Basic Level</option>
+      <option value="HighLevel">High Level</option>
     </select>
-    
-    
+
+    <div id="permissionSubContainer" style="display: none;">
+      <select id="permissionSub" name="permissionSub">
+        <option value="none" disabled selected hidden>Select Specific Role</option>
+        <option value="Role1">Role X</option>
+        <option value="Role1">Role X</option>
+        <option value="Role1">Role X</option>
+        <option value="Role1">Role X</option>
+      </select>
+    </div>
+
+    <table id="basicTable" style="display: none;">
+      <h2 id="BasicshowH2" style="display: none;">Specific user to edit:</h2>
+      <thead>
+        <tr>
+          <th>Viewing</th>
+          <th>Editing</th>
+          <th>Creating</th>
+          <th>Deleting</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label></td>
+          <td><label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label></td>
+          <td><label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label></td>
+          <td><label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label></td>
+        </tr>
+      </tbody>
+    </table>
+    <table id="highTable" style="display: none;">
+      <h2 id="HighShowH2" style="display: none;">Specific role to edit:</h2>
+      <tr>
+        <th>High Permission Details</th>
+      </tr>
+      <tr>
+        <td>High-level permission details</td>
+      </tr>
+    </table>
   </main>
   <footer>
     <script src="../index.js"></script>

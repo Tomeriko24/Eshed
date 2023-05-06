@@ -43,6 +43,41 @@ function goBack() {
 }
 
 
+function showTable() {
+  var selectElement = document.getElementById("permission");
+  var basicTable = document.getElementById("basicTable");
+  var highTable = document.getElementById("highTable");
+  var BasicshowH2 = document.getElementById("BasicshowH2");
+  var HighShowH2 = document.getElementById("HighShowH2");
+  var permissionSubContainer = document.getElementById("permissionSubContainer");
+
+  basicTable.style.display = "none";
+  highTable.style.display = "none";
+  BasicshowH2.style.display = "none";
+  HighShowH2.style.display = "none";
+  permissionSubContainer.style.display = "none";
+
+  if (selectElement.value === "BasicLevel") {
+    basicTable.style.display = "table";
+    BasicshowH2.style.display = "block";
+    permissionSubContainer.style.display = "block";
+  } else if (selectElement.value === "HighLevel") {
+    highTable.style.display = "table";
+    HighShowH2.style.display = "block";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // // Wait for the DOM to finish loading before running the code
