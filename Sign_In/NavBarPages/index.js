@@ -45,26 +45,6 @@ function goBack() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // Wait for the DOM to finish loading before running the code
 // document.addEventListener('DOMContentLoaded', function() {
   
@@ -87,25 +67,6 @@ function goBack() {
 //     });
   
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // function Back2Conso(){

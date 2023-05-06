@@ -342,3 +342,13 @@ iframe {
   left: 0;
   border: none;
 }
+
+  select {
+    padding: 5px;
+    fill:#00ffff;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #b2e8ff;
+
+  }
