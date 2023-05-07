@@ -26,7 +26,7 @@ form.addEventListener('submit', (event) => {
   if (isValidUser) {
     alert('Signed in successfully!');
     form.reset();
-    location.href ="NavBarPages/Home_Page/home_page.html";
+    location.href ="NavBarPages/dash_board/dash_board.html";
     // location.href ="Test_import.html";
   } else {
     alert('Invalid username or password');
@@ -36,7 +36,7 @@ form.addEventListener('submit', (event) => {
 
 // Handle click on nav links
 for (let i = 0; i < navLinks.length; i++) {
-  NavBarPages / home_page.html
+  NavBarPages / dash_board.html
   navLinks[i].addEventListener('click', (event) => {
     event.preventDefault();
     const link = event.target.getAttribute('href');

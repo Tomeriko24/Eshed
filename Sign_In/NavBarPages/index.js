@@ -64,12 +64,14 @@ function showTable() {
   selectedPermission.textContent = "";
 }
 
-function updateSelectedPermission() {
-  var permissionSubElement = document.getElementById("permissionSub");
-  var selectedPermission = document.getElementById("selectedPermission");
 
-  selectedPermission.textContent = "Selected Const: " + permissionSubElement.value;
-}
+// function that saves the toggle choice
+// function updateSelectedPermission() {
+//   var permissionSubElement = document.getElementById("permissionSub");
+//   var selectedPermission = document.getElementById("selectedPermission");
+
+//   selectedPermission.textContent = "Selected Const: " + permissionSubElement.value;
+// }
 
 
 

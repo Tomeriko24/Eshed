@@ -22,34 +22,68 @@
     </div>
 
     <h2>Choose Permissions Level</h2>
-    <div id="permissionContainer">
-      <select id="permission" name="permission" onchange="showTable()">
-        <option value="none" disabled selected hidden>Select Permission Level</option>
-        <option value="BasicLevel">Basic Level</option>
-        <option value="HighLevel">High Level</option>
-      </select>
-    </div>
-    
-    <div id="permissionSubContainer" style="display: none;">
-      <select id="permissionSub" name="permissionSub" onchange="updateSelectedPermission()">
-        <option value="none" disabled selected hidden>Select Specific Role</option>
-        <option value="Const 1">Const 1</option>
-        <option value="Const 2">Const 2</option>
-        <option value="Const 3">Const 3</option>
-        <option value="Const 4">Const 4</option>
-        <option value="Const 5">Const 5</option>
-        <option value="Const 6">Const 6</option>
-        <option value="Const 7">Const 7</option>
-        <option value="Const 8">Const 8</option>
-        <option value="Const 9">Const 9</option>
-        <option value="Const 10">Const 10</option>
-      </select>
-      <h2 id="selectedPermission"></h2>
 
-    </div>
+      <div id="permissionContainer">
+        <select id="permission" name="permission" onchange="showTable()">
+          <option value="none" disabled selected hidden>Select Permission Level</option>
+          <option value="BasicLevel">Basic Level</option>
+          <option value="HighLevel">High Level</option>
+        </select>
+      </div>
 
-    <table id="basicTable" style="display: none;">
-      <h2 id="BasicshowH2" style="display: none;">Specific user to edit:</h2>
+      <div id="permissionSubContainer" style="display: none;">
+        <select id="permissionSub" name="permissionSub" onchange="updateSelectedPermission()">
+          <option value="none" disabled selected hidden>Select Specific Role</option>
+          <option value="Const1">Const1</option>
+          <option value="Const2">Const2</option>
+          <option value="Const3">Const3</option>
+          <option value="Const4">Const4</option>
+          <option value="Const5">Const5</option>
+          <option value="Const6">Const6</option>
+          <option value="Const7">Const7</option>
+          <option value="Const8">Const8</option>
+          <option value="Const9">Const9</option>
+          <option value="Const10">Const10</option>
+        </select>
+        <h2 id="selectedPermission"></h2>
+      </div>
+
+      <table id="basicTable" style="display: none;">
+        <h2 id="BasicshowH2" style="display: none;">Specific user to edit:</h2>
+        <thead>
+          <tr>
+            <th>Viewing</th>
+            <th>Editing</th>
+            <th>Creating</th>
+            <th>Deleting</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="EditingToggle">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="CreatingToggle">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="DeletingToggle">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+      </table>
+
+
+
+
+    <table id="highTable" style="display: none;">
+      <h2 id="HighShowH2" style="display: none;">Specific role to edit:</h2>
       <thead>
         <tr>
           <th>Viewing</th>
@@ -61,33 +95,24 @@
       <tbody>
         <tr>
           <td><label class="switch">
-              <input type="checkbox">
+              <input type="checkbox" id="viewingToggle">
               <span class="slider round"></span>
             </label></td>
           <td><label class="switch">
-              <input type="checkbox">
+              <input type="checkbox" id="EditingToggle">
               <span class="slider round"></span>
             </label></td>
           <td><label class="switch">
-              <input type="checkbox">
+              <input type="checkbox" id="CreatingToggle">
               <span class="slider round"></span>
             </label></td>
           <td><label class="switch">
-              <input type="checkbox">
+              <input type="checkbox" id="DeletingToggle">
               <span class="slider round"></span>
             </label></td>
         </tr>
-      </tbody>
-    </table>
-    <table id="highTable" style="display: none;">
-      <h2 id="HighShowH2" style="display: none;">Specific role to edit:</h2>
-      <tr>
-        <th>High Permission Details</th>
-      </tr>
-      <tr>
-        <td>High-level permission details</td>
-      </tr>
-    </table>
+  </table>
+    </tbody>
   </main>
   <footer>
     <script src="../index.js"></script>
