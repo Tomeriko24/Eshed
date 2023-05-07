@@ -23,12 +23,13 @@
 
 
       <div>
+        <h2>חלוקה לפי סוגי פרוייקטים</h2>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
         <canvas id="barChart" style="width:100%;"></canvas>
         <script>
           var xValues = ["Active Projects", "Finished Projects", "Delayed Projects", "Hours Spent", "Budget Spent(M)"];
           var yValues = [55, 49, 44, 24, 19];
-          var barColors = ["green", "red", "yellow", "orange", "brown"];
+          var barColors = ["green", "YELLOW", "RED", "orange", "brown"];
       
           new Chart("barChart", {
             type: "bar",
@@ -51,34 +52,34 @@
       </div>
       
 
-      <div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-        <canvas id="pieChart" style="width: 50%; height: 50%;"></canvas>
-        <script>
-          var xValues = ["Active Projects", "Finished Projects", "Delayed Projects", "Hours Spent", "Budget Spent(M)"];
-          var yValues = [55, 49, 44, 24, 19];
-          var barColors = ["red", "green", "yellow", "orange", "brown"];
-      
-          new Chart("pieChart", {
-            type: "pie",
-            data: {
-              labels: xValues,
-              datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-              }]
-            },
-            options: {
-              legend: { display: false },
-              title: {
-                display: true,
-                text: "Projects:"
-              }
-            }
-          });
-        </script>
-      </div>
-      
+<div>
+  <h2>חלוקה לפי פרוייקטים</h2>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <canvas id="pieChart" style="width:50%;max-width:300px"></canvas>
+  <script>
+    var xValues = ["Active Projects", "Finished Projects", "Delayed Projects", "Hours Spent", "Budget Spent(M)"];
+    var yValues = [55, 49, 44, 24, 19];
+    var barColors = ["red", "green", "yellow", "orange", "brown"];
+
+    new Chart("pieChart", {
+      type: "pie",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: "Projects:"
+        }
+      }
+    });
+  </script>
+</div>
 
 <!-- <iframe src="../../../Components/SignOut.html"></iframe> -->
 
