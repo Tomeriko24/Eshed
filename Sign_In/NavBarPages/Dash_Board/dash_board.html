@@ -5,31 +5,130 @@
   <meta charset="UTF-8">
   <title id="page-title">My Home Page</title>
   <link rel="stylesheet" href="../stylehome.css">
-  <script>
-    // Set the title based on the H1 tag
-    const pageTitle = document.querySelector('h1').textContent;
-    document.title = pageTitle + ' - Home Page';
-  </script>
+
 </head>
 
 <body>
   <header>
   </header>
   <main>
-    <h1>Welcome to my home page!</h1>
+    <h1>home page!</h1>
     <p>This is some sample text for the home page
-      ultrices fringilla at ac diam. Vestibulum tempor aliquam massa a lacinia. Fusce vel<br>
-      laoreet arcu. Morbi dapibus, nibh at tristique pretium, quam eros blandit risus, nec<br>
-      euismod metus lorem non lacus. Ut non nulla id justo vestibulum consequat. Fusce a <br>
-      sapien vel odio consectetur elementum. Vestibulum ante ipsum primis in faucibus orci<br>
-      luctus et ultrices posuere cubilia Curae; Quisque pharetra mi quis nunc iaculis,<br>
-      in posuere turpis pharetra.</p>
+      ult</p>
 
-    <!-- //להכניס כאן מעבר לפרוייקטים פעילים? מה אנחנו רוצים לראות במסך הבית שלנו, זה בעצם כמו המסך של הדוחות? -->
     <div class="sidebar">
       <iframe src="../../../Components/sidebar.html"></iframe>
     </div>
-      <!-- searching list below -->
+    <div>
+
+
+<div >
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <canvas id="barChart" style="width:100%;max-width:600px"></canvas>
+  <script>
+    var xValues = ["Active Projects", "Finished Projects", "Delayed Projects", "Hours Spent", "Budget Spent(M)"];
+    var yValues = [55, 49, 44, 24, 19];
+    var barColors = ["red", "green", "yellow", "orange", "brown"];
+
+    new Chart("barChart", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: "Projects:"
+        }
+      }
+    });
+  </script>
+</div>
+
+<div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <canvas id="pieChart" style="width:100%;max-width:600px"></canvas>
+  <script>
+    var xValues = ["Active Projects", "Finished Projects", "Delayed Projects", "Hours Spent", "Budget Spent(M)"];
+    var yValues = [55, 49, 44, 24, 19];
+    var barColors = ["red", "green", "yellow", "orange", "brown"];
+
+    new Chart("pieChart", {
+      type: "pie",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: "Projects:"
+        }
+      }
+    });
+  </script>
+</div>
+
+
+  </main>
+  <footer>
+    <script src="../index.js"></script>
+    <div class="sign-out">
+      <button onclick="signOut()" class="button">Sign Out</button>
+    </div>
+    <p> Signed in to the system</p>
+  </footer>
+</body>
+
+</html>
+
+
+
+
+
+
+
+      <!-- <canvas id="myChart"></canvas>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 15, 3, 5, 2, 3],
+              borderWidth: 0.5
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+    </div> -->
+
+
+
+
+    <!-- searching list below -->
     <!-- <input type="text" id="myInput" onkeyup="filterList()" placeholder="Search for Consultants...">
     <ul id="myList">
       <li>John <a><a href="PagesOfConso/Const1.html" class="btnLink">more</a></a></li>
@@ -65,44 +164,3 @@
         border-bottom: none;
       }
     </style> -->
-    <div>
-      <canvas id="myChart"></canvas>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script>
-      const ctx = document.getElementById('myChart');
-
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-            label: '# of Votes',
-            data: [12, 15, 3, 5, 2, 3],
-            borderWidth: 0.5
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
-    </script>
-
-
-  </main>
-  <footer>
-    <script src="../index.js"></script>
-    <div class="sign-out">
-      <button onclick="signOut()" class="button">Sign Out</button>
-    </div>
-    <p> Signed in to the system</p>
-  </footer>
-</body>
-
-</html>
