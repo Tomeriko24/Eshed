@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Home Page</title>
+  <link rel="stylesheet" href="../../stylehome.css">
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <h1 id="main-heading">Create New Project</h1>
+    <p id="sample-text">This is some sample text for the home page.</p>
+    <p id="lorem-ipsum">Lorem ipsum dolor</p>
+    <div class="sidebar">
+      <iframe src="../../../../Components/sidebar.html"></iframe>
+    </div>
+
+
+    <ul class="breadcrumb">
+      <li><a href="./stage1.html">Stage 1 </a></li>
+      <li></li>
+    </ul>
+
+    <style>
+      ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+      }
+
+      ul.breadcrumb li {
+        display: inline;
+        font-size: 18px;
+      }
+
+      ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+      }
+
+      ul.breadcrumb li a {
+        color: #0275d8;
+        text-decoration: none;
+      }
+
+      ul.breadcrumb li a:hover {
+        color: #01447e;
+        text-decoration: underline;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .box {
+        width: 45%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      .row {
+        display: flex;
+        margin-bottom: 10px;
+      }
+
+      .column {
+        width: 50%;
+        padding: 5px;
+      }
+
+      .title {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .textbox {
+        width: 100%;
+        padding: 5px;
+      }
+
+      select {
+        width: 100%;
+        padding: 5px;
+      }
+
+    </style>
+
+
+    <div class="container">
+      <div class="box">
+        <div class="row">
+          <div class="column">
+            <div class="title">Project Name:</div>
+            <input type="text" class="textbox" placeholder="Enter Project Name">
+          </div>
+          <div class="column">
+            <div class="title">POC:</div>
+            <input type="text" class="textbox" placeholder="Enter Person Of Contact Info">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="title">Project Description:</div>
+            <input type="text" class="textbox" placeholder="Write Here The Project Description">
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="row">
+          <div class="column">
+            <div class="title">Start Date:</div>
+            <input type="date" class="textbox">
+          </div>
+          <div class="column">
+            <div class="title">End Date:</div>
+            <input type="date" class="textbox">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="title">Choose Expertise:</div>
+            <select>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option4">Option 4</option>
+              <option value="option5">Option 5</option>
+              <option value="option6">Option 6</option>
+              <option value="option7">Option 7</option>
+              <option value="option8">Option 8</option>
+              <option value="option9">Option 9</option>
+              <option value="option10">Option 10</option>
+              <option value="option11">Option 11</option>
+              <option value="option12">Option 12</option>
+              <option value="option13">Option 13</option>
+              <option value="option14">Option 14</option>
+              <option value="option15">Option 15</option>
+            </select>
+          </div>
+          <div class="column">
+            <div class="title">District:</div>
+            <select>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option4">Option 4</option>
+              <option value="option5">Option 5</option>
+              <option value="option6">Option 6</option>
+              <option value="option7">Option 7</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="title">Amount Of Hours Predicted:</div>
+            <input type="text" class="textbox" placeholder="Enter Amount Of Hours Predicted ">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      function getFormData() {
+        const yourName = document.getElementById('name').value;
+        const yourEmail = document.getElementById('email').value;
+        const projectDescription = document.getElementById('description').value;
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+        const expertise = document.getElementById('expertise').value;
+        const district = document.getElementById('district').value;
+        const hours = document.getElementById('hours').value;
+  
+        return {
+          name: yourName,
+          email: yourEmail,
+          description: projectDescription,
+          startDate: startDate,
+          endDate: endDate,
+          expertise: expertise,
+          district: district,
+          hours: hours
+        };
+      }
+  
+      const form = document.getElementById('form');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = getFormData();
+        console.log(formData);
+      });
+    </script>
+  
+
+  </main>
+  <footer>
+    <script src="../index.js"></script>
+    <div class="sign-out">
+      <button class="button-1" role="button" onclick="history.back()">Back To Projects List</button>
+    </div>
+    <p id="signed-in-text"> Signed in to the system</p>
+  </footer>
+</body>
+
+</html>
