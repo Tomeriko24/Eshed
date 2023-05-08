@@ -413,3 +413,9 @@ iframe {
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
