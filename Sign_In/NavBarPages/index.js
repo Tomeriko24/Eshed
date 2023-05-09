@@ -120,7 +120,41 @@ function showTable() {
         
 
 
-
+    function searchTable() {
+      // Get the search input value
+      const searchValue = document.getElementById('search-input').value.trim().toLowerCase();
+    
+      // Get the table body element
+      const tableBody = document.querySelector('tbody');
+    
+      // Get all the rows in the table
+      const rows = tableBody.querySelectorAll('tr');
+    
+      // Clear the previous search results
+      rows.forEach(row => {
+        row.style.display = 'none';
+      });
+    
+      // Iterate over the rows and show matching rows based on the search value
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        let foundMatch = false;
+    
+        // Check if any cell in the row contains the search value
+        cells.forEach(cell => {
+          if (cell.textContent.toLowerCase().includes(searchValue)) {
+            foundMatch = true;
+          }
+        });
+    
+        // Show the row if a match is found
+        if (foundMatch) {
+          row.style.display = 'table-row';
+        }
+      });
+    }
+    
+    
 
 
 
