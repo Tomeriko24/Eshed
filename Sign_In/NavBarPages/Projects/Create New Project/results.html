@@ -10,77 +10,73 @@
 <body>
     <main>
         <div>
-            <h1 id="main-heading">Stage 2</h1>
-            <p id="sample-text">This is some sample text for the home page.</p>
-            <p id="lorem-ipsum">Lorem ipsum dolor</p>
+            <h1 id="main-heading">Results</h1>
+            <p id="sample-text">The system has provided you with the following consultants.</p>
+            <p id="sample-text">Please choose <b>one</b> for the project.</p>
 
         </div>
         <div class="sidebar">
             <iframe src="../../../../Components/sidebar.html"></iframe>
         </div>
+
+
+
+
         <div>
-            <ul class="breadcrumb">
-                <li><a href="./stage1.html">Stage 1 </a></li>
-                <li>Stage 2</li>
-            </ul>
-        </div>
-
-
-        <div class="container">
-
-            <div class="box">
-                <div class="row">
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Is there a need in medical insurance?:</div>
-                        <select>
-                            <option value="none" disabled selected hidden>Choose Yes or No</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="title">More information:</div>
-                        <input type="text" class="textbox" placeholder="Enter Amount Of Hours Predicted ">
-                    </div>
-                </div>
+            <div class="title" style="font-size: 20px; text-align: left;">Consultants List:</div>
+            <div class="row">
+                <label for="radio1">
+                    <input type="radio" id="radio1" name="consultant">
+                    <span class="checkbox-title" id="checkboxTitle1">Const 1</span>
+                    <span class="checkbox-text" id="checkboxText1">Additional Text 1</span>
+                </label>
+                <img src="../../Consultants/PagesOfConso/CleanPicsOfConso/const1.jpeg" class="profile-image"
+                    alt="My Profile Photo: const1">
             </div>
-            <div class="box">
-                <div class="row">
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Did a protocol meeting occurred?</div>
-                        <select>
-                            <option value="none" disabled selected hidden>Choose Yes or No</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Insert PDF File:</div>
-                        <input type="file" id="file-input">
-                        <button onclick="loadFile()">see File</button>
-                        <div id="file-content"></div>
-                    </div>
-                </div>
+            <div class="row">
+                <label for="radio2">
+                    <input type="radio" id="radio2" name="consultant">
+                    <span class="checkbox-title" id="checkboxTitle2">Const 2</span>
+                    <span class="checkbox-text" id="checkboxText2">Additional Text 2</span>
+                </label>
+                <img src="../../Consultants/PagesOfConso/CleanPicsOfConso/const2.jpeg" class="profile-image"
+                    alt="My Profile Photo: const2">
+            </div>
+            <div class="row">
+                <label for="radio3">
+                    <input type="radio" id="radio3" name="consultant">
+                    <span class="checkbox-title" id="checkboxTitle3">Const 3</span>
+                    <span class="checkbox-text" id="checkboxText3">Additional Text 3</span>
+                </label>
+                <img src="../../Consultants/PagesOfConso/CleanPicsOfConso/const3.jpeg" class="profile-image"
+                    alt="My Profile Photo: const3">
+            </div>
+            <div class="row">
+                <label for="radio4">
+                    <input type="radio" id="radio4" name="consultant">
+                    <span class="checkbox-title" id="checkboxTitle4">Const 4</span>
+                    <span class="checkbox-text" id="checkboxText4">Additional Text 4</span>
+                </label>
+                <img src="../../Consultants/PagesOfConso/CleanPicsOfConso/const4.jpeg" class="profile-image"
+                    alt="My Profile Photo: const4">
             </div>
         </div>
+
+
+
+
+
+
         <div class="row">
-            <button onclick="SnackAndReset()">Submit Project</button>
+            <button onclick="SnackAndReset()">Accept Result</button>
         </div>
-        <div id="snackbar">Project Submitted!</div>
+        <div id="snackbar">Done</div>
         <script>
             function SnackAndReset() {
                 var x = document.getElementById("snackbar");
                 x.className = "show";
                 setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-                setTimeout(function () { location.href = "results.html"; }, 3000);
+                setTimeout(function () { location.href = "../project_page.html"; }, 3000);
                 function RestValues() {
                     var projectName = document.getElementById('projectName').value;
                     var poc = document.getElementById('poc').value;
@@ -104,12 +100,18 @@
                 };
 
             }
+            function Snack() {
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+                setTimeout(function () { location.href = "../project_page.html"; }, 3000);
+            }
         </script>
     </main>
     <footer>
         <script src="../../index.js"></script>
         <div class="sign-out">
-            <button class="button-1" role="button" onclick="history.back()">Back To Stage 1</button>
+            <button class="button-1" role="button" onclick="history.back()">Back To Stage 2</button>
         </div>
         <p id="signed-in-text"> Signed in to the system</p>
     </footer>
@@ -222,6 +224,30 @@
             bottom: 0;
             opacity: 0;
         }
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .title {
+        font-weight: bold;
+    }
+
+    .checkbox-title {
+        font-weight: bold;
+    }
+
+    .checkbox-text {
+        margin-left: 10px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: auto;
+        margin-left: 10px;
     }
 </style>
 

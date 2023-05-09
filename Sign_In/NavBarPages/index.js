@@ -64,6 +64,65 @@ function showTable() {
   selectedPermission.textContent = "";
 }
 
+    function saveValues() {
+        var projectName = document.getElementById('projectName').value;
+        var poc = document.getElementById('poc').value;
+        var projectDescription = document.getElementById('projectDescription').value;
+        var startDate = document.getElementById('startDate').value;
+        var endDate = document.getElementById('endDate').value;
+        var expertise = document.getElementById('expertise').value;
+        var medicalInsurance = document.getElementById('medicalInsurance').value;
+        var predictedHours = document.getElementById('predictedHours').value;
+
+        // Create an object to store the values
+        var values = {
+            projectName: projectName,
+            poc: poc,
+            projectDescription: projectDescription,
+            startDate: startDate,
+            endDate: endDate,
+            expertise: expertise,
+            medicalInsurance: medicalInsurance,
+            predictedHours: predictedHours
+        };
+
+        // Save the values to local storage
+        localStorage.setItem('formValues', JSON.stringify(values));
+    }
+
+    function resetValues() {
+        // Clear the form fields
+        document.getElementById('projectName').value = '';
+        document.getElementById('poc').value = '';
+        document.getElementById('projectDescription').value = '';
+        document.getElementById('startDate').value = '';
+        document.getElementById('endDate').value = '';
+        document.getElementById('expertise').value = '';
+        document.getElementById('medicalInsurance').value = '';
+        document.getElementById('predictedHours').value = '';
+
+        // Remove the saved values from local storage
+        localStorage.removeItem('formValues');
+    }
+
+    function loadFile() {
+      const fileInput = document.getElementById("file-input");
+      const file = fileInput.files[0];
+    
+      if (file && file.type === "application/pdf") {
+        const fileURL = URL.createObjectURL(file);
+        const newTab = window.open(fileURL, "_blank");
+        newTab.focus();
+      } else {
+        console.log("Please select a PDF file.");
+      }
+    }
+        
+
+
+
+
+
 
 // function that saves the toggle choice
 // function updateSelectedPermission() {
