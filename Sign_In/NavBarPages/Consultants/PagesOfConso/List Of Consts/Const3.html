@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Home Page</title>
+  <link rel="stylesheet" href="../../../stylehome.css">  <style>
+    img {
+
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(8, 0, 255, 0.3);
+    }
+
+    img.zoom {
+      padding: 30px;
+      background-color: rgb(135, 222, 244);
+      opacity: 0.8;
+      transition: transform 0.2s;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    img.zoom:hover {
+      -ms-transform: scale(2);
+      -webkit-transform: scale(2);
+      transform: scale(2);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+  </header>
+  <main>
+    <h1>Eitan Ben-Shaul</h1>
+    <div>
+      <p>Hey! My name is Eitan Ben-Shaul. I will be happy to join your project.</p>
+      <p><b>
+          little about me:
+        </b>
+        Committed to continuous learning and development, staying up-to-date with industry trends and best practices.
+        Proficient in project management methodologies and tools, including Scrum and Kanban.
+        Strong communication and negotiation skills, able to manage multiple stakeholders effectively.
+        Skilled in project planning, execution, and monitoring, able to adapt to changing market conditions and customer
+        needs.
+        Innovative project manager with a focus on driving growth and developing new opportunities.
+      </p>
+      <b><span style="font-size: larger;">My expertises</span></b>
+      <ul>
+        <li>Transportation checks - pedestrians</li>
+        <li>Management and training</li>
+        <li>Local railway</li>
+        <li>Quality control Extra</li>
+        <li>Risk management and assessment</li>
+      </ul>
+    </div>
+    <div class="sidebar">
+      <iframe src="../../../../../Components/sidebar.html"></iframe>
+
+    </div>
+   
+    <div>
+      <a href="Active_Projects/A_P_3.html" class="btnLink">Active Projects</a>
+      <a href="Past_Projects/P_P_3.html" class="btnLink">Past Projects</a>
+      <a href="All_Projects/AL_P_3.html" class="btnLink">All Projects</a>
+    </div>
+   
+    <div style="width: 90%; text-align:right; margin-top: -170px;">
+      <img src="../CleanPicsOfConso/const3.jpeg" class="zoom" alt="My Profile Photo: const3">
+    </div>
+  </main>
+  <footer>
+    <script src="../index.js"></script>
+    <button class="button-1" role="button" onclick="history.back()">Back To Consultants List</button>
+  </footer>
+</body>
+
+</html>

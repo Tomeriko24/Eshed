@@ -12,113 +12,88 @@
   </header>
   <main>
     <h1>Consultants page</h1>
-    <p>On this page you can watch all the active and non-active transportation consultants.
+    <p>On this page, you can watch all the active and non-active transportation consultants.
       <br>If you want to watch a consultant's details, click on the <b><i>more</i></b> button.
-      <br>There you can see his/her expertises and projects.</p>
+      <br>There you can see his/her expertise and projects.
+    </p>
     <div class="sidebar">
       <iframe src="../../../Components/sidebar.html"></iframe>
     </div>
     <table>
       <thead>
         <tr>
-          <th>#</th>
-          <th id="first_name">First Name</th>
-          <th id="last_name">Last Name</th>
-          <th id="phone_number">phone number</th>
-          <th id="email">Email</th>
-          <th id="info"> Info</th>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Info</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th>1</th>
-          <td>Nick</td>
-          <td>Cordova</td>
-          <td>054-404-1174</td>
-          <td>NickCordova@gmail.com</td>
-          <td><a href="PagesOfConso/Const1.html" class="btnLink">more</a></td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>Heath</td>
-          <td>Barajas</td>
-          <td>052-731-1893</td>
-          <td>HeathBarajas@gmail.com</td>
-          <td><a href="PagesOfConso/Const2.html" class="btnLink">more</a></td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>Raven</td>
-          <td>Cole</td>
-          <td>054-303-1356</td>
-          <td>RavenCole@gmail.com</td>
-          <td><a href="PagesOfConso/Const3.html" class="btnLink">more</a></td>
-        </tr>
-        <tr>
-          <th>4</th>
-          <td>Joel</td>
-          <td>Barton</td>
-          <td>052-681-1636</td>
-          <td>JoelBarton@gmail.com</td>
-          <td><a href="PagesOfConso/Const4.html" class="btnLink">more</a></td>
-        </tr>
-        <tr>
-          <th>5</th>
-          <td>Roland</td>
-          <td>Golden</td>
-          <td>054-736-1187</td>
-          <td>RolandGolden@gmail.com</td>
-          <td><a href="PagesOfConso/Const5.html" class="btnLink">more</a></td>
-        </tr>
-        <tr>
-          <th>6</th>
-          <td>Brenna</td>
-          <td>Jenkins</td>
-          <td>052-396-1324</td>
-          <td>BrennaJenkins@gmail.com</td>
-          <td><a href="PagesOfConso/Const6.html" class="btnLink">more</a></td>
-        </tr>
-        <tr>
-          <th>7</th>
-          <td>Noelle</td>
-          <td>Long</td>
-          <td>054-429-1112</td>
-          <td>NoelleLong@gmail.com</td>
-          <td><a href="PagesOfConso/Const7.html" class="btnLink">more</a></td>
-        </tr>
-        <tr>
-          <th>8</th>
-          <td>Hood</td>
-          <td>Annabella</td>
-          <td>052-648-1787</td>
-          <td>AnnabellaHood@gmail.com</td>
-          <td><a href="PagesOfConso/Const8.html" class="btnLink">more</a></td>
-        </tr>
-        <tr>
-          <th>9</th>
-          <td>Heidy</td>
-          <td>Wang</td>
-          <td>054-279-1368</td>
-          <td>HeidyWang@gmail.com</td>
-          <td><a href="PagesOfConso/Const9.html" class="btnLink">more</a></td>
-        </tr>
-        <tr>
-          <th>10</th>
-          <td>Maximo</td>
-          <td>Ball</td>
-          <td>052-794-1502</td>
-          <td>MaximoBall@gmail.com</td>
-          <td><a href="PagesOfConso/Const10.html" class="btnLink">more</a></td>
-        </tr>
       </tbody>
     </table>
+    
+    <script>
+      function populateTable() {
+        // Fetch the CSV file
+        fetch('Consultants.csv')
+          .then(response => response.text())
+          .then(data => {
+            // Split the data into rows
+            const rows = data.split('\n');
+    
+            // Get the table body element
+            const tableBody = document.querySelector('tbody');
+    
+            // Iterate over the rows, limited to 10 rows
+            for (let i = 1; i < 11; i++) {
+              // Split the row into cells
+              const cells = rows[i].split(',');
+    
+              // Create a new table row
+              const newRow = document.createElement('tr');
+    
+              // Iterate over the cells, limited to 6 cells
+              for (let j = 0; j < 5; j++) {
+                // Create a new table cell
+                const newCell = document.createElement('td');
+    
+                // Set the cell's text content to the cell value
+                newCell.textContent = cells[j];
+    
+                // Append the cell to the row
+                newRow.appendChild(newCell);
+              }
+    
+              // Create the "Info" cell with a link
+              const infoCell = document.createElement('td');
+              const infoLink = document.createElement('a');
+              infoLink.href = `PagesOfConso/List Of Consts/Const${i}.html`;
+              infoLink.textContent = 'more';
+              infoLink.classList.add('btnLink');
+              infoCell.appendChild(infoLink);
+              newRow.appendChild(infoCell);
+    
+              // Append the row to the table body
+              tableBody.appendChild(newRow);
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      }
+    
+      // Call the function to populate the table
+      populateTable();
+    </script>
+    
   </main>
   <footer>
     <script src="../index.js"></script>
     <div class="sign-out">
       <button onclick="signOut()" class="button">Sign Out</button>
     </div>
-    <p> Signed in to the system</p>
   </footer>
 
 </body>
