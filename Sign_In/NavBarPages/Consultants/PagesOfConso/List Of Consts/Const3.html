@@ -4,33 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>My Home Page</title>
-  <link rel="stylesheet" href="../../../stylehome.css">  <style>
-    img {
+  <link rel="stylesheet" href="../../../stylehome.css">
 
-      margin: 0 auto;
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(8, 0, 255, 0.3);
-    }
-
-    img.zoom {
-      padding: 30px;
-      background-color: rgb(135, 222, 244);
-      opacity: 0.8;
-      transition: transform 0.2s;
-      width: 200px;
-      height: 200px;
-      margin: 0 auto;
-    }
-
-    img.zoom:hover {
-      -ms-transform: scale(2);
-      -webkit-transform: scale(2);
-      transform: scale(2);
-    }
-  </style>
 </head>
 
 <body>
@@ -60,16 +35,14 @@
       </ul>
     </div>
     <div class="sidebar">
-      <iframe src="../../../../../Components/sidebar.html"></iframe>
-
+      <iframe src="../../../../../../Components/sidebar.html"></iframe>
     </div>
-   
     <div>
-      <a href="Active_Projects/A_P_3.html" class="btnLink">Active Projects</a>
-      <a href="Past_Projects/P_P_3.html" class="btnLink">Past Projects</a>
-      <a href="All_Projects/AL_P_3.html" class="btnLink">All Projects</a>
+      <a href="../Projects/Active_Projects/A_P_3.html" class="btnLink">Active Projects</a>
+      <a href="../Projects/Past_Projects/P_P_3.html" class="btnLink">Past Projects</a>
+      <a href="../Projects/All_Projects/AL_P_3.html" class="btnLink">All Projects</a>
     </div>
-   
+
     <div style="width: 90%; text-align:right; margin-top: -170px;">
       <img src="../CleanPicsOfConso/const3.jpeg" class="zoom" alt="My Profile Photo: const3">
     </div>
@@ -79,5 +52,32 @@
     <button class="button-1" role="button" onclick="history.back()">Back To Consultants List</button>
   </footer>
 </body>
+<style>
+  img {
+
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(8, 0, 255, 0.3);
+  }
+
+  img.zoom {
+    padding: 30px;
+    background-color: rgb(135, 222, 244);
+    opacity: 0.8;
+    transition: transform 0.2s;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  img.zoom:hover {
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+</style>
 
 </html>
