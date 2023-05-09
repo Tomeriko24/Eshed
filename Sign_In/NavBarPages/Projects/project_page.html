@@ -11,12 +11,13 @@
   <header></header>
   <main>
     <h1 id="main-heading">All Projects</h1>
-    <p>On this page, you can watch all the active and past projects that have been held through the Transportation Administration.
-      <br>If you want to watch a project's details, click on the <b><i>more</i></b> button.</p>
+    <p>On this page, you can watch all the active and past projects that have been held through the Transportation
+      Administration.
+      <br>If you want to watch a project's details, click on the <b><i>more</i></b> button.
+    </p>
     <div class="sidebar">
       <iframe src="../../../Components/sidebar.html"></iframe>
     </div>
-
 
     <div class="centered-content">
       <a href="../Projects/Active Projects/Active_Projects.html" class="button" target="_parent">Active Projects</a>
@@ -24,6 +25,7 @@
       <a href="../Projects/Previous Projects/Previous_projects.html" class="button" target="_parent">Past
         Projects</a>
     </div>
+    <input type="text" id="search-input" placeholder="Search by Project Name" oninput="searchTable()">
 
     <div style="overflow-x: auto;">
       <table style="width: 100%;">
@@ -63,8 +65,9 @@
               // Split the row into cells
               const cells = rows[i].split(',');
 
-              // Create a new table row
+              // Create a new table row with a unique ID
               const newRow = document.createElement('tr');
+              newRow.id = `row-${i}`;
 
               // Iterate over the cells
               for (let j = 0; j < 10; j++) {
@@ -86,11 +89,70 @@
             console.error('Error:', error);
           });
       }
-
       // Call the function to populate the table
       populateTable();
-    </script>
 
+      function sortTable() {
+        // Get the table element
+        const table = document.querySelector('table');
+
+        // Get the table body element
+        const tableBody = table.querySelector('tbody');
+
+        // Get the rows to be sorted
+        const rows = Array.from(tableBody.querySelectorAll('tr'));
+
+        // Sort the rows based on the Project Name column
+        rows.sort((a, b) => {
+          const aName = a.querySelector('#project_name').textContent;
+          const bName = b.querySelector('#project_name').textContent;
+          return aName.localeCompare(bName);
+        });
+
+        // Remove existing rows from the table
+        tableBody.innerHTML = '';
+
+        // Append the sorted rows to the table
+        rows.forEach(row => {
+          tableBody.appendChild(row);
+        });
+      }
+
+      function searchTable() {
+  // Get the search input value
+  const searchValue = document.getElementById('search-input').value.trim().toLowerCase();
+
+  // Get the table body element
+  const tableBody = document.querySelector('tbody');
+
+  // Get all the rows in the table
+  const rows = tableBody.querySelectorAll('tr');
+
+  // Clear the previous search results
+  rows.forEach(row => {
+    row.style.display = 'none';
+  });
+
+  // Iterate over the rows and show matching rows based on the search value
+  rows.forEach(row => {
+    const cells = row.querySelectorAll('td');
+    let foundMatch = false;
+
+    // Check if any cell in the row contains the search value
+    cells.forEach(cell => {
+      if (cell.textContent.toLowerCase().includes(searchValue)) {
+        foundMatch = true;
+      }
+    });
+
+    // Show the row if a match is found
+    if (foundMatch) {
+      row.style.display = 'table-row';
+    }
+  });
+}
+
+    </script>
   </main>
   <footer>
     <script src="../index.js"></script>

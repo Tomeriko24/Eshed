@@ -21,67 +21,66 @@
     </div>
     <div>
 
-
-      <div>
-        <h2>Active Projects</h2>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-        <canvas id="barChart" style="width:100%;"></canvas>
-        <script>
-          var xValues = ["Active Projects", "Finished Projects", "Delayed Projects", "Hours Spent", "Budget Spent(M)"];
-          var yValues = [55, 49, 44, 24, 19];
-          var barColors = ["green", "red", "yellow", "grey", "brown"];
-      
-          new Chart("barChart", {
-            type: "bar",
-            data: {
-              labels: xValues,
-              datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-              }]
-            },
-            options: {
-              legend: { display: false },
-              title: {
-                display: true,
-                text: "Projects:"
+      <div class="chart-container">
+        <div>
+          <h2>Active Projects</h2>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+          <canvas id="barChart" style="width:100%;"></canvas>
+          <script>
+            var xValues = ["Active Projects", "Finished Projects"]
+            var yValues = [30, 30];
+            var barColors = ["yellow", "green"];
+  
+            new Chart("barChart", {
+              type: "bar",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues
+                }]
+              },
+              options: {
+                legend: { display: false },
+                title: {
+                  display: true,
+                  text: "Status:"
+                }
               }
-            }
-          });
-        </script>
+            });
+          </script>
+        </div>
+  
+        <div>
+          <h2>Consultants</h2>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+          <canvas id="pieChart" style="width:50%;max-width:300px"></canvas>
+          <script>
+            var xValues = ["Adi Cohen","David Levi","Eitan Ben-Shaul","Nati Goldberg","Yael Cohen","Noam Cohen-Schneider","Talia Rosenbaum", "Amit Cohen-Tal", "Roni Abramowitz", "Alon Levy-Sharoni"];
+            var yValues = [6,6,6,6,6,6,6,6,6,6,];
+            var barColors = ["black", "green", "blue", "white", "orange","red","grey","pink","brown","white"];
+  
+            new Chart("pieChart", {
+              type: "pie",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues
+                }]
+              },
+              options: {
+                legend: { display: false },
+                title: {
+                  display: true,
+                  text: "Amount of Projects:"
+                }
+              }
+            });
+          </script>
+        </div>
       </div>
-      
-      
-
-<div>
-  <h2>Active Consultants</h2>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-  <canvas id="pieChart" style="width:50%;max-width:300px"></canvas>
-  <script>
-    var xValues = ["Active Projects", "Finished Projects", "Delayed Projects", "Hours Spent", "Budget Spent(M)"];
-    var yValues = [55, 49, 44, 24, 19];
-    var barColors = ["black", "green", "blue", "white", "orange"];
-
-    new Chart("pieChart", {
-      type: "pie",
-      data: {
-        labels: xValues,
-        datasets: [{
-          backgroundColor: barColors,
-          data: yValues
-        }]
-      },
-      options: {
-        legend: { display: false },
-        title: {
-          display: true,
-          text: "Projects:"
-        }
-      }
-    });
-  </script>
-</div>
-<!-- *Annual budget -->
+  <!-- *Annual budget -->
 
   </main>
   <footer>
@@ -94,7 +93,20 @@
 </body>
 
 </html>
+<style>
+  .chart-container {
+    display: flex;
+    border-color: ;
+  }
 
+  .chart-container > div {
+    width: 50%;
+  }
+  .centered-text {
+      display: flex;
+      justify-content: center;
+    }
+</style>
 
 
 

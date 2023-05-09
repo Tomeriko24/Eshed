@@ -15,7 +15,7 @@
     <p>On this page you can control the users permissions inside the system.<br>
       In the drop down menu, choose the group you would like to edit. <br>
       Then select the specific users.
-  </p>
+    </p>
 
     <div class="sidebar">
       <iframe src="../../../Components/sidebar.html"></iframe>
@@ -23,31 +23,32 @@
 
     <h2>Choose Permissions Level</h2>
 
-      <div id="permissionContainer">
-        <select id="permission" name="permission" onchange="showTable()">
-          <option value="none" disabled selected hidden>Select Permission Level</option>
-          <option value="BasicLevel">Basic Level</option>
-          <option value="HighLevel">High Level</option>
-        </select>
-      </div>
+    <div id="permissionContainer">
+      <select id="permission" name="permission" onchange="showTable()">
+        <option value="none" disabled selected hidden>Select Permission Level</option>
+        <option value="BasicLevel">Basic Level</option>
+        <option value="HighLevel">High Level</option>
+      </select>
+    </div>
 
-      <div id="permissionSubContainer" style="display: none;">
-        <select id="permissionSub" name="permissionSub" onchange="updateSelectedPermission()">
-          <option value="none" disabled selected hidden>Select Specific Role</option>
-          <option value="Const1">Const1</option>
-          <option value="Const2">Const2</option>
-          <option value="Const3">Const3</option>
-          <option value="Const4">Const4</option>
-          <option value="Const5">Const5</option>
-          <option value="Const6">Const6</option>
-          <option value="Const7">Const7</option>
-          <option value="Const8">Const8</option>
-          <option value="Const9">Const9</option>
-          <option value="Const10">Const10</option>
-        </select>
-        <h2 id="selectedPermission"></h2>
-      </div>
+    <div id="permissionSubContainer" style="display: none;">
+      <select id="permissionSub" name="permissionSub" onchange="updateSelectedPermission()">
+        <option value="none" disabled selected hidden>Select Specific Role</option>
+        <option value="Const1">Const1</option>
+        <option value="Const2">Const2</option>
+        <option value="Const3">Const3</option>
+        <option value="Const4">Const4</option>
+        <option value="Const5">Const5</option>
+        <option value="Const6">Const6</option>
+        <option value="Const7">Const7</option>
+        <option value="Const8">Const8</option>
+        <option value="Const9">Const9</option>
+        <option value="Const10">Const10</option>
+      </select>
+      <h2 id="selectedPermission"></h2>
+    </div>
 
+    <form id="toggleForm">
       <table id="basicTable" style="display: none;">
         <h2 id="BasicshowH2" style="display: none;">Specific user to edit:</h2>
         <thead>
@@ -65,25 +66,24 @@
                 <span class="slider round"></span>
               </label></td>
             <td><label class="switch">
-                <input type="checkbox" id="EditingToggle">
+                <input type="checkbox" id="editingToggle">
                 <span class="slider round"></span>
               </label></td>
             <td><label class="switch">
-                <input type="checkbox" id="CreatingToggle">
+                <input type="checkbox" id="creatingToggle">
                 <span class="slider round"></span>
               </label></td>
             <td><label class="switch">
-                <input type="checkbox" id="DeletingToggle">
+                <input type="checkbox" id="deletingToggle">
                 <span class="slider round"></span>
               </label></td>
           </tr>
+        </tbody>
       </table>
 
-
-
-
-    <table id="highTable" style="display: none;">
-      <h2 id="HighShowH2" style="display: none;">Specific role to edit:</h2>
+      <table id="highTable" style="display: none;">
+        <h2 id="HighShowH2
+" style="display: none;">Specific role to edit:</h2>
       <thead>
         <tr>
           <th>Viewing</th>
