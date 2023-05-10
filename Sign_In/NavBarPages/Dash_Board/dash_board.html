@@ -15,22 +15,21 @@
     <h1>home page!</h1>
     <p>Welcome to The Transportation Administration system!<br>
       Here you can watch current work data:
-    </p>      
+    </p>
     <div class="sidebar">
       <iframe src="../../../Components/sidebar.html"></iframe>
     </div>
     <div>
-
       <div class="chart-container">
         <div>
           <h2>Active Projects</h2>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
           <canvas id="barChart" style="width:100%;"></canvas>
           <script>
-            var xValues = ["Active Projects", "Finished Projects"]
+            var xValues = ["Active Projects", "Finished Projects"];
             var yValues = [30, 30];
             var barColors = ["yellow", "green"];
-  
+
             new Chart("barChart", {
               type: "bar",
               data: {
@@ -50,23 +49,29 @@
             });
           </script>
         </div>
-  
+
         <div>
           <h2>Consultants</h2>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+          <div class="centered-text">
+            <label for="filter-select">Show:</label>
+            <select id="filter-select">
+              <option value="projects">on</option>
+              <option value="consultants">off</option>
+            </select>
+          </div>
           <canvas id="pieChart" style="width:50%;max-width:300px"></canvas>
           <script>
-            var xValues = ["Adi Cohen","David Levi","Eitan Ben-Shaul","Nati Goldberg","Yael Cohen","Noam Cohen-Schneider","Talia Rosenbaum", "Amit Cohen-Tal", "Roni Abramowitz", "Alon Levy-Sharoni"];
-            var yValues = [6,6,6,6,6,6,6,6,6,6,];
-            var barColors = ["black", "green", "blue", "white", "orange","red","grey","pink","brown","white"];
-  
-            new Chart("pieChart", {
+            var consultants = ["Adi Cohen", "David Levi", "Eitan Ben-Shaul", "Nati Goldberg", "Yael Cohen", "Noam Cohen-Schneider", "Talia Rosenbaum", "Amit Cohen-Tal", "Roni Abramowitz", "Alon Levy-Sharoni"];
+            var projects = [6, 6, 6, 6, 6, 6, 6, 6, 6, 6];
+            var barColors = ["black", "green", "blue", "white", "orange", "red", "grey", "pink", "brown", "white"];
+
+            var pieChart = new Chart("pieChart", {
               type: "pie",
               data: {
-                labels: xValues,
+                labels: consultants,
                 datasets: [{
                   backgroundColor: barColors,
-                  data: yValues
+                  data: projects
                 }]
               },
               options: {
@@ -77,18 +82,30 @@
                 }
               }
             });
+
+            var filterSelect = document.getElementById("filter-select");
+            filterSelect.addEventListener("change", function () {
+              var selectedValue = filterSelect.value;
+              if (selectedValue === "projects") {
+                pieChart.data.labels = consultants;
+                pieChart.data.datasets[0].data = projects;
+              } else if (selectedValue === "consultants") {
+                pieChart.data.labels = projects;
+                pieChart.data.datasets[0].data = consultants;
+              }
+
+              pieChart.update();
+            });
           </script>
         </div>
       </div>
-  <!-- *Annual budget -->
-
+    </div>
   </main>
   <footer>
     <script src="../index.js"></script>
     <div class="sign-out">
       <button onclick="signOut()" class="button">Sign Out</button>
     </div>
-
   </footer>
 </body>
 
@@ -99,13 +116,14 @@
     border-color: ;
   }
 
-  .chart-container > div {
+  .chart-container>div {
     width: 50%;
   }
+
   .centered-text {
-      display: flex;
-      justify-content: center;
-    }
+    display: flex;
+    justify-content: center;
+  }
 </style>
 
 
@@ -116,8 +134,10 @@
 
 
 
-    <!-- searching list below -->
-    <!-- <input type="text" id="myInput" onkeyup="filterList()" placeholder="Search for Consultants...">
+
+
+<!-- searching list below -->
+<!-- <input type="text" id="myInput" onkeyup="filterList()" placeholder="Search for Consultants...">
     <ul id="myList">
       <li>John <a><a href="PagesOfConso/Const1.html" class="btnLink">more</a></a></li>
       <li>Mary</li>
@@ -127,7 +147,7 @@
       <li>Emily</li>
     </ul> 
      <style> -->
-      <!-- #myInput {
+<!-- #myInput {
         padding: 10px;
         margin-bottom: 10px;
         width: 50%;
@@ -151,4 +171,4 @@
       li:last-child {
         border-bottom: none;
       }
-    </style> --> 
+    </style> -->

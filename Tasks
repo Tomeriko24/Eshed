@@ -82,3 +82,9 @@ create new project flows
 permissions flow, being able to edit each one and save the data
 
 noy - build הזנת שעות עבודה
+
+
+
+
+10/5
+edit the table in the approval_authorities page to be responsive to CSV file.
