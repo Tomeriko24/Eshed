@@ -153,8 +153,40 @@ function showTable() {
         }
       });
     }
+
     
+    function resetPage() {
+      location.reload(); // Reloads the current page
+    }
     
+    function SnackAndReset() {
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+      setTimeout(function () { location.href = "results.html"; }, 3000);
+      function RestValues() {
+          var projectName = document.getElementById('projectName').value;
+          var poc = document.getElementById('poc').value;
+          var projectDescription = document.getElementById('projectDescription').value;
+          var startDate = document.getElementById('startDate').value;
+          var endDate = document.getElementById('endDate').value;
+          var expertise = document.getElementById('expertise').value;
+          var medicalInsurance = document.getElementById('medicalInsurance').value;
+          var predictedHours = document.getElementById('predictedHours').value;
+      }
+      // Create an object to store the values
+      var values = {
+          projectName: "",
+          poc: "",
+          projectDescription: "",
+          startDate: "",
+          endDate: "",
+          expertise: "",
+          medicalInsurance: "",
+          predictedHours: ""
+      };
+
+  }
 
 
 
