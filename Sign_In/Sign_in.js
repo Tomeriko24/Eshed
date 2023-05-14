@@ -33,13 +33,3 @@ form.addEventListener('submit', (event) => {
     form.reset();
   }
 });
-
-// Handle click on nav links
-for (let i = 0; i < navLinks.length; i++) {
-  NavBarPages / dash_board.html
-  navLinks[i].addEventListener('click', (event) => {
-    event.preventDefault();
-    const link = event.target.getAttribute('href');
-    location.href = link;
-  });
-}
