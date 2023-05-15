@@ -14,43 +14,93 @@
   <main>
     <h1>Amit Cohen-Tal: Active Projects</h1>
     <p>This is some sample text for the home page.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Dolorem, cupiditate, quos harum reiciendis laborum totam dolore necessitatibus
-      ipsum voluptates eum fuga ea soluta assumenda exercitationem provident debitis
-      perferendis dolores molestiae?
-    </p>
-    <table>
+
+    <table id="projectsTable">
       <thead>
         <tr>
-          <th>Name Of Project</th>
-          <th>Start Date</th>
-          <th>End Date</th>
-          <th>Approval Authorities</th>
-          <th>Duration</th>
+          <th>Project_Id</th>
+          <th>consultant_ID</th>
+          <th>Project_Name</th>
+          <th>Status</th>
+          <th>District</th>
+          <th>Start_date</th>
+          <th>duration(Month)</th>
+          <th>End_date</th>
+          <th>duration(Days)</th>
+          <th>Link_to_Project</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>blaaaaaaaaaa</td>
-          <td>blaaaaaaaaaa</td>
-          <td>blaaaaaaaaaa</td>
-          <td>blaaaaaaaaaa</td>
-          <td></td>
-        </tr>
-      <tbody>
-      </tbody>
+      <tbody></tbody>
     </table>
-    <div class="sidebar">
-      <iframe src="../../../../../../Components/sidebar.html"></iframe>
-    </div>
+  </div>
+  <div class="sidebar">
+    <iframe src="../../../../../../Components/sidebar.html"></iframe>
+  </div>
+</main>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const districtName = document.querySelector('h1').textContent.trim();
+
+    fetch('../projects.csv')
+      .then(response => response.text())
+      .then(data => {
+        const table = document.getElementById('projectsTable');
+        const rows = data.trim().split('\n').slice(1); // Exclude header row
+
+        rows.forEach(row => {
+          const cells = row.split(',');
+          const projectConsultantID = cells[1].trim(); // Get consultant_ID from the second cell (index 1)
+          const projectStatus = cells[3].trim(); // Get the project status from the fourth cell (index 3)
+
+          if (projectConsultantID === '8' && projectStatus === 'A') { // Adjust the conditions here
+            const newRow = table.insertRow();
+
+            cells.forEach(cell => {
+              if (cell.trim() !== '') {
+                const newCell = newRow.insertCell();
+                newCell.textContent = cell;
+              }
+            });
+
+            // Add button in the last cell of each row
+            const buttonCell = newRow.insertCell();
+            const button = document.createElement('button');
+            button.textContent = 'View Project';
+            button.addEventListener('click', () => {
+              // Redirect to the new page
+              window.location.href = 'project-details.html'; // Replace with the desired URL
+            });
+            buttonCell.appendChild(button);
+          }
+        });
+      })
+      .catch(error => {
+        console.log('Error fetching projects data:', error);
+      });
+  });
+</script>
   </main>
   <footer>
+    <script src="../index.js"></script>
     <script src="../index.js"></script>
     <div class="sign-out">
       <button class="button-1" role="button" onclick="history.back()">Back To Consultant Info</button>
     </div>
 
   </footer>
-</body>
 
+</body>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+</style>
 </html>
