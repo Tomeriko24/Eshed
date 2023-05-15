@@ -67,15 +67,15 @@
               }
             });
 
-            // Add button in the last cell of each row
-            const buttonCell = newRow.insertCell();
-            const button = document.createElement('button');
-            button.textContent = 'View Project';
-            button.addEventListener('click', () => {
-              // Redirect to the new page
-              window.location.href = 'project-details.html'; // Replace with the desired URL
-            });
-            buttonCell.appendChild(button);
+              // Add button in the last cell of each row
+              const buttonCell = newRow.insertCell(); const button = document.createElement('button');
+              button.textContent = 'View Project';
+              button.addEventListener('click', () => {
+                const projectNumber = cells[0].trim(); // Get the project number from the first cell (index 0)
+                const projectPageURL = `../../../../Projects/all_projects/project${projectNumber}.html`;
+                window.location.href = projectPageURL;
+              });
+              buttonCell.appendChild(button);
           }
         });
       })
