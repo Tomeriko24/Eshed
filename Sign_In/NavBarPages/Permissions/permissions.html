@@ -12,8 +12,8 @@
   </header>
   <main>
     <h1>Permissions page</h1>
-    <p>On this page you can control the users permissions inside the system.<br>
-      In the drop down menu, choose the group you would like to edit. <br>
+    <p>On this page, you can control the users' permissions inside the system.<br>
+      In the drop-down menu, choose the group you would like to edit. <br>
       Then select the specific users.
     </p>
 
@@ -26,31 +26,40 @@
     <div id="permissionContainer">
       <select id="permission" name="permission" onchange="showTable()">
         <option value="none" disabled selected hidden>Select Permission Level</option>
-        <option value="BasicLevel">Basic Level</option>
-        <option value="HighLevel">High Level</option>
+        <option value="BasicLevel">Consultants</option>
+        <option value="HighLevel">Districts</option>
       </select>
     </div>
 
     <div id="permissionSubContainer" style="display: none;">
       <select id="permissionSub" name="permissionSub" onchange="updateSelectedPermission()">
-        <option value="none" disabled selected hidden>Select Specific Role</option>
-        <option value="Const1">Const1</option>
-        <option value="Const2">Const2</option>
-        <option value="Const3">Const3</option>
-        <option value="Const4">Const4</option>
-        <option value="Const5">Const5</option>
-        <option value="Const6">Const6</option>
-        <option value="Const7">Const7</option>
-        <option value="Const8">Const8</option>
-        <option value="Const9">Const9</option>
-        <option value="Const10">Const10</option>
+        <option value="none" disabled selected hidden>Select User</option>
+        <option value="Adi Cohen">Adi Cohen</option>
+        <option value="David Levi">David Levi</option>
+        <option value="Eitan Ben-Shaul">Eitan Ben-Shaul</option>
+        <option value="Nati Goldberg">Nati Goldberg</option>
+        <option value="Yael Cohen">Yael Cohen</option>
+        <option value="Noam Cohen-Schneider">Noam Cohen-Schneider</option>
+        <option value="Talia Rosenbaum">Talia Rosenbaum</option>
+        <option value="Amit Cohen-Tal">Amit Cohen-Tal</option>
+        <option value="Roni Abramowitz">Roni Abramowitz</option>
+        <option value="Alon Levy-Sharoni">Alon Levy-Sharoni</option>
       </select>
-      <h2 id="selectedPermission"></h2>
+    </div>
+
+    <div id="districtContainer" style="display: none;">
+      <select id="district" name="district">
+        <option value="none" disabled selected hidden>Select District</option>
+        <option value="District1">District 1</option>
+        <option value="District2">District 2</option>
+        <option value="District3">District 3</option>
+        <option value="District4">District 4</option>
+        <option value="District5">District 5</option>
+      </select>
     </div>
 
     <form id="toggleForm">
       <table id="basicTable" style="display: none;">
-        <h2 id="BasicshowH2" style="display: none;">Specific user to edit:</h2>
         <thead>
           <tr>
             <th>Viewing</th>
@@ -62,66 +71,62 @@
         <tbody>
           <tr>
             <td><label class="switch">
-                <input type="checkbox" id="viewingToggle">
+                <input type="checkbox" id="viewingToggleBasic">
                 <span class="slider round"></span>
               </label></td>
             <td><label class="switch">
-                <input type="checkbox" id="editingToggle">
+                <input type="checkbox" id="editingToggleBasic">
                 <span class="slider round"></span>
               </label></td>
             <td><label class="switch">
-                <input type="checkbox" id="creatingToggle">
+                <input type="checkbox" id="creatingToggleBasic">
                 <span class="slider round"></span>
               </label></td>
             <td><label class="switch">
-                <input type="checkbox" id="deletingToggle">
+                <input type="checkbox" id="deletingToggleBasic">
                 <span class="slider round"></span>
               </label></td>
           </tr>
         </tbody>
       </table>
-
       <table id="highTable" style="display: none;">
-        <h2 id="HighShowH2
-" style="display: none;">Specific role to edit:</h2>
-      <thead>
-        <tr>
-          <th>Viewing</th>
-          <th>Editing</th>
-          <th>Creating</th>
-          <th>Deleting</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><label class="switch">
-              <input type="checkbox" id="viewingToggle">
-              <span class="slider round"></span>
-            </label></td>
-          <td><label class="switch">
-              <input type="checkbox" id="EditingToggle">
-              <span class="slider round"></span>
-            </label></td>
-          <td><label class="switch">
-              <input type="checkbox" id="CreatingToggle">
-              <span class="slider round"></span>
-            </label></td>
-          <td><label class="switch">
-              <input type="checkbox" id="DeletingToggle">
-              <span class="slider round"></span>
-            </label></td>
-        </tr>
-  </table>
-    </tbody>
+        <thead>
+          <tr>
+            <th>Viewing</th>
+            <th>Editing</th>
+            <th>Creating</th>
+            <th>Deleting</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggleHigh">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggleHigh">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggleHigh">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggleHigh">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
   </main>
   <footer>
     <script src="../index.js"></script>
     <div class="sign-out">
       <button onclick="signOut()" class="button">Sign Out</button>
     </div>
-
   </footer>
-
 </body>
 
 </html>
