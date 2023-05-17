@@ -1,61 +1,61 @@
-﻿project_id,const_id,project_name,Status,start_date,end_date,project_duration(Month),customer_id,customer_poc
-1,1,The Cross Island Line,A,11/15/2020,02/24/2024,39,301,Liora Cohen
-2,1,The North-South Commuter Railway,A,02/25/2021,11/16/2023,32,304,Shira Cohen-David
-3,1,The Western Sydney Airport,P,10/01/2020,01/09/2021,3,302,Avigail Sasson
-4,2,The New Safe Confinement,P,11/06/2020,01/16/2022,14,302,Yotam Levi
-5,2,The Hinkley Point C nuclear power plant,P,02/21/2021,04/18/2023,25,303,Matan Klein
-6,2,The Istanbul Airport,P,11/01/2020,03/02/2022,16,302,Yotam Levi
-7,3,The Grand Paris Express,A,11/12/2020,09/08/2024,45,303,Matan Klein
-8,3,The Chennai Metro Rail,P,08/31/2020,04/29/2023,31,305,Adi Carmi
-9,3,The Bosphorus Tunnel,A,01/18/2021,02/18/2024,37,302,Yotam Levi
-10,4,The Mumbai Coastal Road,A,08/25/2020,02/07/2024,41,306,Yair Dahan
-11,4,The Amur Gas Processing Plant,P,08/25/2020,07/22/2022,22,304,Shira Cohen-David
-12,4,The Changi Airport Terminal 5,P,11/08/2020,04/19/2023,29,305,Eran Ben-Shabat
-13,5,The Istanbul Canal,P,02/06/2021,11/02/2022,20,302,Yotam Levi
-14,5,The Delhi-Mumbai Industrial Corridor,P,08/04/2020,04/01/2022,19,307,Baruch Azulay
-15,5,The Thames Tideway Tunnel,A,09/28/2020,12/16/2025,62,303,Matan Klein
-16,6,The Doha Metro,P,07/19/2020,02/13/2022,18,305,Eran Ben-Shabat
-17,6,The Central Expressway,P,02/03/2021,09/05/2022,19,302,Yotam Levi
-18,6,The West Coast Expressway,A,02/14/2021,08/11/2025,53,302,Avigail Sasson
-19,7,The Rail Baltica,P,01/13/2021,09/15/2022,20,305,Eran Ben-Shabat
-20,7,The Abraj Kudai hotel,P,12/19/2020,10/18/2021,9,303,Matan Klein
-21,7,The Gotthard Base Tunnel,A,08/13/2020,06/26/2025,58,302,Avigail Sasson
-22,8,The Sagrada Familia,P,07/16/2020,11/28/2022,28,304,Shira Cohen-David
-23,8,The SkyTrain,P,01/02/2021,12/07/2022,23,303,Matan Klein
-24,8,The City Rail Link,A,08/22/2020,07/09/2024,46,303,Matan Klein
-25,9,The New York City Subway,A,09/18/2020,01/25/2025,52,305,Adi Carmi
-26,9,The Jubilee Line Extension,A,03/01/2021,08/20/2023,29,306,Yair Dahan
-27,9,The Terrafugia flying car,P,12/20/2020,12/12/2024,47,303,Matan Klein
-28,10,The Sydney Harbour Tunnel,A,12/07/2020,07/22/2023,31,302,Yotam Levi
-29,10,The Cross-Harbour Tunnel,P,10/14/2020,03/28/2023,29,302,Avigail Sasson
-30,10,The Second Bosphorus Bridge,P,08/06/2020,03/23/2024,43,304,Shira Cohen-David
-31,5,The Trans-Alaska Pipeline System,A,01/17/2020,07/08/2023,41,301,Liora Cohen
-32,5,The Big Dig,P,05/08/2022,10/01/2022,4,301,Liora Cohen
-33,4,The Golden Quadrilateral,A,12/17/2022,02/25/2024,14,304,Shira Cohen-David
-34,8,The H-3 Highway,P,04/02/2021,10/21/2021,6,305,Eran Ben-Shabat
-35,5,The Beijing-Hong Kong-Macau Expressway,P,12/13/2021,06/26/2022,6,303,Matan Klein
-36,7,The Hong Kong-Zhuhai-Macau Bridge,P,01/09/2021,04/20/2022,15,307,Ronit Levy-Rubin
-37,5,The Pacific Highway Upgrade,A,10/14/2021,11/11/2023,24,305,Adi Carmi
-38,6,The 407 ETR Toll Road,A,08/03/2020,08/08/2024,48,303,Matan Klein
-39,5,The Akashi Kaiky? Bridge,P,08/30/2020,03/13/2021,6,304,Shira Cohen-David
-40,10,The Istanbul Strait Road Tunnel,P,04/28/2021,08/04/2022,15,302,Yotam Levi
-41,3,The Mumbai-Pune Expressway,P,11/30/2021,12/03/2022,12,301,Liora Cohen
-42,8,The Alaskan Way Viaduct Replacement Tunnel,P,02/15/2020,04/03/2021,13,301,Liora Cohen
-43,4,The Lusail Expressway,A,05/28/2020,04/16/2024,46,303,Matan Klein
-44,9,The North Luzon Expressway,A,06/09/2021,07/16/2023,25,307,Baruch Azulay
-45,2,The Sheikh Jaber Al-Ahmad Al-Sabah Causeway,A,10/12/2022,05/21/2024,19,305,Adi Carmi
-46,7,The WestConnex Motorway,A,05/15/2022,01/08/2024,19,301,Liora Cohen
-47,3,The West Kowloon Corridor,A,03/05/2021,01/21/2025,46,301,Liora Cohen
-48,8,The New International Airport of Mexico City,P,10/24/2020,02/09/2023,27,302,Avigail Sasson
-49,8,The Follo Line Railway,A,04/09/2022,12/24/2023,20,305,Adi Carmi
-50,3,The Intercounty Connector,A,11/03/2022,05/15/2024,18,303,Matan Klein
-51,8,The Chennai Outer Ring Road,P,01/20/2021,05/19/2023,27,305,Adi Carmi
-52,4,The Eastern Peripheral Expressway,P,03/19/2022,09/22/2022,6,301,Liora Cohen
-53,9,The North-South Corridor,P,04/18/2021,05/28/2022,13,301,Liora Cohen
-54,1,The Coastal Pacific Highway,P,05/28/2020,11/28/2022,30,305,Eran Ben-Shabat
-55,8,The Dhaka Elevated Expressway,P,08/04/2020,02/01/2021,5,306,Yair Dahan
-56,1,The Suez Canal Expansion,A,06/15/2022,04/03/2025,33,305,Eran Ben-Shabat
-57,6,The Tianjin-Qinhuangdao High-Speed Railway,P,04/26/2020,05/14/2023,36,306,Yair Dahan
-58,9,The Xinjiang-Tibet Highway,A,10/04/2020,12/14/2024,50,304,Shira Cohen-David
-59,2,The Great Ocean Road Upgrade,A,07/11/2021,06/04/2024,34,303,Matan Klein
-60,3,The Zárate-Brazo Largo Bridge.,P,03/21/2021,02/01/2022,10,306,Yair Dahan
+﻿project_id,const_id,project_name,Status,District_Name,start_date,end_date,project_duration(Month),customer_poc,,
+1,1,The Cross Island Line,A,Judea and Samaria District,15/11/2020,24/02/2024,39,Liora Cohen,,
+2,1,The North-South Commuter Railway,A,The Northern District,25/02/2021,16/11/2023,32,Shira Cohen-David,,
+3,1,The Western Sydney Airport,P,The Haifa District,01/10/2020,09/01/2021,3,Avigail Sasson,,
+4,2,The New Safe Confinement,P,The Haifa District,06/11/2020,16/01/2022,14,Yotam Levi,,
+5,2,The Hinkley Point C nuclear power plant,P,Jerusalem District,21/02/2021,18/04/2023,25,Matan Klein,,
+6,2,The Istanbul Airport,P,The Haifa District,01/11/2020,02/03/2022,16,Yotam Levi,,
+7,3,The Grand Paris Express,A,Jerusalem District,12/11/2020,08/09/2024,45,Matan Klein,,
+8,3,The Chennai Metro Rail,P,The Central District,31/08/2020,29/04/2023,31,Adi Carmi,,
+9,3,The Bosphorus Tunnel,A,The Haifa District,18/01/2021,18/02/2024,37,Yotam Levi,,
+10,4,The Mumbai Coastal Road,A,South District,25/08/2020,07/02/2024,41,Yair Dahan,,
+11,4,The Amur Gas Processing Plant,P,The Northern District,25/08/2020,22/07/2022,22,Shira Cohen-David,,
+12,4,The Changi Airport Terminal 5,P,The Central District,08/11/2020,19/04/2023,29,Eran Ben-Shabat,,
+13,5,The Istanbul Canal,P,The Haifa District,06/02/2021,02/11/2022,20,Yotam Levi,,
+14,5,The Delhi-Mumbai Industrial Corridor,P,Tel-Aviv District,04/08/2020,01/04/2022,19,Baruch Azulay,,
+15,5,The Thames Tideway Tunnel,A,Jerusalem District,28/09/2020,16/12/2025,62,Matan Klein,,
+16,6,The Doha Metro,P,The Central District,19/07/2020,13/02/2022,18,Eran Ben-Shabat,,
+17,6,The Central Expressway,P,The Haifa District,03/02/2021,05/09/2022,19,Yotam Levi,,
+18,6,The West Coast Expressway,A,The Haifa District,14/02/2021,11/08/2025,53,Avigail Sasson,,
+19,7,The Rail Baltica,P,The Central District,13/01/2021,15/09/2022,20,Eran Ben-Shabat,,
+20,7,The Abraj Kudai hotel,P,Jerusalem District,19/12/2020,18/10/2021,9,Matan Klein,,
+21,7,The Gotthard Base Tunnel,A,The Haifa District,13/08/2020,26/06/2025,58,Avigail Sasson,,
+22,8,The Sagrada Familia,P,The Northern District,16/07/2020,28/11/2022,28,Shira Cohen-David,,
+23,8,The SkyTrain,P,Jerusalem District,02/01/2021,07/12/2022,23,Matan Klein,,
+24,8,The City Rail Link,A,Jerusalem District,22/08/2020,09/07/2024,46,Matan Klein,,
+25,9,The New York City Subway,A,The Central District,18/09/2020,25/01/2025,52,Adi Carmi,,
+26,9,The Jubilee Line Extension,A,South District,01/03/2021,20/08/2023,29,Yair Dahan,,
+27,9,The Terrafugia flying car,P,Jerusalem District,20/12/2020,12/12/2024,47,Matan Klein,,
+28,10,The Sydney Harbour Tunnel,A,The Haifa District,07/12/2020,22/07/2023,31,Yotam Levi,,
+29,10,The Cross-Harbour Tunnel,P,The Haifa District,14/10/2020,28/03/2023,29,Avigail Sasson,,
+30,10,The Second Bosphorus Bridge,P,The Northern District,06/08/2020,23/03/2024,43,Shira Cohen-David,,
+31,5,The Trans-Alaska Pipeline System,A,Judea and Samaria District,17/01/2020,08/07/2023,41,Liora Cohen,,
+32,5,The Big Dig,P,Judea and Samaria District,08/05/2022,01/10/2022,4,Liora Cohen,,
+33,4,The Golden Quadrilateral,A,The Northern District,17/12/2022,25/02/2024,14,Shira Cohen-David,,
+34,8,The H-3 Highway,P,The Central District,02/04/2021,21/10/2021,6,Eran Ben-Shabat,,
+35,5,The Beijing-Hong Kong-Macau Expressway,P,Jerusalem District,13/12/2021,26/06/2022,6,Matan Klein,,
+36,7,The Hong Kong-Zhuhai-Macau Bridge,P,Tel-Aviv District,09/01/2021,20/04/2022,15,Ronit Levy-Rubin,,
+37,5,The Pacific Highway Upgrade,A,The Central District,14/10/2021,11/11/2023,24,Adi Carmi,,
+38,6,The 407 ETR Toll Road,A,Jerusalem District,03/08/2020,08/08/2024,48,Matan Klein,,
+39,5,The Akashi Kaiky? Bridge,P,The Northern District,30/08/2020,13/03/2021,6,Shira Cohen-David,,
+40,10,The Istanbul Strait Road Tunnel,P,The Haifa District,28/04/2021,04/08/2022,15,Yotam Levi,,
+41,3,The Mumbai-Pune Expressway,P,Judea and Samaria District,30/11/2021,03/12/2022,12,Liora Cohen,,
+42,8,The Alaskan Way Viaduct Replacement Tunnel,P,Judea and Samaria District,15/02/2020,03/04/2021,13,Liora Cohen,,
+43,4,The Lusail Expressway,A,Jerusalem District,28/05/2020,16/04/2024,46,Matan Klein,,
+44,9,The North Luzon Expressway,A,Tel-Aviv District,09/06/2021,16/07/2023,25,Baruch Azulay,,
+45,2,The Sheikh Jaber Al-Ahmad Al-Sabah Causeway,A,The Central District,12/10/2022,21/05/2024,19,Adi Carmi,,
+46,7,The WestConnex Motorway,A,Judea and Samaria District,15/05/2022,08/01/2024,19,Liora Cohen,,
+47,3,The West Kowloon Corridor,A,Judea and Samaria District,05/03/2021,21/01/2025,46,Liora Cohen,,
+48,8,The New International Airport of Mexico City,P,The Haifa District,24/10/2020,09/02/2023,27,Avigail Sasson,,
+49,8,The Follo Line Railway,A,The Central District,09/04/2022,24/12/2023,20,Adi Carmi,,
+50,3,The Intercounty Connector,A,Jerusalem District,03/11/2022,15/05/2024,18,Matan Klein,,
+51,8,The Chennai Outer Ring Road,P,The Central District,20/01/2021,19/05/2023,27,Adi Carmi,,
+52,4,The Eastern Peripheral Expressway,P,Judea and Samaria District,19/03/2022,22/09/2022,6,Liora Cohen,,
+53,9,The North-South Corridor,P,Judea and Samaria District,18/04/2021,28/05/2022,13,Liora Cohen,,
+54,1,The Coastal Pacific Highway,P,The Central District,28/05/2020,28/11/2022,30,Eran Ben-Shabat,,
+55,8,The Dhaka Elevated Expressway,P,South District,04/08/2020,01/02/2021,5,Yair Dahan,,
+56,1,The Suez Canal Expansion,A,The Central District,15/06/2022,03/04/2025,33,Eran Ben-Shabat,,
+57,6,The Tianjin-Qinhuangdao High-Speed Railway,P,South District,26/04/2020,14/05/2023,36,Yair Dahan,,
+58,9,The Xinjiang-Tibet Highway,A,The Northern District,04/10/2020,14/12/2024,50,Shira Cohen-David,,
+59,2,The Great Ocean Road Upgrade,A,Jerusalem District,11/07/2021,04/06/2024,34,Matan Klein,,
+60,3,The Zárate-Brazo Largo Bridge.,P,South District,21/03/2021,01/02/2022,10,Yair Dahan,,
