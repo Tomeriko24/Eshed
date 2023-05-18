@@ -8,50 +8,66 @@
 </head>
 
 <body>
+  <header></header>
   <main>
-    <div>
-      <h1 id="main-heading">Stage 2</h1>
-      <p id="sample-text">This is some sample text for the home page.</p>
-      <p id="lorem-ipsum">Lorem ipsum dolor</p>
-    </div>
+    <h1 id="main-heading">Stage 1</h1>
+    <p id="sample-text">This is some sample text for the home page.</p>
+    <p id="lorem-ipsum">Lorem ipsum dolor</p>
     <div class="sidebar">
       <iframe src="../../../../Components/sidebar.html"></iframe>
     </div>
-    <div>
-      <ul class="breadcrumb">
-        <li><a href="./stage1.html">Stage 1 </a></li>
-        <li>Stage 2</li>
-      </ul>
-    </div>
+
+
+    <ul class="breadcrumb">
+      <li>Stage 1</li>
+      <li></li>
+    </ul>
+
+
+
 
     <div class="container">
       <div class="box">
         <div class="row">
-        </div>
-        <div class="row">
           <div class="column">
-            <div class="title">Is there a need for medical insurance?:</div>
-            <select id="medicalInsuranceSelect">
-              <option value="none" disabled selected hidden>Choose Yes or No</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
+            <div class="title">Project Name:</div>
+            <input type="text" id="projectName" class="textbox" placeholder="Enter Project Name">
+          </div>
+          <div class="column">
+            <div class="title">POC:</div>
+            <input type="text" id="poc" class="textbox" placeholder="Enter Person Of Contact Info">
           </div>
         </div>
         <div class="row">
           <div class="column">
-            <div class="title">Additional information:</div>
-            <input type="text" class="textbox" placeholder="Write here">
+            <div class="title">Project Description:</div>
+            <input type="text" id="projectDescription" class="textbox" placeholder="Write Here The Project Description">
           </div>
         </div>
       </div>
       <div class="box">
         <div class="row">
+          <div class="column">
+            <div class="title">Start Date:</div>
+            <input type="date" id="startDate" class="textbox">
+          </div>
+          <div class="column">
+            <div class="title">End Date:</div>
+            <input type="date" id="endDate" class="textbox">
+          </div>
         </div>
         <div class="row">
           <div class="column">
-            <div class="title">Did a protocol meeting occur?</div>
-            <select id="protocolMeetingSelect">
+            <div class="title">Choose Expertise:</div>
+            <select id="expertise">
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+          </div>
+          <div class="column">
+            <div class="title">Is there a need in medical insurance?:</div>
+            <select id="medicalInsurance">
               <option value="none" disabled selected hidden>Choose Yes or No</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -60,115 +76,89 @@
         </div>
         <div class="row">
           <div class="column">
-            <div class="title">Insert PDF File:</div>
-            <input type="file" id="file-input">
-            <button onclick="loadFile()">see File</button>
-            <div id="file-content"></div>
+            <div class="title">Amount Of Hours Predicted:</div>
+            <input type="number" id="predictedHours" class="textbox" placeholder="Enter Amount Of Hours Predicted"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '')">
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <button onclick="SnackAndRedirect()">Submit Project</button>
-    </div>
-    <div id="snackbar">Project Submitted!</div>
-    <script>
-      function SnackAndRedirect() {
-        var x = document.getElementById("snackbar");
-        x.className = "show";
-        setTimeout(function() {
-          x.className = x.className.replace("show", "");
-        }, 3000);
 
-        var medicalInsuranceDropdown = document.getElementById("medicalInsuranceSelect");
-        var selectedMedicalInsurance = medicalInsuranceDropdown.value;
 
-        if (selectedMedicalInsurance.toLowerCase() === "yes") {
-          location.href = "results1.html";
-        } else {
-          var protocolMeetingDropdown = document.getElementById("protocolMeetingSelect");
-          var selectedProtocolMeeting = protocolMeetingDropdown.value;
+    <a href="./stage2.html" class="btnLink" onclick="saveValues()">Next Step</a>
 
-          if (selectedProtocolMeeting.toLowerCase() === "yes") {
-            location.href = "results2.html";
-          } else {
-            location.href = "results3.html";
-          }
-        }
-      }
-    </script>
   </main>
   <footer>
     <script src="../../index.js"></script>
     <div class="sign-out">
-      <button class="button-1" role="button" onclick="history.back()">Back To Stage 1</button>
+      <button class="button-1" role="button" onclick="history.back()">Back To Projects List</button>
     </div>
+
   </footer>
 </body>
-
 <style>
-    ul.breadcrumb {
-        padding: 10px 16px;
-        list-style: none;
-    }
+  ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+  }
 
-    ul.breadcrumb li {
-        display: inline;
-        font-size: 18px;
-    }
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
 
-    ul.breadcrumb li+li:before {
-        padding: 8px;
-        color: black;
-        content: "/\00a0";
-    }
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
 
-    ul.breadcrumb li a {
-        color: #0275d8;
-        text-decoration: none;
-    }
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
 
-    ul.breadcrumb li a:hover {
-        color: #01447e;
-        text-decoration: underline;
-    }
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-    }
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .box {
-        width: 45%;
-        padding: 20px;
-        border: 1px solid #ccc;
-        margin-bottom: 20px;
-    }
+  .box {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
 
-    .row {
-        display: flex;
-        margin-bottom: 10px;
-    }
+  .row {
+    display: flex;
+    margin-bottom: 10px;
+  }
 
-    .column {
-        width: 50%;
-        padding: 5px;
-    }
+  .column {
+    width: 50%;
+    padding: 5px;
+  }
 
-    .title {
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
+  .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 
-    .textbox {
-        width: 100%;
-        padding: 5px;
-    }
+  .textbox {
+    width: 100%;
+    padding: 5px;
+  }
 
-    select {
-        width: 100%;
-        padding: 5px;
-    }
+  select {
+    width: 100%;
+    padding: 5px;
+  }
 </style>
 
 </html>
