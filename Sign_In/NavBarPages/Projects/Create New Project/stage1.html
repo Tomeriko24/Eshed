@@ -2,102 +2,110 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>My Home Page</title>
-    <link rel="stylesheet" href="../../stylehome.css">
+  <meta charset="UTF-8">
+  <title>My Home Page</title>
+  <link rel="stylesheet" href="../../stylehome.css">
 </head>
 
 <body>
-    <header></header>
-    <main>
-        <h1 id="main-heading">Stage 1<br>
-            change the list</h1>
-        <p id="sample-text">This is some sample text for the home page.</p>
-        <p id="lorem-ipsum">Lorem ipsum dolor</p>
-        <div class="sidebar">
-            <iframe src="../../../../Components/sidebar.html"></iframe>
+  <main>
+    <div>
+      <h1 id="main-heading">Stage 2</h1>
+      <p id="sample-text">This is some sample text for the home page.</p>
+      <p id="lorem-ipsum">Lorem ipsum dolor</p>
+    </div>
+    <div class="sidebar">
+      <iframe src="../../../../Components/sidebar.html"></iframe>
+    </div>
+    <div>
+      <ul class="breadcrumb">
+        <li><a href="./stage1.html">Stage 1 </a></li>
+        <li>Stage 2</li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="box">
+        <div class="row">
         </div>
-
-
-        <ul class="breadcrumb">
-            <li>Stage 1</li>
-            <li></li>
-        </ul>
-
-
-
-
-        <div class="container">
-            <div class="box">
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Project Name:</div>
-                        <input type="text" id="projectName" class="textbox" placeholder="Enter Project Name">
-                    </div>
-                    <div class="column">
-                        <div class="title">POC:</div>
-                        <input type="text" id="poc" class="textbox" placeholder="Enter Person Of Contact Info">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Project Description:</div>
-                        <input type="text" id="projectDescription" class="textbox"
-                            placeholder="Write Here The Project Description">
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Start Date:</div>
-                        <input type="date" id="startDate" class="textbox">
-                    </div>
-                    <div class="column">
-                        <div class="title">End Date:</div>
-                        <input type="date" id="endDate" class="textbox">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Choose Expertise:</div>
-                        <select id="expertise">
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
-                        </select>
-                    </div>
-                    <div class="column">
-                        <div class="title">Is there a need in medical insurance?:</div>
-                        <select id="medicalInsurance">
-                            <option value="none" disabled selected hidden>Choose Yes or No</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Amount Of Hours Predicted:</div>
-                        <input type="text" id="predictedHours" class="textbox"
-                            placeholder="Enter Amount Of Hours Predicted">
-                    </div>
-                </div>
-            </div>
+        <div class="row">
+          <div class="column">
+            <div class="title">Is there a need for medical insurance?:</div>
+            <select id="medicalInsuranceSelect">
+              <option value="none" disabled selected hidden>Choose Yes or No</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
         </div>
-
-
-        <a href="./stage2.html" class="btnLink" onclick="saveValues()">Next Step</a>
-
-    </main>
-    <footer>
-        <script src="../../index.js"></script>
-        <div class="sign-out">
-            <button class="button-1" role="button" onclick="history.back()">Back To Projects List</button>
+        <div class="row">
+          <div class="column">
+            <div class="title">Additional information:</div>
+            <input type="text" class="textbox" placeholder="Write here">
+          </div>
         </div>
-    
-    </footer>
+      </div>
+      <div class="box">
+        <div class="row">
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="title">Did a protocol meeting occur?</div>
+            <select id="protocolMeetingSelect">
+              <option value="none" disabled selected hidden>Choose Yes or No</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="title">Insert PDF File:</div>
+            <input type="file" id="file-input">
+            <button onclick="loadFile()">see File</button>
+            <div id="file-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button onclick="SnackAndRedirect()">Submit Project</button>
+    </div>
+    <div id="snackbar">Project Submitted!</div>
+    <script>
+      function SnackAndRedirect() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function() {
+          x.className = x.className.replace("show", "");
+        }, 3000);
+
+        var medicalInsuranceDropdown = document.getElementById("medicalInsuranceSelect");
+        var selectedMedicalInsurance = medicalInsuranceDropdown.value;
+
+        if (selectedMedicalInsurance.toLowerCase() === "yes") {
+          location.href = "results1.html";
+        } else {
+          var protocolMeetingDropdown = document.getElementById("protocolMeetingSelect");
+          var selectedProtocolMeeting = protocolMeetingDropdown.value;
+
+          if (selectedProtocolMeeting.toLowerCase() === "yes") {
+            location.href = "results2.html";
+          } else {
+            location.href = "results3.html";
+          }
+        }
+      }
+    </script>
+  </main>
+  <footer>
+    <script src="../../index.js"></script>
+    <div class="sign-out">
+      <button class="button-1" role="button" onclick="history.back()">Back To Stage 1</button>
+    </div>
+  </footer>
 </body>
+
 <style>
     ul.breadcrumb {
         padding: 10px 16px;

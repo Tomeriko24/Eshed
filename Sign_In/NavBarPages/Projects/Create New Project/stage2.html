@@ -43,8 +43,8 @@
                 </div>
                 <div class="row">
                     <div class="column">
-                        <div class="title">More information:</div>
-                        <input type="text" class="textbox" placeholder="Enter Amount Of Hours Predicted ">
+                        <div class="title">Additional information:</div>
+                        <input type="text" class="textbox" placeholder="Write here">
                     </div>
                 </div>
             </div>
@@ -81,6 +81,21 @@
                 x.className = "show";
                 setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
                 setTimeout(function () { location.href = "results.html"; }, 3000);
+                var expertiseDropdown = document.getElementById("expertise");
+      var selectedExpertise = expertiseDropdown.options[expertiseDropdown.selectedIndex].value;
+      
+      if (selectedExpertise >= "option1" && selectedExpertise <= "option5") {
+        location.href = "results1.html";
+      } else if (selectedExpertise >= "option6" && selectedExpertise <= "option10") {
+        location.href = "results2.html";
+      } else {
+        location.href = "results3.html";
+      }
+    }
+
+
+
+
                 function RestValues() {
                     var projectName = document.getElementById('projectName').value;
                     var poc = document.getElementById('poc').value;

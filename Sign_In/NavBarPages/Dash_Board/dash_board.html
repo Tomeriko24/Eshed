@@ -12,8 +12,7 @@
   <header>
   </header>
   <main>
-    <h1>home page!<br>
-    לשנות את החלוקה של הטבלאות</h1>
+    <h1>home page!</h1>
     <p>Welcome to The Transportation Administration system!<br>
       Here you can watch current work data:
     </p>
@@ -21,16 +20,16 @@
       <iframe src="../../../Components/sidebar.html"></iframe>
     </div>
     <div>
-      <div class="chart-container">
-        <div>
-          <h2>Active Projects</h2>
+      <div style="display: flex;">
+        <div style="width: 50%;">
+          <h2>Projects By Status:</h2>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-          <canvas id="barChart" style="width:100%;"></canvas>
+          <canvas id="barChart"></canvas>
           <script>
-            var xValues = ["Active Projects", "Finished Projects"];
-            var yValues = [30, 30];
-            var barColors = ["yellow", "green"];
-
+            var xValues = ["Active Projects", "Ended This Year", "Ended Last Year"];
+            var yValues = [29, 6, 19];
+            var barColors = ["orange", "green", "gray"];
+    
             new Chart("barChart", {
               type: "bar",
               data: {
@@ -50,22 +49,22 @@
             });
           </script>
         </div>
-
-        <div>
+    
+        <div style="width: 50%;">
           <h2>Consultants</h2>
           <div class="centered-text">
             <label for="filter-select">Show:</label>
             <select id="filter-select">
-              <option value="projects" >on</option>
+              <option value="projects">on</option>
               <option value="consultants">off</option>
             </select>
           </div>
-          <canvas id="pieChart" style="width:50%;max-width:300px"></canvas>
+          <canvas id="pieChart" style="width: 50%; max-width: 300px;"></canvas>
           <script>
             var consultants = ["Adi Cohen", "David Levi", "Eitan Ben-Shaul", "Nati Goldberg", "Yael Cohen", "Noam Cohen-Schneider", "Talia Rosenbaum", "Amit Cohen-Tal", "Roni Abramowitz", "Alon Levy-Sharoni"];
-            var projects = [6, 6, 6, 6, 6, 6, 6, 6, 6, 6];
+            var projects = [5, 7, 6, 8, 5, 5, 9, 6, 4];
             var barColors = ["black", "green", "blue", "white", "orange", "red", "grey", "pink", "brown", "white"];
-
+    
             var pieChart = new Chart("pieChart", {
               type: "pie",
               data: {
@@ -83,7 +82,7 @@
                 }
               }
             });
-
+    
             var filterSelect = document.getElementById("filter-select");
             filterSelect.addEventListener("change", function () {
               var selectedValue = filterSelect.value;
@@ -94,13 +93,153 @@
                 pieChart.data.labels = projects;
                 pieChart.data.datasets[0].data = consultants;
               }
-
+    
               pieChart.update();
             });
           </script>
         </div>
       </div>
     </div>
+    
+    <!-- New Row of Diagrams -->
+    
+    <div class="chart-container">
+      <div>
+        <h2>Revenue Growth</h2>
+        <canvas id="lineChart" style="width:100%;"></canvas>
+        <script>
+          var years = ["2018", "2019", "2020", "2021", "2022"];
+          var revenue = [100, 150, 200, 250, 300];
+          var lineColor = "blue";
+    
+          new Chart("lineChart", {
+            type: "line",
+            data: {
+              labels: years,
+              datasets: [{
+                borderColor: lineColor,
+                data: revenue
+              }]
+            },
+            options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: "Revenue Growth Over Years"
+              }
+            }
+          });
+        </script>
+      </div>
+    
+      <div>
+        <h2>Tasks Progress</h2>
+        <canvas id="dotChart" style="width:50%;max-width:300px"></canvas>
+        <script>
+          var tasks = ["Task 1", "Task 2", "Task 3", "Task 4"];
+          var progress = [25, 50, 75, 100];
+          var dotColors = ["green", "blue", "orange", "red"];
+    
+          new Chart("dotChart", {
+            type: "scatter",
+            data: {
+              datasets: [{
+                backgroundColor: dotColors,
+                data: tasks.map((task, index) => ({ x: index, y: progress[index] }))
+              }]
+            },
+            options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: "Tasks Progress"
+              },
+              scales: {
+                x: {
+                  type: "linear",
+                  position: "bottom"
+                },
+                y: {
+                  min: 0,
+                  max: 100,
+                  ticks: {
+                    stepSize: 25
+                  }
+                }
+              }
+            }
+          });
+        </script>
+      </div>
+    </div>
+
+    <!-- New Row of Diagrams -->
+
+    <div class="chart-container">
+      <div>
+        <h2>Orders by Districts</h2>
+        <canvas id="doughnutChart" style="width:100%;"></canvas>
+        <script>
+          var regions = ["Judea & Samira","The Haife District","Jerusalem District","The Northen District","The Central District","The Southern District","Tel-Aviv District"];
+          var orders = [7,17,10,9,8,4,5];
+          var doughnutColors = ["blue", "green", "orange", "red","black","white","yellow"];
+          new Chart("doughnutChart", {
+            type: "doughnut",
+            data: {
+              labels: regions,
+              datasets: [{
+                backgroundColor: doughnutColors,
+                data: orders
+              }]
+            },
+            options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: "Orders by Region"
+              }
+            }
+          });
+        </script>
+      </div>
+
+      <div>
+        <h2>Customer Satisfaction</h2>
+        <canvas id="radarChart" style="width:50%;max-width:300px"></canvas>
+        <script>
+          var criteria = ["Quality", "Service", "Price", "Delivery"];
+          var satisfaction = [90, 30, 50, 75];
+
+          new Chart("radarChart", {
+            type: "radar",
+            data: {
+              labels: criteria,
+              datasets: [{
+                backgroundColor: "rgba(0, 123, 255, 0.5)",
+                borderColor: "rgba(0, 123, 255, 1)",
+                pointBackgroundColor: "rgba(0, 123, 255, 1)",
+                data: satisfaction
+              }]
+            },
+            options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: "Customer Satisfaction"
+              },
+              scale: {
+                ticks: {
+                  beginAtZero: true,
+                  max: 100,
+                  stepSize: 20
+                }
+              }
+            }
+          });
+        </script>
+      </div>
+    </div>
+
   </main>
   <footer>
     <script src="../index.js"></script>
@@ -111,6 +250,7 @@
 </body>
 
 </html>
+
 <style>
   .chart-container {
     display: flex;
@@ -126,50 +266,3 @@
     justify-content: center;
   }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-<!-- searching list below -->
-<!-- <input type="text" id="myInput" onkeyup="filterList()" placeholder="Search for Consultants...">
-    <ul id="myList">
-      <li>John <a><a href="PagesOfConso/Const1.html" class="btnLink">more</a></a></li>
-      <li>Mary</li>
-      <li>David</li>
-      <li>Samantha</li>
-      <li>George</li>
-      <li>Emily</li>
-    </ul> 
-     <style> -->
-<!-- #myInput {
-        padding: 10px;
-        margin-bottom: 10px;
-        width: 50%;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        width: 30%;
-
-      }
-
-      li {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-      }
-
-      li:last-child {
-        border-bottom: none;
-      }
-    </style> -->
