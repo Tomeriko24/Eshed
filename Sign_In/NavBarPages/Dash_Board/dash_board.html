@@ -20,8 +20,9 @@
       <iframe src="../../../Components/sidebar.html"></iframe>
     </div>
     <div>
-      <div style="display: flex;">
-        <div style="width: 50%;">
+      <div class="chart-container" style="display: flex; justify-content: center;">
+        <div style="width: 50%; text-align: center;">
+
           <h2>Projects By Status:</h2>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
           <canvas id="barChart"></canvas>
@@ -29,7 +30,7 @@
             var xValues = ["Active Projects", "Ended This Year", "Ended Last Year"];
             var yValues = [29, 6, 19];
             var barColors = ["orange", "green", "gray"];
-    
+
             new Chart("barChart", {
               type: "bar",
               data: {
@@ -49,196 +50,163 @@
             });
           </script>
         </div>
-    
-        <div style="width: 50%;">
-          <h2>Consultants</h2>
-          <div class="centered-text">
-            <label for="filter-select">Show:</label>
-            <select id="filter-select">
-              <option value="projects">on</option>
-              <option value="consultants">off</option>
-            </select>
+
+        <div class="chart-container" style="display: flex; justify-content: center;">
+          <div style="width: 50%; text-align: center;">
+            <h2>Consultants</h2>
+            <div class="centered-text">
+              <!-- <label for="filter-select">Show:</label>
+              <select id="filter-select">
+                <option value="projects">on</option>
+                <option value="consultants">off</option>
+              </select> -->
+            </div>
+            <canvas id="pieChart" style="width: 50%; max-width: 300px;"></canvas>
+            <script>
+              var consultants = ["Adi Cohen", "David Levi", "Eitan Ben-Shaul", "Nati Goldberg", "Yael Cohen", "Noam Cohen-Schneider", "Talia Rosenbaum", "Amit Cohen-Tal", "Roni Abramowitz", "Alon Levy-Sharoni"];
+              var projects = [5, 7, 6, 8, 5, 5, 9, 6, 4];
+              var barColors = ["black", "green", "blue", "white", "orange", "red", "grey", "pink", "brown", "white"];
+
+              var pieChart = new Chart("pieChart", {
+                type: "pie",
+                data: {
+                  labels: consultants,
+                  datasets: [{
+                    backgroundColor: barColors,
+                    data: projects
+                  }]
+                },
+                options: {
+                  legend: { display: false },
+                  title: {
+                    display: true,
+                    text: "Amount of Projects Per Consultant:"
+                  }
+                }
+              });
+
+              var filterSelect = document.getElementById("filter-select");
+              filterSelect.addEventListener("change", function () {
+                var selectedValue = filterSelect.value;
+                if (selectedValue === "projects") {
+                  pieChart.data.labels = consultants;
+                  pieChart.data.datasets[0].data = projects;
+                } else if (selectedValue === "consultants") {
+                  pieChart.data.labels = projects;
+                  pieChart.data.datasets[0].data = consultants;
+                }
+
+                pieChart.update();
+              });
+            </script>
           </div>
-          <canvas id="pieChart" style="width: 50%; max-width: 300px;"></canvas>
+        </div>
+      </div>
+
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Project Id</th>
+              <th>Consultant ID</th>
+              <th>Project Name</th>
+              <th>Status</th>
+              <th>District</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Duration (Months)</th>
+              <th>Customer POC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>31</td>
+              <td>5</td>
+              <td>The Trans-Alaska Pipeline System</td>
+              <td>Active</td>
+              <td>The Haifa District</td>
+              <td>17/01/2020</td>
+              <td><b>08/07/2023</b></td>
+              <td>12</td>
+              <td>Yotam Levi</td>
+            </tr>
+            <tr>
+              <td>44</td>
+              <td>9</td>
+              <td>The Northen Luzon Expressway</td>
+              <td>Active</td>
+              <td>The Haifa District</td>
+              <td>09/06/2021</td>
+              <td><b>16/07/2023</b></td>
+              <td>25</td>
+              <td>Yotam Levi</td>
+            </tr>
+            <tr>
+              <td>28</td>
+              <td>10</td>
+              <td>The Sydney Harbour Tunnel</td>
+              <td>Active</td>
+              <td>The Haifa District</td>
+              <td>07/12/2020</td>
+              <td><b>22/07/2023</b></td>
+              <td>31</td>
+              <td>Yotam Levi</td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td>9</td>
+              <td>The Jubilee Line Extension</td>
+              <td>Active</td>
+              <td>South District</td>
+              <td>01/03/2021</td>
+              <td><b>20/08/2023</b></td>
+              <td>29</td>
+              <td>Yair Dahan</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>1</td>
+              <td>The North-South Commuter Railway</td>
+              <td>Active</td>
+              <td>The Northern District</td>
+              <td>25/02/2021</td>
+              <td><b>16/11/2023</b></td>
+              <td>32</td>
+              <td>Shira Cohen-David</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="chart-container" style="display: flex; justify-content: center;">
+        <div>
+          <h2 style="display: flex; justify-content: center;">Orders by Districts</h2>
+          <canvas id="doughnutChart" style="width:100%;"></canvas>
           <script>
-            var consultants = ["Adi Cohen", "David Levi", "Eitan Ben-Shaul", "Nati Goldberg", "Yael Cohen", "Noam Cohen-Schneider", "Talia Rosenbaum", "Amit Cohen-Tal", "Roni Abramowitz", "Alon Levy-Sharoni"];
-            var projects = [5, 7, 6, 8, 5, 5, 9, 6, 4];
-            var barColors = ["black", "green", "blue", "white", "orange", "red", "grey", "pink", "brown", "white"];
-    
-            var pieChart = new Chart("pieChart", {
-              type: "pie",
+            var regions = ["Judea & Samira", "The Haife District", "Jerusalem District", "The Northen District", "The Central District", "The Southern District", "Tel-Aviv District"];
+            var orders = [7, 17, 10, 9, 8, 4, 5];
+            var doughnutColors = ["blue", "green", "orange", "red", "black", "white", "yellow"];
+            new Chart("doughnutChart", {
+              type: "doughnut",
               data: {
-                labels: consultants,
+                labels: regions,
                 datasets: [{
-                  backgroundColor: barColors,
-                  data: projects
+                  backgroundColor: doughnutColors,
+                  data: orders
                 }]
               },
               options: {
                 legend: { display: false },
                 title: {
                   display: true,
-                  text: "Amount of Projects Per Consultant:"
+                  text: "Districts By Colour:"
                 }
               }
-            });
-    
-            var filterSelect = document.getElementById("filter-select");
-            filterSelect.addEventListener("change", function () {
-              var selectedValue = filterSelect.value;
-              if (selectedValue === "projects") {
-                pieChart.data.labels = consultants;
-                pieChart.data.datasets[0].data = projects;
-              } else if (selectedValue === "consultants") {
-                pieChart.data.labels = projects;
-                pieChart.data.datasets[0].data = consultants;
-              }
-    
-              pieChart.update();
             });
           </script>
         </div>
       </div>
-    </div>
-    
-    <!-- New Row of Diagrams -->
-    
-    <div class="chart-container">
-      <div>
-        <h2>Revenue Growth</h2>
-        <canvas id="lineChart" style="width:100%;"></canvas>
-        <script>
-          var years = ["2018", "2019", "2020", "2021", "2022"];
-          var revenue = [100, 150, 200, 250, 300];
-          var lineColor = "blue";
-    
-          new Chart("lineChart", {
-            type: "line",
-            data: {
-              labels: years,
-              datasets: [{
-                borderColor: lineColor,
-                data: revenue
-              }]
-            },
-            options: {
-              legend: { display: false },
-              title: {
-                display: true,
-                text: "Revenue Growth Over Years"
-              }
-            }
-          });
-        </script>
-      </div>
-    
-      <div>
-        <h2>Tasks Progress</h2>
-        <canvas id="dotChart" style="width:50%;max-width:300px"></canvas>
-        <script>
-          var tasks = ["Task 1", "Task 2", "Task 3", "Task 4"];
-          var progress = [25, 50, 75, 100];
-          var dotColors = ["green", "blue", "orange", "red"];
-    
-          new Chart("dotChart", {
-            type: "scatter",
-            data: {
-              datasets: [{
-                backgroundColor: dotColors,
-                data: tasks.map((task, index) => ({ x: index, y: progress[index] }))
-              }]
-            },
-            options: {
-              legend: { display: false },
-              title: {
-                display: true,
-                text: "Tasks Progress"
-              },
-              scales: {
-                x: {
-                  type: "linear",
-                  position: "bottom"
-                },
-                y: {
-                  min: 0,
-                  max: 100,
-                  ticks: {
-                    stepSize: 25
-                  }
-                }
-              }
-            }
-          });
-        </script>
-      </div>
-    </div>
 
-    <!-- New Row of Diagrams -->
-
-    <div class="chart-container">
-      <div>
-        <h2>Orders by Districts</h2>
-        <canvas id="doughnutChart" style="width:100%;"></canvas>
-        <script>
-          var regions = ["Judea & Samira","The Haife District","Jerusalem District","The Northen District","The Central District","The Southern District","Tel-Aviv District"];
-          var orders = [7,17,10,9,8,4,5];
-          var doughnutColors = ["blue", "green", "orange", "red","black","white","yellow"];
-          new Chart("doughnutChart", {
-            type: "doughnut",
-            data: {
-              labels: regions,
-              datasets: [{
-                backgroundColor: doughnutColors,
-                data: orders
-              }]
-            },
-            options: {
-              legend: { display: false },
-              title: {
-                display: true,
-                text: "Orders by Region"
-              }
-            }
-          });
-        </script>
-      </div>
-
-      <div>
-        <h2>Customer Satisfaction</h2>
-        <canvas id="radarChart" style="width:50%;max-width:300px"></canvas>
-        <script>
-          var criteria = ["Quality", "Service", "Price", "Delivery"];
-          var satisfaction = [90, 30, 50, 75];
-
-          new Chart("radarChart", {
-            type: "radar",
-            data: {
-              labels: criteria,
-              datasets: [{
-                backgroundColor: "rgba(0, 123, 255, 0.5)",
-                borderColor: "rgba(0, 123, 255, 1)",
-                pointBackgroundColor: "rgba(0, 123, 255, 1)",
-                data: satisfaction
-              }]
-            },
-            options: {
-              legend: { display: false },
-              title: {
-                display: true,
-                text: "Customer Satisfaction"
-              },
-              scale: {
-                ticks: {
-                  beginAtZero: true,
-                  max: 100,
-                  stepSize: 20
-                }
-              }
-            }
-          });
-        </script>
-      </div>
-    </div>
 
   </main>
   <footer>
@@ -248,6 +216,8 @@
     </div>
   </footer>
 </body>
+
+
 
 </html>
 
@@ -264,5 +234,17 @@
   .centered-text {
     display: flex;
     justify-content: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
   }
 </style>
