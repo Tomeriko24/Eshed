@@ -11,8 +11,8 @@
   <header></header>
   <main>
     <h1 id="main-heading">Previous Projects</h1>
-    <p>On this page, you can watch all the active and past projects that have been held through the Transportation
-      Administration.
+    <p>On this page, you can watch all the past projects that have been held through the Transportation
+      Administration System.
       <br>If you want to watch a project's details, click on the <b><i>more</i></b> button.
     </p>
     <div class="sidebar">
@@ -41,20 +41,20 @@
       			
     </select>
 
-    <div style="overflow-x: auto;">
-      <table style="width: 100%;">
+    <div>
+      <table>
         <thead>
           <tr>
-            <th id="project_id">Project ID</th>
-            <th id="const_id">Consultant ID</th>
-            <th id="project_name">Project Name</th>
-            <th id="project_status">Project Status</th>
-            <th id="District">District</th>
-            <th id="start_date">Start Date</th>
-            <th id="project_duration(Month)">Project Duration (Months)</th>
-            <th id="end_date">End Date</th>
-            <th id="project_duration(Days)">Project Duration (Days)</th>
-            <th id="Link_to_Project">Link to Project</th>
+            <th>Project Id</th>
+            <th>consultant ID</th>
+            <th>Project Name</th>
+            <th>Status</th>
+            <th>District</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Duration(Month)</th>
+            <th>Customer poc</th>
+            <th>Link to Project</th>
           </tr>
         </thead>
         <tbody>
@@ -179,5 +179,17 @@ function populateTable() {
     </div>
   </footer>
 </body>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
 
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+</style>
 </html>
