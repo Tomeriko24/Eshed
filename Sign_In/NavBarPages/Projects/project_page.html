@@ -49,9 +49,9 @@
             <th>Status</th>
             <th>District</th>
             <th>Start date</th>
-            <th>Duration-Months</th>
-          <th>End Date</th>
-            <th>Duration-Days</th>
+            <th>End date</th>
+            <th>Duration(Month)</th>
+            <th>Customer poc</th>
             <th>Link to Project</th>
           </tr>
         </thead>
@@ -59,74 +59,9 @@
         </tbody>
       </table>
     </div>
-    <div id="pagination"></div>
 
     <script>
-function populateTable(rowsPerPage) {
-  // Fetch the CSV file
-  fetch('Projects.csv')
-    .then(response => response.text())
-    .then(data => {
-      // Split the data into rows
-      const rows = data.split('\n');
-
-      // Calculate the total number of pages
-      const totalPages = Math.ceil((rows.length - 2) / rowsPerPage); // Subtracting 2 to exclude the header and empty row
-
-      // Get the table body element
-      const tableBody = document.querySelector('tbody');
-
-      // Calculate the start and end indices for the current page
-      const startIndex = (currentPage - 1) * rowsPerPage + 1; // Adding 1 to skip the header row
-      const endIndex = Math.min(startIndex + rowsPerPage, rows.length - 1); // Subtracting 1 to exclude the empty row
-
-      // Clear the previous rows from the table
-      tableBody.innerHTML = '';
-
-      // Iterate over the rows for the current page
-      for (let i = startIndex; i < endIndex; i++) {
-        // Split the row into cells
-        const cells = rows[i].split(',');
-
-        // Create a new table row with a unique ID
-        const newRow = document.createElement('tr');
-        newRow.id = `row-${i}`;
-
-        // Iterate over the cells
-        for (let j = 0; j < 9; j++) {
-          // Create a new table cell
-          const newCell = document.createElement('td');
-
-          // Set the cell's text content to the cell value
-          newCell.textContent = cells[j];
-
-          // Append the cell to the row
-          newRow.appendChild(newCell);
-        }
-
-        // Add button in the last cell of each row
-        const buttonCell = document.createElement('td');
-        const button = document.createElement('button');
-        button.textContent = 'View Project';
-        button.addEventListener('click', () => {
-          const projectNumber = cells[0].trim(); // Get the project number from the first cell (index 0)
-          const projectPageURL = `../Projects/all_projects/project${projectNumber}.html`;
-          window.location.href = projectPageURL;
-        });
-        buttonCell.appendChild(button);
-        newRow.appendChild(buttonCell);
-
-        // Append the row to the table body
-        tableBody.appendChild(newRow);
-      }
-
-      // Update the pagination buttons
-      updatePagination(totalPages);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-}
+      function populateTable() {
         // Fetch the CSV file
         fetch('Projects.csv')
           .then(response => response.text())
@@ -138,7 +73,7 @@ function populateTable(rowsPerPage) {
             const tableBody = document.querySelector('tbody');
 
             // Iterate over the rows
-            for (let i = 1; i < rows.length - 1; i++) {
+            for (let i = 1; i < rows.length-1; i++) {
               // Split the row into cells
               const cells = rows[i].split(',');
 
@@ -179,7 +114,7 @@ function populateTable(rowsPerPage) {
           });
       }
       // Call the function to populate the table
-      populateTable(30);
+      populateTable();
 
       function sortTable() {
         // Get the table element
@@ -240,46 +175,6 @@ function populateTable(rowsPerPage) {
           }
         });
       }
-      let currentPage = 1;
-      function updatePagination(totalPages) {
-  const paginationContainer = document.getElementById('pagination');
-  paginationContainer.innerHTML = '';
-
-  if (totalPages > 1) {
-    // Create the previous page button
-    const previousButton = document.createElement('button');
-    previousButton.textContent = 'Previous';
-    previousButton.addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        populateTable(30);
-      }
-    });
-    paginationContainer.appendChild(previousButton);
-
-    // Create page number buttons
-    for (let i = 1; i <= totalPages; i++) {
-      const pageNumberButton = document.createElement('button');
-      pageNumberButton.textContent = i;
-      pageNumberButton.addEventListener('click', () => {
-        currentPage = i;
-        populateTable(30);
-      });
-      paginationContainer.appendChild(pageNumberButton);
-    }
-
-    // Create the next page button
-    const nextButton = document.createElement('button');
-    nextButton.textContent = 'Next';
-    nextButton.addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        populateTable(30);
-      }
-    });
-    paginationContainer.appendChild(nextButton);
-  }
-}
 
     </script>
   </main>
