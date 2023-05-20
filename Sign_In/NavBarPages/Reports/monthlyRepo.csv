@@ -1,0 +1,801 @@
+﻿const_id,project_id,being_approved_by,work_date,tot_hours,const_type, salary 
+7,21,The Haifa District,20/11/2020,1.90,2,440.8
+2,45,The Haifa District,12/01/2023,5.02,1,1312.36
+9,25,The Central District,09/12/2021,7.12,2,1651.066667
+10,28,The Haifa District,11/06/2022,1.17,1,305.2
+5,32,The Haifa District,10/08/2022,2.52,1,658.36
+3,9,The Haifa District,09/02/2022,5.00,2,1160
+4,33,Jerusalem District,21/01/2023,2.18,2,506.5333333
+7,20,Jerusalem District,22/01/2021,5.48,2,1272.133333
+5,13,The Haifa District,20/11/2022,3.35,1,876.36
+4,52,The Central District,21/06/2022,1.50,2,348
+1,1,Judea and Samaria District,04/11/2021,4.05,1,1059.48
+10,30,The Northern District,13/02/2023,5.50,1,1438.8
+6,17,The Haifa District,30/05/2021,4.77,2,1105.866667
+4,12,The Central District,17/02/2021,10.33,2,2397.333333
+3,7,Jerusalem District,29/01/2023,0.32,2,73.46666667
+6,18,The Haifa District,21/01/2022,5.45,2,1264.4
+5,32,The Haifa District,08/08/2022,5.35,1,1399.56
+9,44,The Haifa District,10/01/2023,0.67,2,154.6666667
+2,4,The Haifa District,04/05/2022,5.05,1,1321.08
+8,24,Jerusalem District,23/08/2022,6.32,1,1652.44
+6,16,The Central District,09/02/2022,1.95,2,452.4
+9,44,The Haifa District,25/01/2023,2.07,2,479.4666667
+4,52,The Central District,25/06/2022,3.22,2,746.2666667
+7,21,The Haifa District,09/04/2022,5.33,2,1237.333333
+10,28,The Haifa District,20/01/2023,0.75,1,196.2
+2,45,The Haifa District,15/01/2023,2.50,1,654
+7,20,Jerusalem District,18/03/2021,10.63,2,2466.933333
+7,20,Jerusalem District,18/04/2021,1.57,2,363.4666667
+1,1,Judea and Samaria District,02/10/2022,7.45,1,1948.92
+4,10,South District,12/10/2020,5.17,2,1198.666667
+7,19,The Central District,02/03/2021,6.70,2,1554.4
+8,23,Jerusalem District,19/04/2021,4.93,1,1290.56
+9,44,The Haifa District,22/09/2022,8.02,2,1859.866667
+9,58,Judea and Samaria District,16/05/2023,9.47,2,2196.266667
+1,1,Judea and Samaria District,29/04/2021,4.65,1,1216.44
+3,8,The Central District,25/06/2022,1.53,2,355.7333333
+3,47,The Haifa District,14/06/2021,6.42,2,1488.666667
+8,49,Judea and Samaria District,06/07/2022,5.55,1,1451.88
+8,34,Judea and Samaria District,03/07/2021,4.43,1,1159.76
+1,2,The Northern District,27/05/2021,5.60,1,1464.96
+2,4,The Haifa District,05/07/2022,3.05,1,797.88
+3,47,The Haifa District,02/02/2022,4.70,2,1090.4
+9,58,Judea and Samaria District,29/01/2023,2.98,2,692.1333333
+10,40,The Northern District,10/07/2021,8.65,1,2262.84
+3,50,South District,27/02/2023,0.68,2,158.5333333
+6,18,The Haifa District,30/05/2021,2.70,2,626.4
+5,37,Jerusalem District,30/03/2022,7.87,1,2057.92
+3,50,South District,05/02/2023,1.90,2,440.8
+3,47,The Haifa District,13/06/2021,5.87,2,1361.066667
+7,21,The Haifa District,20/11/2020,2.20,2,510.4
+4,43,The Northern District,05/12/2020,3.73,2,866.1333333
+5,39,Jerusalem District,27/04/2021,4.93,1,1290.56
+10,29,The Haifa District,11/02/2021,5.25,1,1373.4
+5,31,The Haifa District,25/01/2023,0.15,1,39.24
+2,5,Jerusalem District,22/07/2021,3.87,1,1011.52
+2,5,Jerusalem District,14/07/2022,5.60,1,1464.96
+5,35,The Northern District,09/09/2022,5.93,1,1552.16
+1,2,The Northern District,26/05/2021,4.92,1,1286.2
+2,5,Jerusalem District,06/03/2023,8.45,1,2210.52
+8,23,Jerusalem District,13/04/2021,7.87,1,2057.92
+3,7,Jerusalem District,04/11/2021,1.45,2,336.4
+8,22,The Northern District,19/12/2022,2.13,1,558.08
+3,50,South District,11/02/2023,8.08,2,1875.333333
+2,45,The Haifa District,13/05/2023,0.40,1,104.64
+5,15,Jerusalem District,05/12/2020,2.67,1,697.6
+9,26,South District,17/06/2021,3.55,2,823.6
+8,48,The Northern District,14/10/2022,4.80,1,1255.68
+2,45,The Haifa District,15/01/2023,1.97,1,514.48
+4,33,Jerusalem District,19/05/2023,1.58,2,367.3333333
+6,38,Tel-Aviv District,26/02/2022,4.53,2,1051.733333
+5,35,The Northern District,03/03/2022,0.85,1,222.36
+6,17,The Haifa District,20/01/2022,1.28,2,297.7333333
+4,11,The Northern District,26/12/2021,4.85,2,1125.2
+4,52,The Central District,01/06/2022,9.08,2,2107.333333
+10,28,The Haifa District,04/01/2023,5.88,1,1539.08
+7,46,The Haifa District,24/08/2022,0.47,2,108.2666667
+2,45,The Haifa District,03/05/2023,2.95,1,771.72
+4,43,The Northern District,26/05/2022,6.77,2,1569.866667
+7,19,The Central District,06/04/2021,1.25,2,290
+5,13,The Haifa District,11/02/2022,2.48,1,649.64
+4,11,The Northern District,03/01/2022,2.90,2,672.8
+9,53,The Central District,05/04/2022,8.30,2,1925.6
+9,58,Judea and Samaria District,30/07/2022,2.65,2,614.8
+7,20,Jerusalem District,06/06/2021,2.08,2,483.3333333
+6,38,Tel-Aviv District,01/11/2020,1.48,2,344.1333333
+8,22,The Northern District,19/10/2022,6.52,1,1704.76
+4,11,The Northern District,22/01/2021,4.08,2,947.3333333
+4,12,The Central District,24/01/2023,4.88,2,1132.933333
+6,16,The Central District,08/05/2022,4.57,2,1059.466667
+5,35,The Northern District,01/03/2022,4.58,1,1199
+1,2,The Northern District,01/03/2021,2.05,1,536.28
+3,9,The Haifa District,24/04/2021,6.90,2,1600.8
+2,6,The Haifa District,23/12/2022,1.05,1,274.68
+7,19,The Central District,25/10/2021,5.88,2,1364.933333
+2,59,The Central District,30/10/2021,7.98,1,2088.44
+8,24,Jerusalem District,10/05/2023,9.85,1,2576.76
+1,2,The Northern District,10/05/2021,7.42,1,1940.2
+10,29,The Haifa District,03/01/2021,3.05,1,797.88
+5,31,The Haifa District,27/04/2020,6.22,1,1626.28
+3,7,Jerusalem District,03/06/2021,5.55,2,1287.6
+8,42,The Northern District,02/03/2021,3.83,1,1002.8
+9,27,Jerusalem District,20/10/2021,7.12,2,1651.066667
+8,23,Jerusalem District,22/12/2022,6.55,1,1713.48
+4,11,The Northern District,10/01/2021,0.88,2,204.9333333
+2,4,The Haifa District,12/05/2022,7.42,1,1940.2
+5,35,The Northern District,10/02/2022,2.78,1,728.12
+8,51,Tel-Aviv District,30/01/2023,5.80,1,1517.28
+9,44,The Haifa District,14/05/2023,5.05,2,1171.6
+2,59,The Central District,20/01/2023,2.08,1,545
+1,2,The Northern District,23/01/2023,1.38,1,361.88
+2,5,Jerusalem District,02/07/2022,0.83,1,218
+6,16,The Central District,13/11/2022,7.77,2,1801.866667
+3,9,The Haifa District,29/04/2021,0.57,2,131.4666667
+6,16,The Central District,28/11/2021,3.95,2,916.4
+5,35,The Northern District,30/03/2022,4.35,1,1137.96
+9,44,The Haifa District,03/01/2023,9.58,2,2223.333333
+9,44,The Haifa District,21/05/2022,2.58,2,599.3333333
+10,29,The Haifa District,22/01/2021,2.67,1,697.6
+3,50,South District,06/02/2023,1.63,2,378.9333333
+4,33,Jerusalem District,07/03/2023,5.22,2,1210.266667
+6,16,The Central District,25/11/2021,2.88,2,668.9333333
+2,4,The Haifa District,07/02/2021,9.10,1,2380.56
+10,28,The Haifa District,04/11/2022,5.58,1,1460.6
+10,29,The Haifa District,16/04/2022,4.42,1,1155.4
+6,57,Judea and Samaria District,07/01/2023,3.68,2,854.5333333
+3,8,The Central District,07/01/2023,7.53,2,1747.733333
+5,37,Jerusalem District,27/01/2022,6.02,1,1573.96
+4,33,Jerusalem District,24/01/2023,1.23,2,286.1333333
+7,21,The Haifa District,09/01/2021,1.07,2,247.4666667
+4,33,Jerusalem District,08/05/2023,6.65,2,1542.8
+4,10,South District,10/01/2022,1.38,2,320.9333333
+3,60,Judea and Samaria District,24/06/2022,7.13,2,1654.933333
+7,36,Judea and Samaria District,30/07/2021,3.02,2,699.8666667
+7,20,Jerusalem District,01/05/2021,3.67,2,850.6666667
+9,27,Jerusalem District,22/07/2022,3.68,2,854.5333333
+7,36,Judea and Samaria District,16/04/2021,8.30,2,1925.6
+2,45,The Haifa District,17/01/2023,4.25,1,1111.8
+3,41,Tel-Aviv District,02/02/2022,4.93,2,1144.533333
+10,29,The Haifa District,09/04/2021,0.08,1,21.8
+10,40,The Northern District,28/12/2022,0.80,1,209.28
+3,50,South District,10/11/2022,4.32,2,1001.466667
+2,45,The Haifa District,20/01/2023,3.93,1,1028.96
+3,50,South District,21/12/2022,1.42,2,328.6666667
+7,20,Jerusalem District,15/03/2021,2.27,2,525.8666667
+7,20,Jerusalem District,25/10/2021,6.83,2,1585.333333
+4,10,South District,03/12/2022,2.23,2,518.1333333
+5,14,Tel-Aviv District,20/01/2021,2.73,1,715.04
+2,4,The Haifa District,05/12/2022,1.62,1,422.92
+10,40,The Northern District,25/01/2022,7.17,1,1874.8
+4,43,The Northern District,09/06/2022,6.18,2,1434.533333
+5,37,Jerusalem District,03/01/2022,1.25,1,327
+4,33,Jerusalem District,07/03/2023,2.77,2,641.8666667
+3,9,The Haifa District,02/11/2021,0.97,2,224.2666667
+7,21,The Haifa District,13/05/2023,3.42,2,792.6666667
+3,9,The Haifa District,19/01/2021,1.72,2,398.2666667
+10,29,The Haifa District,29/11/2020,8.35,1,2184.36
+3,50,South District,01/03/2023,9.43,2,2188.533333
+9,53,The Central District,13/11/2022,3.67,2,850.6666667
+10,40,The Northern District,25/07/2021,5.35,1,1399.56
+5,32,The Haifa District,21/08/2022,7.53,1,1970.72
+5,14,Tel-Aviv District,26/09/2020,4.20,1,1098.72
+9,25,The Central District,08/05/2023,1.87,2,433.0666667
+6,17,The Haifa District,13/11/2022,5.47,2,1268.266667
+2,45,The Haifa District,07/01/2023,1.60,1,418.56
+7,20,Jerusalem District,30/11/2021,3.62,2,839.0666667
+7,21,The Haifa District,27/03/2023,0.25,2,58
+4,11,The Northern District,16/06/2022,2.22,2,514.2666667
+4,10,South District,11/03/2021,7.07,2,1639.466667
+7,19,The Central District,02/11/2021,6.75,2,1566
+7,19,The Central District,27/11/2021,6.93,2,1608.533333
+3,8,The Central District,09/11/2020,7.20,2,1670.4
+3,47,The Haifa District,07/06/2021,5.15,2,1194.8
+2,6,The Haifa District,27/05/2021,4.42,1,1155.4
+6,18,The Haifa District,28/08/2022,7.03,2,1631.733333
+8,48,The Northern District,24/01/2023,5.85,1,1530.36
+4,33,Jerusalem District,20/03/2023,1.62,2,375.0666667
+8,34,Judea and Samaria District,23/12/2021,7.90,1,2066.64
+7,36,Judea and Samaria District,27/07/2021,8.27,2,1917.866667
+3,47,The Haifa District,24/04/2021,5.17,2,1198.666667
+10,30,The Northern District,27/01/2023,7.60,1,1988.16
+9,58,Judea and Samaria District,27/10/2021,3.78,2,877.7333333
+9,44,The Haifa District,22/09/2021,3.65,2,846.8
+6,16,The Central District,26/06/2022,1.32,2,305.4666667
+3,7,Jerusalem District,20/12/2022,0.57,2,131.4666667
+8,22,The Northern District,16/10/2022,4.78,1,1251.32
+10,40,The Northern District,16/07/2021,3.48,1,911.24
+5,15,Jerusalem District,30/10/2022,3.48,1,911.24
+3,8,The Central District,07/11/2020,3.23,2,750.1333333
+8,49,Judea and Samaria District,02/05/2023,4.78,1,1251.32
+10,40,The Northern District,19/02/2022,2.37,1,619.12
+5,39,Jerusalem District,05/02/2021,4.90,1,1281.84
+10,30,The Northern District,14/08/2020,3.53,1,924.32
+7,21,The Haifa District,26/01/2021,0.47,2,108.2666667
+5,37,Jerusalem District,27/11/2021,1.15,1,300.84
+6,18,The Haifa District,26/06/2021,5.75,2,1334
+6,16,The Central District,13/12/2021,3.53,2,819.7333333
+9,25,The Central District,27/04/2021,0.78,2,181.7333333
+6,16,The Central District,08/10/2020,2.45,2,568.4
+9,58,Judea and Samaria District,10/01/2021,1.03,2,239.7333333
+3,9,The Haifa District,18/04/2021,6.95,2,1612.4
+6,16,The Central District,21/10/2020,5.13,2,1190.933333
+9,58,Judea and Samaria District,07/01/2023,6.63,2,1538.933333
+9,27,Jerusalem District,19/01/2021,1.65,2,382.8
+8,42,The Northern District,19/10/2021,5.73,1,1499.84
+8,48,The Northern District,11/01/2021,5.47,1,1430.08
+10,29,The Haifa District,19/11/2021,3.68,1,963.56
+6,16,The Central District,29/08/2022,7.22,2,1674.266667
+10,40,The Northern District,29/05/2022,4.03,1,1055.12
+7,46,The Haifa District,29/08/2022,2.62,2,607.0666667
+8,49,Judea and Samaria District,16/07/2022,2.10,1,549.36
+1,54,The Haifa District,27/06/2021,8.72,1,2280.28
+7,20,Jerusalem District,27/12/2021,10.35,2,2401.2
+1,3,The Haifa District,27/01/2021,9.15,1,2393.64
+1,2,The Northern District,04/08/2021,3.50,1,915.6
+10,40,The Northern District,18/06/2021,2.57,1,671.44
+1,54,The Haifa District,03/09/2021,1.28,1,335.72
+8,49,Judea and Samaria District,24/01/2023,3.87,1,1011.52
+2,4,The Haifa District,14/11/2021,2.93,1,767.36
+9,58,Judea and Samaria District,17/05/2023,2.08,2,483.3333333
+2,59,The Central District,14/10/2021,4.35,1,1137.96
+10,29,The Haifa District,19/05/2023,6.23,1,1630.64
+4,10,South District,23/11/2020,1.13,2,262.9333333
+10,28,The Haifa District,07/03/2021,5.48,1,1434.44
+5,35,The Northern District,29/03/2022,1.80,1,470.88
+7,20,Jerusalem District,29/03/2021,3.73,2,866.1333333
+1,54,The Haifa District,10/08/2020,1.92,1,501.4
+6,38,Tel-Aviv District,29/01/2023,4.93,2,1144.533333
+7,21,The Haifa District,27/11/2020,0.02,2,3.866666667
+2,45,The Haifa District,03/01/2023,2.70,1,706.32
+2,4,The Haifa District,10/03/2022,3.18,1,832.76
+6,18,The Haifa District,09/09/2022,3.85,2,893.2
+2,45,The Haifa District,16/01/2023,8.03,1,2101.52
+6,18,The Haifa District,16/09/2022,3.88,2,900.9333333
+8,34,Judea and Samaria District,02/10/2021,3.37,1,880.72
+3,9,The Haifa District,19/10/2021,3.22,2,746.2666667
+1,3,The Haifa District,28/12/2021,8.43,1,2206.16
+9,26,South District,18/03/2022,1.13,2,262.9333333
+7,19,The Central District,04/10/2021,9.22,2,2138.266667
+5,15,Jerusalem District,14/04/2021,2.30,1,601.68
+6,17,The Haifa District,16/07/2022,3.77,2,873.8666667
+3,9,The Haifa District,17/04/2021,4.22,2,978.2666667
+5,37,Jerusalem District,13/05/2023,8.23,1,2153.84
+7,20,Jerusalem District,01/12/2021,8.58,2,1991.333333
+1,56,Tel-Aviv District,30/09/2022,2.47,1,645.28
+1,2,The Northern District,24/06/2021,1.25,1,327
+7,36,Judea and Samaria District,15/11/2022,2.53,2,587.7333333
+4,10,South District,19/10/2021,0.17,2,38.66666667
+9,27,Jerusalem District,01/08/2022,3.95,2,916.4
+9,58,Judea and Samaria District,21/07/2022,10.35,2,2401.2
+1,2,The Northern District,09/10/2021,2.48,1,649.64
+9,25,The Central District,07/05/2023,2.97,2,688.2666667
+5,31,The Haifa District,28/07/2020,4.20,1,1098.72
+1,1,Judea and Samaria District,11/05/2021,4.37,1,1142.32
+7,20,Jerusalem District,07/10/2021,2.75,2,638
+3,47,The Haifa District,11/06/2021,6.88,2,1596.933333
+4,12,The Central District,26/04/2022,7.57,2,1755.466667
+2,45,The Haifa District,22/01/2023,9.33,1,2441.6
+9,27,Jerusalem District,29/06/2021,8.22,2,1906.266667
+9,44,The Haifa District,05/09/2021,5.73,2,1330.133333
+1,3,The Haifa District,11/06/2021,1.32,1,344.44
+9,58,Judea and Samaria District,21/01/2021,7.93,2,1840.533333
+10,30,The Northern District,04/11/2020,7.82,1,2044.84
+5,14,Tel-Aviv District,02/11/2020,2.10,1,549.36
+3,7,Jerusalem District,08/05/2023,7.62,2,1767.066667
+6,17,The Haifa District,04/05/2021,0.70,2,162.4
+7,20,Jerusalem District,17/01/2021,3.65,2,846.8
+7,21,The Haifa District,01/03/2021,1.25,2,290
+8,55,South District,17/09/2021,3.18,1,832.76
+1,56,Tel-Aviv District,14/09/2022,2.32,1,606.04
+8,49,Judea and Samaria District,02/07/2022,3.93,1,1028.96
+1,3,The Haifa District,07/05/2021,0.48,1,126.44
+9,26,South District,24/08/2022,2.63,2,610.9333333
+8,48,The Northern District,10/03/2021,3.23,1,845.84
+8,48,The Northern District,10/01/2023,4.62,1,1207.72
+3,47,The Haifa District,07/05/2023,3.43,2,796.5333333
+9,26,South District,16/07/2021,3.17,2,734.6666667
+8,24,Jerusalem District,25/02/2022,1.88,1,492.68
+3,60,Judea and Samaria District,16/12/2021,3.50,2,812
+7,36,Judea and Samaria District,27/03/2021,1.97,2,456.2666667
+8,51,Tel-Aviv District,26/01/2023,5.78,1,1512.92
+6,57,Judea and Samaria District,12/07/2021,3.58,2,831.3333333
+7,19,The Central District,29/01/2022,4.42,2,1024.666667
+1,1,Judea and Samaria District,10/02/2021,7.15,1,1870.44
+1,56,Tel-Aviv District,29/01/2023,1.95,1,510.12
+6,57,Judea and Samaria District,30/05/2022,5.08,2,1179.333333
+2,45,The Haifa District,11/01/2023,1.83,1,479.6
+3,60,Judea and Samaria District,08/04/2022,9.60,2,2227.2
+3,9,The Haifa District,25/04/2021,6.22,2,1442.266667
+8,51,Tel-Aviv District,08/04/2021,2.40,1,627.84
+10,30,The Northern District,16/04/2023,5.88,1,1539.08
+4,33,Jerusalem District,17/03/2023,5.87,2,1361.066667
+10,30,The Northern District,09/11/2020,1.23,1,322.64
+8,49,Judea and Samaria District,25/02/2023,2.27,1,592.96
+4,12,The Central District,07/05/2023,0.37,2,85.06666667
+10,40,The Northern District,01/07/2021,4.75,1,1242.6
+8,24,Jerusalem District,02/02/2021,5.13,1,1342.88
+5,13,The Haifa District,11/02/2022,0.83,1,218
+1,2,The Northern District,10/01/2023,4.05,1,1059.48
+5,13,The Haifa District,21/07/2022,1.00,1,261.6
+2,45,The Haifa District,29/01/2023,7.15,1,1870.44
+3,60,Judea and Samaria District,27/05/2022,1.90,2,440.8
+2,45,The Haifa District,14/01/2023,5.02,1,1312.36
+3,41,Tel-Aviv District,10/10/2022,7.12,2,1651.066667
+4,33,Jerusalem District,28/03/2023,1.17,2,270.6666667
+9,27,Jerusalem District,20/11/2022,2.52,2,583.8666667
+9,25,The Central District,26/04/2023,5.00,2,1160
+1,1,Judea and Samaria District,01/05/2021,2.18,1,571.16
+5,31,The Haifa District,29/05/2021,5.48,1,1434.44
+8,22,The Northern District,07/11/2022,3.35,1,876.36
+8,42,The Northern District,09/01/2021,1.50,1,392.4
+6,16,The Central District,28/06/2021,4.05,2,939.6
+1,2,The Northern District,11/12/2022,5.50,1,1438.8
+5,39,Jerusalem District,13/12/2021,4.77,1,1246.96
+7,36,Judea and Samaria District,25/03/2022,10.33,2,2397.333333
+6,57,Judea and Samaria District,27/01/2023,0.32,2,73.46666667
+10,40,The Northern District,19/09/2022,5.45,1,1425.72
+6,18,The Haifa District,05/01/2022,5.35,2,1241.2
+9,27,Jerusalem District,28/12/2021,0.67,2,154.6666667
+1,2,The Northern District,27/05/2021,5.05,1,1321.08
+5,37,Jerusalem District,07/05/2023,6.32,1,1652.44
+10,28,The Haifa District,21/12/2020,1.95,1,510.12
+3,9,The Haifa District,22/03/2022,2.07,2,479.4666667
+9,25,The Central District,05/12/2020,3.22,2,746.2666667
+8,48,The Northern District,23/12/2020,5.33,1,1395.2
+1,54,The Haifa District,17/08/2021,0.75,1,196.2
+5,14,Tel-Aviv District,07/11/2020,2.50,1,654
+9,25,The Central District,29/01/2023,10.63,2,2466.933333
+4,10,South District,07/11/2020,1.57,2,363.4666667
+3,41,Tel-Aviv District,07/11/2022,7.45,2,1728.4
+3,9,The Haifa District,27/10/2021,5.17,2,1198.666667
+6,16,The Central District,20/10/2020,6.70,2,1554.4
+1,1,Judea and Samaria District,23/01/2023,4.93,1,1290.56
+6,17,The Haifa District,08/12/2022,8.02,2,1859.866667
+10,29,The Haifa District,19/05/2021,9.47,1,2476.48
+1,1,Judea and Samaria District,21/01/2023,4.65,1,1216.44
+2,6,The Haifa District,24/02/2021,1.53,1,401.12
+3,60,Judea and Samaria District,02/06/2021,6.42,2,1488.666667
+10,29,The Haifa District,06/10/2022,5.55,1,1451.88
+8,49,Judea and Samaria District,03/05/2023,4.43,1,1159.76
+5,13,The Haifa District,18/07/2022,5.60,1,1464.96
+4,33,Jerusalem District,29/01/2023,3.05,2,707.6
+4,11,The Northern District,30/06/2022,4.70,2,1090.4
+10,28,The Haifa District,14/03/2021,2.98,1,780.44
+6,17,The Haifa District,27/05/2021,8.65,2,2006.8
+6,18,The Haifa District,10/05/2023,0.68,2,158.5333333
+2,4,The Haifa District,29/08/2022,2.70,1,706.32
+8,42,The Northern District,27/07/2021,7.87,1,2057.92
+10,28,The Haifa District,12/03/2021,1.90,1,497.04
+3,60,Judea and Samaria District,27/06/2021,5.87,2,1361.066667
+1,1,Judea and Samaria District,27/01/2023,2.20,1,575.52
+2,4,The Haifa District,10/12/2021,3.73,1,976.64
+6,18,The Haifa District,24/05/2021,4.93,2,1144.533333
+4,10,South District,25/06/2022,5.25,2,1218
+5,39,Jerusalem District,25/11/2020,0.15,1,39.24
+4,43,The Northern District,25/08/2020,3.87,2,897.0666667
+8,55,South District,16/02/2021,5.60,1,1464.96
+3,41,Tel-Aviv District,12/02/2022,5.93,2,1376.533333
+1,54,The Haifa District,11/05/2021,4.92,1,1286.2
+7,21,The Haifa District,24/10/2022,8.45,2,1960.4
+1,1,Judea and Samaria District,24/11/2021,7.87,1,2057.92
+9,26,South District,11/06/2021,1.45,2,336.4
+1,3,The Haifa District,30/10/2021,2.13,1,558.08
+9,53,The Central District,21/01/2022,8.08,2,1875.333333
+6,17,The Haifa District,12/06/2022,0.40,2,92.8
+9,44,The Haifa District,22/09/2021,2.67,2,618.6666667
+8,23,Jerusalem District,14/11/2021,3.55,1,928.68
+6,57,Judea and Samaria District,15/03/2023,4.80,2,1113.6
+7,21,The Haifa District,13/11/2020,1.97,2,456.2666667
+5,15,Jerusalem District,17/01/2021,1.58,1,414.2
+8,22,The Northern District,20/07/2021,4.53,1,1185.92
+10,29,The Haifa District,24/03/2023,0.85,1,222.36
+1,54,The Haifa District,01/08/2020,1.28,1,335.72
+9,53,The Central District,25/07/2021,4.85,2,1125.2
+3,7,Jerusalem District,02/05/2022,9.08,2,2107.333333
+5,14,Tel-Aviv District,05/10/2021,5.88,1,1539.08
+8,22,The Northern District,30/11/2021,0.47,1,122.08
+3,47,The Haifa District,02/01/2022,2.95,2,684.4
+4,11,The Northern District,14/07/2022,6.77,2,1569.866667
+6,17,The Haifa District,08/08/2022,1.25,2,290
+7,21,The Haifa District,07/06/2021,2.48,2,576.1333333
+2,59,The Central District,02/03/2022,2.90,1,758.64
+9,44,The Haifa District,06/09/2021,8.30,2,1925.6
+9,44,The Haifa District,13/08/2022,2.65,2,614.8
+7,20,Jerusalem District,28/11/2021,2.08,2,483.3333333
+10,28,The Haifa District,15/06/2021,1.48,1,388.04
+7,20,Jerusalem District,06/07/2021,6.52,2,1511.866667
+6,38,Tel-Aviv District,18/03/2021,4.08,2,947.3333333
+5,32,The Haifa District,28/08/2022,4.88,1,1277.48
+6,38,Tel-Aviv District,17/05/2023,4.57,2,1059.466667
+5,15,Jerusalem District,01/11/2020,4.58,1,1199
+5,37,Jerusalem District,23/01/2022,2.05,1,536.28
+2,45,The Haifa District,03/01/2023,6.90,1,1805.04
+3,8,The Central District,02/06/2022,1.05,2,243.6
+1,1,Judea and Samaria District,01/02/2021,5.88,1,1539.08
+6,18,The Haifa District,18/02/2022,7.98,2,1852.133333
+1,56,Tel-Aviv District,21/09/2022,9.85,1,2576.76
+3,41,Tel-Aviv District,04/11/2022,7.42,2,1720.666667
+1,1,Judea and Samaria District,14/07/2022,3.05,1,797.88
+2,59,The Central District,05/10/2021,6.22,1,1626.28
+3,8,The Central District,05/09/2021,5.55,2,1287.6
+5,39,Jerusalem District,06/02/2021,3.83,1,1002.8
+9,27,Jerusalem District,26/01/2023,7.12,2,1651.066667
+9,26,South District,09/07/2021,6.55,2,1519.6
+3,41,Tel-Aviv District,28/01/2022,0.88,2,204.9333333
+1,56,Tel-Aviv District,22/01/2023,7.42,1,1940.2
+1,1,Judea and Samaria District,10/07/2021,2.78,1,728.12
+4,33,Jerusalem District,23/02/2023,5.80,2,1345.6
+7,46,The Haifa District,11/08/2022,5.05,2,1171.6
+8,42,The Northern District,08/05/2020,2.08,1,545
+7,20,Jerusalem District,30/09/2021,1.38,2,320.9333333
+7,19,The Central District,03/04/2021,0.83,2,193.3333333
+4,43,The Northern District,05/11/2022,7.77,2,1801.866667
+4,33,Jerusalem District,26/03/2023,0.57,2,131.4666667
+9,27,Jerusalem District,20/01/2022,3.95,2,916.4
+8,24,Jerusalem District,21/01/2023,4.35,1,1137.96
+4,12,The Central District,12/07/2022,9.58,2,2223.333333
+1,1,Judea and Samaria District,19/09/2021,2.58,1,675.8
+8,51,Tel-Aviv District,09/04/2021,2.67,1,697.6
+6,17,The Haifa District,18/03/2021,1.63,2,378.9333333
+2,4,The Haifa District,10/06/2021,5.22,1,1364.68
+8,23,Jerusalem District,29/04/2021,2.88,1,754.28
+3,7,Jerusalem District,04/11/2022,9.10,2,2111.2
+7,20,Jerusalem District,16/03/2021,5.58,2,1295.333333
+8,48,The Northern District,09/03/2023,4.42,1,1155.4
+3,41,Tel-Aviv District,16/02/2022,3.68,2,854.5333333
+5,37,Jerusalem District,10/03/2022,7.53,1,1970.72
+4,52,The Central District,27/03/2022,6.02,2,1395.866667
+8,51,Tel-Aviv District,11/03/2023,1.23,1,322.64
+9,58,Judea and Samaria District,10/11/2021,1.07,2,247.4666667
+9,58,Judea and Samaria District,19/11/2020,6.65,2,1542.8
+1,3,The Haifa District,30/06/2021,1.38,1,361.88
+2,45,The Haifa District,21/01/2023,7.13,1,1866.08
+9,26,South District,06/01/2023,3.02,2,699.8666667
+10,28,The Haifa District,10/10/2021,3.67,1,959.2
+3,8,The Central District,05/11/2020,3.68,2,854.5333333
+10,30,The Northern District,02/06/2021,8.30,1,2171.28
+10,30,The Northern District,06/09/2020,4.25,1,1111.8
+4,52,The Central District,08/06/2022,4.93,2,1144.533333
+8,49,Judea and Samaria District,12/05/2023,0.08,1,21.8
+10,30,The Northern District,22/04/2021,0.80,1,209.28
+9,27,Jerusalem District,02/03/2021,4.32,2,1001.466667
+2,5,Jerusalem District,30/05/2021,3.93,1,1028.96
+1,3,The Haifa District,10/09/2021,1.42,1,370.6
+8,23,Jerusalem District,08/12/2022,2.27,1,592.96
+1,54,The Haifa District,17/08/2020,6.83,1,1787.6
+4,43,The Northern District,22/04/2021,2.23,2,518.1333333
+8,34,Judea and Samaria District,12/10/2021,2.73,1,715.04
+6,16,The Central District,06/10/2020,1.62,2,375.0666667
+8,23,Jerusalem District,28/04/2021,7.17,1,1874.8
+4,33,Jerusalem District,12/05/2023,6.18,2,1434.533333
+9,25,The Central District,20/01/2023,1.25,2,290
+6,38,Tel-Aviv District,06/09/2020,2.77,2,641.8666667
+3,47,The Haifa District,07/05/2022,0.97,2,224.2666667
+6,18,The Haifa District,15/08/2022,3.42,2,792.6666667
+6,17,The Haifa District,07/07/2021,1.72,2,398.2666667
+7,21,The Haifa District,05/11/2020,8.35,2,1937.2
+1,3,The Haifa District,14/01/2021,9.43,1,2467.76
+8,42,The Northern District,04/08/2020,3.67,1,959.2
+2,45,The Haifa District,13/05/2023,5.35,1,1399.56
+4,10,South District,08/02/2023,7.53,2,1747.733333
+4,11,The Northern District,29/05/2022,4.20,2,974.4
+10,30,The Northern District,06/08/2020,1.87,1,488.32
+7,46,The Haifa District,21/08/2022,5.47,2,1268.266667
+8,42,The Northern District,11/08/2021,1.60,1,418.56
+7,21,The Haifa District,05/11/2020,3.62,2,839.0666667
+5,31,The Haifa District,14/05/2023,0.25,1,65.4
+1,3,The Haifa District,11/10/2020,2.22,1,579.88
+6,38,Tel-Aviv District,27/11/2020,7.07,2,1639.466667
+9,58,Judea and Samaria District,22/07/2022,6.75,2,1566
+3,50,South District,14/05/2023,6.93,2,1608.533333
+8,55,South District,08/08/2021,7.20,1,1883.52
+2,6,The Haifa District,20/05/2022,5.15,1,1347.24
+10,30,The Northern District,15/11/2020,4.42,1,1155.4
+10,40,The Northern District,05/05/2021,7.03,1,1839.92
+6,17,The Haifa District,22/10/2022,5.85,2,1357.2
+7,19,The Central District,20/06/2022,1.62,2,375.0666667
+10,29,The Haifa District,28/06/2021,7.90,1,2066.64
+3,8,The Central District,17/10/2020,8.27,2,1917.866667
+9,53,The Central District,26/08/2022,5.17,2,1198.666667
+2,45,The Haifa District,28/01/2023,7.60,1,1988.16
+3,9,The Haifa District,18/04/2021,3.78,2,877.7333333
+4,52,The Central District,17/12/2022,3.65,2,846.8
+3,50,South District,03/02/2023,1.32,2,305.4666667
+3,9,The Haifa District,28/07/2021,0.57,2,131.4666667
+6,16,The Central District,20/10/2020,4.78,2,1109.733333
+10,29,The Haifa District,13/01/2021,3.48,1,911.24
+6,17,The Haifa District,12/04/2021,3.48,2,808.1333333
+7,21,The Haifa District,25/03/2023,3.23,2,750.1333333
+3,9,The Haifa District,04/01/2023,4.78,2,1109.733333
+6,17,The Haifa District,30/08/2022,2.37,2,549.0666667
+9,53,The Central District,05/05/2022,4.90,2,1136.8
+1,1,Judea and Samaria District,26/01/2023,3.53,1,924.32
+3,47,The Haifa District,02/05/2023,0.47,2,108.2666667
+8,49,Judea and Samaria District,29/12/2022,1.15,1,300.84
+2,45,The Haifa District,17/01/2023,5.75,1,1504.2
+1,2,The Northern District,20/05/2021,3.53,1,924.32
+8,24,Jerusalem District,15/05/2023,0.78,1,204.92
+9,44,The Haifa District,27/03/2023,2.45,2,568.4
+6,18,The Haifa District,10/05/2021,1.03,2,239.7333333
+10,30,The Northern District,23/01/2023,6.95,1,1818.12
+7,21,The Haifa District,25/11/2020,5.13,2,1190.933333
+6,38,Tel-Aviv District,07/11/2022,6.63,2,1538.933333
+7,20,Jerusalem District,28/04/2021,1.65,2,382.8
+2,45,The Haifa District,18/12/2022,5.73,1,1499.84
+9,44,The Haifa District,21/11/2022,5.47,2,1268.266667
+3,47,The Haifa District,08/01/2022,3.68,2,854.5333333
+3,60,Judea and Samaria District,13/04/2022,7.22,2,1674.266667
+9,27,Jerusalem District,27/01/2023,4.03,2,935.7333333
+3,47,The Haifa District,25/04/2023,2.62,2,607.0666667
+6,16,The Central District,14/08/2020,2.10,2,487.2
+6,16,The Central District,03/10/2020,8.72,2,2022.266667
+9,27,Jerusalem District,08/09/2021,10.35,2,2401.2
+10,29,The Haifa District,18/01/2023,9.15,1,2393.64
+8,42,The Northern District,09/08/2021,3.50,1,915.6
+5,35,The Northern District,24/06/2022,2.57,1,671.44
+1,2,The Northern District,18/05/2021,1.28,1,335.72
+1,2,The Northern District,15/05/2021,3.87,1,1011.52
+7,46,The Haifa District,03/05/2023,2.93,2,680.5333333
+8,49,Judea and Samaria District,01/05/2023,2.08,1,545
+3,41,Tel-Aviv District,16/09/2022,4.35,2,1009.2
+10,28,The Haifa District,26/03/2021,6.23,1,1630.64
+5,31,The Haifa District,06/07/2020,1.13,1,296.48
+9,25,The Central District,07/08/2022,5.48,2,1272.133333
+4,11,The Northern District,21/10/2021,1.80,2,417.6
+3,41,Tel-Aviv District,07/06/2022,3.73,2,866.1333333
+10,30,The Northern District,10/05/2023,1.92,1,501.4
+4,11,The Northern District,29/11/2020,4.93,2,1144.533333
+4,11,The Northern District,25/03/2022,0.02,2,3.866666667
+6,57,Judea and Samaria District,19/02/2023,2.70,2,626.4
+5,39,Jerusalem District,02/08/2021,3.18,1,832.76
+5,37,Jerusalem District,15/01/2022,3.85,1,1007.16
+10,29,The Haifa District,01/01/2021,8.03,1,2101.52
+3,8,The Central District,11/11/2020,3.88,2,900.9333333
+7,21,The Haifa District,03/05/2023,3.37,2,781.0666667
+8,23,Jerusalem District,18/06/2022,3.22,1,841.48
+9,25,The Central District,19/09/2021,8.43,2,1956.533333
+2,6,The Haifa District,21/02/2021,1.13,1,296.48
+8,51,Tel-Aviv District,08/06/2021,9.22,1,2411.08
+6,17,The Haifa District,12/08/2021,2.30,2,533.6
+8,42,The Northern District,05/06/2021,3.77,1,985.36
+4,12,The Central District,25/02/2023,4.22,2,978.2666667
+5,31,The Haifa District,27/02/2022,8.23,1,2153.84
+8,51,Tel-Aviv District,15/02/2022,8.58,1,2245.4
+2,45,The Haifa District,23/01/2023,2.47,1,645.28
+8,49,Judea and Samaria District,08/05/2023,1.25,1,327
+1,1,Judea and Samaria District,20/01/2023,2.53,1,662.72
+9,53,The Central District,10/07/2021,0.17,2,38.66666667
+2,45,The Haifa District,03/01/2023,3.95,1,1033.32
+4,43,The Northern District,18/02/2022,10.35,2,2401.2
+4,52,The Central District,14/06/2022,2.48,2,576.1333333
+2,59,The Central District,28/01/2023,2.97,1,776.08
+10,28,The Haifa District,24/02/2022,4.20,1,1098.72
+1,56,Tel-Aviv District,28/04/2023,4.37,1,1142.32
+8,24,Jerusalem District,30/01/2023,2.75,1,719.4
+4,10,South District,09/11/2020,6.88,2,1596.933333
+10,30,The Northern District,05/09/2021,7.57,1,1979.44
+10,30,The Northern District,24/05/2022,9.33,1,2441.6
+7,36,Judea and Samaria District,26/09/2022,8.22,2,1906.266667
+6,57,Judea and Samaria District,02/08/2020,5.73,2,1330.133333
+9,27,Jerusalem District,26/08/2021,1.32,2,305.4666667
+8,49,Judea and Samaria District,25/09/2022,7.93,1,2075.36
+3,8,The Central District,26/11/2020,7.82,2,1813.466667
+2,4,The Haifa District,24/08/2022,2.10,1,549.36
+3,47,The Haifa District,09/02/2022,7.62,2,1767.066667
+8,22,The Northern District,07/08/2022,0.70,1,183.12
+2,5,Jerusalem District,20/05/2021,3.65,1,954.84
+2,5,Jerusalem District,05/05/2021,1.25,1,327
+3,41,Tel-Aviv District,06/02/2022,3.18,2,738.5333333
+3,41,Tel-Aviv District,03/10/2022,2.32,2,537.4666667
+7,20,Jerusalem District,30/10/2021,3.93,2,912.5333333
+5,39,Jerusalem District,08/09/2021,0.48,1,126.44
+7,36,Judea and Samaria District,08/06/2022,2.63,2,610.9333333
+5,37,Jerusalem District,04/01/2022,3.23,1,845.84
+1,56,Tel-Aviv District,06/12/2022,4.62,1,1207.72
+10,40,The Northern District,19/04/2022,3.43,1,898.16
+5,35,The Northern District,13/04/2022,3.17,1,828.4
+7,36,Judea and Samaria District,06/04/2021,1.88,2,436.9333333
+10,29,The Haifa District,26/01/2021,3.50,1,915.6
+7,36,Judea and Samaria District,06/12/2022,1.97,2,456.2666667
+3,8,The Central District,11/01/2023,5.78,2,1341.733333
+3,8,The Central District,15/11/2020,3.58,2,831.3333333
+9,25,The Central District,02/05/2023,4.42,2,1024.666667
+8,51,Tel-Aviv District,21/04/2021,7.15,1,1870.44
+10,30,The Northern District,03/06/2022,1.95,1,510.12
+10,29,The Haifa District,27/01/2021,5.08,1,1329.8
+6,17,The Haifa District,24/06/2021,1.83,2,425.3333333
+4,52,The Central District,22/06/2022,9.60,2,2227.2
+10,29,The Haifa District,22/01/2021,6.22,1,1626.28
+9,25,The Central District,03/05/2023,2.40,2,556.8
+9,27,Jerusalem District,15/05/2023,5.88,2,1364.933333
+4,11,The Northern District,29/09/2021,5.87,2,1361.066667
+5,35,The Northern District,27/03/2022,1.23,1,322.64
+2,6,The Haifa District,23/03/2022,2.27,1,592.96
+5,15,Jerusalem District,19/10/2022,0.37,1,95.92
+8,42,The Northern District,10/11/2020,4.75,1,1242.6
+9,25,The Central District,21/08/2022,5.13,2,1190.933333
+10,28,The Haifa District,26/01/2023,0.83,1,218
+10,30,The Northern District,04/08/2021,4.05,1,1059.48
+5,15,Jerusalem District,22/02/2022,1.00,1,261.6
+8,42,The Northern District,15/03/2021,7.15,1,1870.44
+4,52,The Central District,06/07/2022,1.90,2,440.8
+7,46,The Haifa District,18/08/2022,5.02,2,1163.866667
+5,37,Jerusalem District,02/01/2022,7.12,1,1861.72
+10,30,The Northern District,09/12/2022,1.17,1,305.2
+2,5,Jerusalem District,14/11/2022,2.52,1,658.36
+8,24,Jerusalem District,03/09/2021,5.00,1,1308
+2,6,The Haifa District,21/02/2021,2.18,1,571.16
+6,57,Judea and Samaria District,11/11/2021,5.48,2,1272.133333
+3,50,South District,15/02/2023,3.35,2,777.2
+5,37,Jerusalem District,10/09/2022,1.50,1,392.4
+10,40,The Northern District,11/10/2022,4.05,1,1059.48
+4,11,The Northern District,30/11/2020,5.50,2,1276
+5,14,Tel-Aviv District,30/03/2022,4.77,1,1246.96
+10,29,The Haifa District,13/04/2023,10.33,1,2703.2
+8,23,Jerusalem District,10/11/2021,0.32,1,82.84
+8,23,Jerusalem District,18/04/2021,5.45,1,1425.72
+8,55,South District,21/08/2021,5.35,1,1399.56
+6,16,The Central District,03/02/2021,0.67,2,154.6666667
+8,34,Judea and Samaria District,10/07/2021,5.05,1,1321.08
+9,58,Judea and Samaria District,05/02/2023,6.32,2,1465.466667
+10,29,The Haifa District,29/01/2023,1.95,1,510.12
+3,60,Judea and Samaria District,20/06/2021,2.07,2,479.4666667
+3,9,The Haifa District,20/01/2023,3.22,2,746.2666667
+5,37,Jerusalem District,03/12/2022,5.33,1,1395.2
+8,34,Judea and Samaria District,07/07/2021,0.75,1,196.2
+8,51,Tel-Aviv District,02/04/2021,2.50,1,654
+5,14,Tel-Aviv District,11/10/2020,10.63,1,2781.68
+7,36,Judea and Samaria District,26/09/2022,1.57,2,363.4666667
+5,13,The Haifa District,08/03/2021,7.45,1,1948.92
+6,16,The Central District,29/01/2021,5.17,2,1198.666667
+6,17,The Haifa District,14/06/2022,6.70,2,1554.4
+8,23,Jerusalem District,21/04/2021,4.93,1,1290.56
+4,10,South District,01/11/2020,8.02,2,1859.866667
+7,20,Jerusalem District,11/07/2021,9.47,2,2196.266667
+7,20,Jerusalem District,25/07/2021,4.65,2,1078.8
+10,29,The Haifa District,23/01/2021,1.53,1,401.12
+10,29,The Haifa District,05/02/2021,6.42,1,1678.6
+1,54,The Haifa District,05/04/2021,5.55,1,1451.88
+8,24,Jerusalem District,12/12/2022,4.43,1,1159.76
+7,46,The Haifa District,06/04/2023,5.60,2,1299.2
+2,6,The Haifa District,05/09/2021,3.05,1,797.88
+5,39,Jerusalem District,18/05/2021,4.70,1,1229.52
+7,19,The Central District,04/12/2021,2.98,2,692.1333333
+2,5,Jerusalem District,17/01/2023,8.65,1,2262.84
+2,45,The Haifa District,12/10/2022,0.68,1,178.76
+1,3,The Haifa District,06/10/2021,2.70,1,706.32
+2,5,Jerusalem District,07/09/2021,7.87,1,2057.92
+8,34,Judea and Samaria District,10/07/2021,1.90,1,497.04
+10,28,The Haifa District,08/01/2023,5.87,1,1534.72
+5,13,The Haifa District,22/05/2021,2.20,1,575.52
+9,25,The Central District,08/12/2020,3.73,2,866.1333333
+9,25,The Central District,28/11/2021,4.93,2,1144.533333
+4,11,The Northern District,15/06/2022,5.25,2,1218
+1,2,The Northern District,01/02/2023,0.15,1,39.24
+7,21,The Haifa District,25/04/2023,3.87,2,897.0666667
+9,27,Jerusalem District,21/01/2023,5.60,2,1299.2
+3,9,The Haifa District,06/02/2021,5.93,2,1376.533333
+6,38,Tel-Aviv District,02/12/2021,4.92,2,1140.666667
+7,19,The Central District,15/12/2022,8.45,2,1960.4
+8,51,Tel-Aviv District,13/04/2021,7.87,1,2057.92
+9,25,The Central District,25/01/2023,1.45,2,336.4
+2,59,The Central District,29/10/2021,2.13,1,558.08
+3,7,Jerusalem District,19/05/2022,8.08,2,1875.333333
+10,30,The Northern District,24/02/2022,0.40,1,104.64
+10,29,The Haifa District,09/02/2022,2.67,1,697.6
+1,1,Judea and Samaria District,12/02/2021,3.55,1,928.68
+6,16,The Central District,15/10/2020,4.80,2,1113.6
+9,27,Jerusalem District,12/03/2022,1.97,2,456.2666667
+9,26,South District,06/06/2021,1.58,2,367.3333333
+4,33,Jerusalem District,08/03/2023,4.53,2,1051.733333
+8,42,The Northern District,27/10/2021,0.85,1,222.36
+3,47,The Haifa District,02/06/2021,1.28,2,297.7333333
+10,29,The Haifa District,23/02/2022,4.85,1,1268.76
+8,22,The Northern District,14/10/2022,9.08,1,2376.2
+2,5,Jerusalem District,27/01/2023,5.88,1,1539.08
+5,13,The Haifa District,30/09/2021,0.47,1,122.08
+8,48,The Northern District,21/01/2023,2.95,1,771.72
+4,12,The Central District,09/11/2020,6.77,2,1569.866667
+2,45,The Haifa District,23/01/2023,1.25,1,327
+1,2,The Northern District,18/12/2021,2.48,1,649.64
+3,50,South District,16/05/2023,2.90,2,672.8
+10,29,The Haifa District,12/03/2023,8.30,1,2171.28
+3,8,The Central District,16/03/2021,2.65,2,614.8
+10,28,The Haifa District,28/09/2021,2.08,1,545
+5,39,Jerusalem District,17/11/2021,1.48,1,388.04
+2,45,The Haifa District,23/01/2023,6.52,1,1704.76
+1,2,The Northern District,28/01/2023,4.08,1,1068.2
+7,21,The Haifa District,01/02/2021,4.88,2,1132.933333
+10,40,The Northern District,04/07/2022,4.57,1,1194.64
+4,11,The Northern District,29/08/2022,4.58,2,1063.333333
+2,5,Jerusalem District,06/01/2022,2.05,1,536.28
+5,32,The Haifa District,27/08/2022,6.90,1,1805.04
+7,20,Jerusalem District,26/01/2021,1.05,2,243.6
+6,18,The Haifa District,23/05/2021,5.88,2,1364.933333
+9,26,South District,04/05/2023,7.98,2,1852.133333
+3,7,Jerusalem District,18/10/2022,9.85,2,2285.2
+5,15,Jerusalem District,22/09/2021,7.42,1,1940.2
+7,19,The Central District,14/07/2022,3.05,2,707.6
+1,54,The Haifa District,12/01/2021,6.22,1,1626.28
+10,40,The Northern District,15/07/2021,5.55,1,1451.88
+4,11,The Northern District,11/09/2022,3.83,2,889.3333333
+6,38,Tel-Aviv District,01/11/2020,7.12,2,1651.066667
+3,41,Tel-Aviv District,22/02/2022,6.55,2,1519.6
+9,25,The Central District,05/12/2020,0.88,2,204.9333333
+4,43,The Northern District,10/08/2020,7.42,2,1720.666667
+4,12,The Central District,22/12/2022,2.78,2,645.7333333
+5,15,Jerusalem District,03/10/2021,5.80,1,1517.28
+5,37,Jerusalem District,10/04/2023,5.05,1,1321.08
+9,53,The Central District,21/07/2021,2.08,2,483.3333333
+1,3,The Haifa District,16/06/2021,1.38,1,361.88
+9,26,South District,23/08/2022,0.83,2,193.3333333
+7,19,The Central District,19/01/2021,7.77,2,1801.866667
+6,38,Tel-Aviv District,26/01/2023,0.57,2,131.4666667
+1,56,Tel-Aviv District,28/09/2022,3.95,1,1033.32
+3,9,The Haifa District,02/05/2023,4.35,2,1009.2
+10,30,The Northern District,01/04/2022,9.58,1,2507
+3,47,The Haifa District,09/06/2021,2.58,2,599.3333333
+6,17,The Haifa District,29/06/2022,2.67,2,618.6666667
+8,49,Judea and Samaria District,11/07/2022,1.63,1,427.28
+1,54,The Haifa District,09/11/2020,5.22,1,1364.68
+10,40,The Northern District,24/08/2022,2.88,1,754.28
+5,32,The Haifa District,29/10/2022,9.10,1,2380.56
+10,30,The Northern District,03/11/2022,5.58,1,1460.6
+6,57,Judea and Samaria District,23/03/2023,4.42,2,1024.666667
+7,21,The Haifa District,28/01/2023,3.68,2,854.5333333
+1,2,The Northern District,04/07/2021,7.53,1,1970.72
+3,50,South District,18/02/2023,6.02,2,1395.866667
+2,4,The Haifa District,16/03/2022,1.23,1,322.64
+7,19,The Central District,23/10/2021,1.07,2,247.4666667
+5,39,Jerusalem District,08/07/2021,6.65,1,1739.64
+10,40,The Northern District,09/10/2022,1.38,1,361.88
+4,52,The Central District,08/07/2022,7.13,2,1654.933333
+4,11,The Northern District,22/04/2021,3.02,2,699.8666667
+9,27,Jerusalem District,15/04/2021,3.67,2,850.6666667
+3,47,The Haifa District,17/08/2021,3.68,2,854.5333333
+10,40,The Northern District,23/07/2021,8.30,1,2171.28
+8,55,South District,22/03/2021,4.25,1,1111.8
+6,17,The Haifa District,03/07/2022,4.93,2,1144.533333
+10,28,The Haifa District,07/11/2021,0.08,1,21.8
+8,49,Judea and Samaria District,07/02/2023,0.80,1,209.28
+1,1,Judea and Samaria District,08/05/2023,4.32,1,1129.24
+2,59,The Central District,17/07/2022,3.93,1,1028.96
+4,12,The Central District,09/02/2023,1.42,2,328.6666667
+8,22,The Northern District,08/10/2020,2.27,1,592.96
+7,20,Jerusalem District,06/03/2021,6.83,2,1585.333333
+7,20,Jerusalem District,30/09/2021,2.23,2,518.1333333
+2,5,Jerusalem District,30/01/2023,2.73,1,715.04
+3,50,South District,18/02/2023,1.62,2,375.0666667
+3,8,The Central District,13/02/2023,7.17,2,1662.666667
+8,51,Tel-Aviv District,16/10/2022,6.18,1,1617.56
+2,45,The Haifa District,08/01/2023,1.25,1,327
+10,29,The Haifa District,07/05/2022,2.77,1,723.76
+4,10,South District,24/01/2023,0.97,2,224.2666667
+4,12,The Central District,14/05/2023,3.42,2,792.6666667
+2,6,The Haifa District,18/12/2022,1.72,1,449.08
+5,35,The Northern District,13/11/2022,8.35,1,2184.36
+8,34,Judea and Samaria District,14/11/2021,9.43,1,2467.76
+3,9,The Haifa District,11/08/2021,3.67,2,850.6666667
+6,17,The Haifa District,12/06/2022,5.35,2,1241.2
+1,1,Judea and Samaria District,14/02/2021,7.53,1,1970.72
+3,7,Jerusalem District,17/04/2022,4.20,2,974.4
+2,5,Jerusalem District,02/03/2022,1.87,1,488.32
+10,40,The Northern District,09/10/2021,5.47,1,1430.08
+2,45,The Haifa District,30/01/2023,1.60,1,418.56
+6,57,Judea and Samaria District,20/11/2021,3.62,2,839.0666667
+4,33,Jerusalem District,15/03/2023,0.25,2,58
+9,27,Jerusalem District,13/06/2022,2.22,2,514.2666667
+7,21,The Haifa District,07/03/2021,7.07,2,1639.466667
+3,47,The Haifa District,02/08/2022,6.75,2,1566
+3,41,Tel-Aviv District,01/02/2022,6.93,2,1608.533333
+1,2,The Northern District,24/05/2021,7.20,1,1883.52
+9,53,The Central District,19/10/2021,5.15,2,1194.8
+6,38,Tel-Aviv District,23/11/2020,4.42,2,1024.666667
+7,21,The Haifa District,11/12/2022,7.03,2,1631.733333
+6,18,The Haifa District,30/05/2021,5.85,2,1357.2
+6,57,Judea and Samaria District,16/07/2020,1.62,2,375.0666667
+7,20,Jerusalem District,26/03/2021,7.90,2,1832.8
+8,34,Judea and Samaria District,16/03/2021,8.27,1,2162.56
+8,22,The Northern District,15/02/2021,5.17,1,1351.6
+9,53,The Central District,10/11/2022,7.60,2,1763.2
+9,44,The Haifa District,02/05/2023,3.78,2,877.7333333
+2,5,Jerusalem District,04/07/2021,3.65,1,954.84
+2,5,Jerusalem District,30/05/2021,1.32,1,344.44
+3,8,The Central District,23/03/2022,0.57,2,131.4666667
+5,37,Jerusalem District,14/01/2022,4.78,1,1251.32
+3,41,Tel-Aviv District,12/02/2022,3.48,2,808.1333333
+1,1,Judea and Samaria District,21/08/2022,3.48,1,911.24
+9,44,The Haifa District,11/09/2021,3.23,2,750.1333333
+2,4,The Haifa District,05/03/2022,4.78,1,1251.32
+8,42,The Northern District,27/10/2021,2.37,1,619.12
+5,14,Tel-Aviv District,05/11/2021,4.90,1,1281.84
+5,15,Jerusalem District,30/12/2021,3.53,1,924.32
+5,32,The Haifa District,12/12/2022,0.47,1,122.08
+7,20,Jerusalem District,22/06/2021,1.15,2,266.8
+10,30,The Northern District,03/11/2020,5.75,1,1504.2
+5,39,Jerusalem District,24/07/2021,3.53,1,924.32
+1,56,Tel-Aviv District,10/09/2022,0.78,1,204.92
+8,55,South District,01/05/2021,2.45,1,640.92
+6,57,Judea and Samaria District,02/02/2023,1.03,2,239.7333333
+8,22,The Northern District,30/05/2022,6.95,1,1818.12
