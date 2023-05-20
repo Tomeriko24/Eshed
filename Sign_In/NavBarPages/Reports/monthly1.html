@@ -11,9 +11,8 @@
     <header>
     </header>
     <main>
-        <h1>Monthly Report</h1>
+        <h1>Monthly Report filter 1</h1>
         <p>This is some sample text for the home page.</p>
-        <p>click on SPACE BAR to move to the double page and "filter" there.</p>
         <div class="sidebar">
             <iframe src="../../../Components/sidebar.html"></iframe>
         </div>
@@ -27,21 +26,22 @@
 
         <div class="container">
             <div class="box">
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Start Date:</div>
-                        <input type="date" id="startDate" class="textbox">
-                    </div>
-                    <div class="column">
-                        <div class="title">End Date:</div>
-                        <input type="date" id="endDate" class="textbox">
-                    </div>
+              <div class="row">
+                <div class="column">
+                  <div class="title">Start Date:</div>
+                  <input type="date" id="startDate" class="textbox" value="2022-04-01">
                 </div>
-                <div class="row" style="justify-content: center">
-                    <button onclick="SnackAndReset2()">Produce Report</button>
+                <div class="column">
+                  <div class="title">End Date:</div>
+                  <input type="date" id="endDate" class="textbox" value="2023-04-01">
                 </div>
+              </div>
+              <div class="row" style="justify-content: center">
+                <button onclick="SnackAndReset2()">Produce Report</button>
+              </div>
             </div>
-        </div>
+          </div>
+          
         <div class="pagination"></div>
 
         <div>
@@ -66,7 +66,7 @@
         <script>
             // Global variables
             let currentPage = 1;
-            const rowsPerPage =60;
+            const rowsPerPage = 60;
             let tableData = [];
 
             function SnackAndReset2() {
@@ -85,7 +85,7 @@
 
             function populateTable() {
                 // Fetch the CSV file
-                fetch('./monthlyRepo.csv')
+                fetch('./monthlyRepoFil1.csv')
                     .then(response => response.text())
                     .then(data => {
                         // Split the data into rows
@@ -186,11 +186,6 @@
 
             // Call the function to populate the table
             populateTable();
-            document.addEventListener('keydown', function (event) {
-                if (event.code === 'Space') {
-                    window.location.href = 'monthly2.html'; // Replace 'monthly.html' with the desired page URL
-                }
-            });
         </script>
 
     </main>

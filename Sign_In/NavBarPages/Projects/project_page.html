@@ -55,12 +55,21 @@
             <th>Link to Project</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="table-body">
         </tbody>
       </table>
     </div>
 
+    <div id="pagination-container">
+      <button onclick="previousPage()" class="button">Previous</button>
+      <button onclick="nextPage()" class="button">Next</button>
+    </div>
+
     <script>
+      const itemsPerPage = 30;
+      let currentPage = 1;
+      let tableData = [];
+
       function populateTable() {
         // Fetch the CSV file
         fetch('Projects.csv')
@@ -70,10 +79,10 @@
             const rows = data.split('\n');
 
             // Get the table body element
-            const tableBody = document.querySelector('tbody');
+            const tableBody = document.getElementById('table-body');
 
             // Iterate over the rows
-            for (let i = 1; i < rows.length-1; i++) {
+            for (let i = 1; i < rows.length - 1; i++) {
               // Split the row into cells
               const cells = rows[i].split(',');
 
@@ -108,38 +117,42 @@
               // Append the row to the table body
               tableBody.appendChild(newRow);
             }
+
+            // Update tableData with the new data
+            tableData = Array.from(tableBody.querySelectorAll('tr'));
+
+            // Show the initial page
+            showPage(currentPage);
           })
           .catch(error => {
             console.error('Error:', error);
           });
       }
-      // Call the function to populate the table
-      populateTable();
 
-      function sortTable() {
-        // Get the table element
-        const table = document.querySelector('table');
-
-        // Get the table body element
-        const tableBody = table.querySelector('tbody');
-
-        // Get the rows to be sorted
-        const rows = Array.from(tableBody.querySelectorAll('tr'));
-
-        // Sort the rows based on the Project Name column
-        rows.sort((a, b) => {
-          const aName = a.querySelector('#project_name').textContent;
-          const bName = b.querySelector('#project_name').textContent;
-          return aName.localeCompare(bName);
+      function showPage(page) {
+        currentPage = page;
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = page * itemsPerPage;
+        tableData.forEach((row, index) => {
+          if (index >= startIndex && index < endIndex) {
+            row.style.display = 'table-row';
+          } else {
+            row.style.display = 'none';
+          }
         });
+      }
 
-        // Remove existing rows from the table
-        tableBody.innerHTML = '';
+      function previousPage() {
+        if (currentPage > 1) {
+          showPage(currentPage - 1);
+        }
+      }
 
-        // Append the sorted rows to the table
-        rows.forEach(row => {
-          tableBody.appendChild(row);
-        });
+      function nextPage() {
+        const totalPages = Math.ceil(tableData.length / itemsPerPage);
+        if (currentPage < totalPages) {
+          showPage(currentPage + 1);
+        }
       }
 
       function searchTable() {
@@ -147,7 +160,7 @@
         const searchValue = document.getElementById('search-input').value.trim().toLowerCase();
 
         // Get the table body element
-        const tableBody = document.querySelector('tbody');
+        const tableBody = document.getElementById('table-body');
 
         // Get all the rows in the table
         const rows = tableBody.querySelectorAll('tr');
@@ -174,8 +187,12 @@
             row.style.display = 'table-row';
           }
         });
+
+        // Reset to the first page after a search
+        showPage(1);
       }
 
+      document.addEventListener('DOMContentLoaded', populateTable);
     </script>
   </main>
   <footer>
