@@ -51,9 +51,9 @@
             <th>Status</th>
             <th>District</th>
             <th>Start date</th>
-            <th>End date</th>
-            <th>Duration(Month)</th>
-            <th>Customer poc</th>
+            <th>Duration-Months</th>
+          <th>End Date</th>
+            <th>Duration-Days</th>
             <th>Link to Project</th>
           </tr>
         </thead>
@@ -76,33 +76,46 @@ function populateTable() {
 
       // Iterate over the rows
       for (let i = 1; i < rows.length; i++) {
-        // Split the row into cells
-        const cells = rows[i].split(',');
-
-        // Check if the project status is "A"
-        const projectStatus = cells[3];
-        if (projectStatus === "P") {
-          // Create a new table row with a unique ID
-          const newRow = document.createElement('tr');
-          newRow.id = `row-${i}`;
-
-          // Iterate over the cells
-          for (let j = 0; j < 10; j++) {
-            // Create a new table cell
-            const newCell = document.createElement('td');
-
-            // Set the cell's text content to the cell value
-            newCell.textContent = cells[j];
-
-            // Append the cell to the row
-            newRow.appendChild(newCell);
-          }
-
-          // Append the row to the table body
-          tableBody.appendChild(newRow);
-        }
-      }
-    })
+              // Split the row into cells
+              const cells = rows[i].split(',');
+    
+              // Check if the project status is "A"
+              const projectStatus = cells[3];
+              if (projectStatus === "P") {
+                // Create a new table row with a unique ID
+                const newRow = document.createElement('tr');
+                newRow.id = `row-${i}`;
+    
+                // Iterate over the cells
+                for (let j = 0; j < 9; j++) {
+                  // Create a new table cell
+                  const newCell = document.createElement('td');
+    
+                  // Set the cell's text content to the cell value
+                  newCell.textContent = cells[j];
+    
+                  // Append the cell to the row
+                  newRow.appendChild(newCell);
+                }
+    
+                // Add button in the last cell of each row
+                const buttonCell = document.createElement('td');
+                const button = document.createElement('button');
+                button.textContent = 'View Project';
+                button.addEventListener('click', () => {
+                  const projectNumber = cells[0].trim(); // Get the project number from the first cell (index 0)
+                  const projectPageURL = `../all_projects/project${projectNumber}.html`;
+                  window.location.href = projectPageURL;
+                });
+                buttonCell.appendChild(button);
+                newRow.appendChild(buttonCell);
+    
+                // Append the row to the table body
+                tableBody.appendChild(newRow);
+              }
+            }
+          })
+    
     .catch(error => {
       console.error('Error:', error);
     });
