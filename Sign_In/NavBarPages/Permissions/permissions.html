@@ -5,63 +5,272 @@
   <meta charset="UTF-8">
   <title>My Home Page</title>
   <link rel="stylesheet" href="../stylehome.css">
+  <style>
+    /* Add custom CSS styles here */
+    .tables-container {
+      display: flex;
+    }
+  
+    #permissionTable:first-child {
+      margin-right: 20px;
+    }
+  
+    .submit-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    main,p,h2 {
+      margin: 0%;
+    }
+  
+    p {
+      margin-bottom: 0; /* Add this line to remove margin-bottom */
+    }
+  </style>
+
+
+
 </head>
 
 <body>
-  <header>
-  </header>
+  <header></header>
   <main>
     <h1>Permissions page</h1>
-    <p>On this page, you can control the users' permissions inside the system.<br>
-      In the drop-down menu, choose the group you would like to edit. <br>
-      Then select the specific users.
-    </p>
+    <p>On this page, you can control the users permissions inside the system.</p>
 
     <div class="sidebar">
       <iframe src="../../../Components/sidebar.html"></iframe>
     </div>
-
-    <h2>Choose Permissions Level</h2>
-
-    <div id="permissionContainer">
-      <select id="permission" name="permission" onchange="showTable()">
-        <option value="none" disabled selected hidden>Select Permission Level</option>
-        <option value="BasicLevel">Consultants</option>
-        <option value="HighLevel">Districts</option>
-      </select>
+    <div class="submit-button-container">
+      <button onclick="location.reload()" class="btnLink">Submit</button>
     </div>
-
-    <div id="permissionSubContainer" style="display: none;">
-      <select id="permissionSub" name="permissionSub" onchange="updateSelectedPermission()">
-        <option value="none" disabled selected hidden>Select User</option>
-        <option value="Adi Cohen">Adi Cohen</option>
-        <option value="David Levi">David Levi</option>
-        <option value="Eitan Ben-Shaul">Eitan Ben-Shaul</option>
-        <option value="Nati Goldberg">Nati Goldberg</option>
-        <option value="Yael Cohen">Yael Cohen</option>
-        <option value="Noam Cohen-Schneider">Noam Cohen-Schneider</option>
-        <option value="Talia Rosenbaum">Talia Rosenbaum</option>
-        <option value="Amit Cohen-Tal">Amit Cohen-Tal</option>
-        <option value="Roni Abramowitz">Roni Abramowitz</option>
-        <option value="Alon Levy-Sharoni">Alon Levy-Sharoni</option>
-      </select>
-    </div>
-
-    <div id="districtContainer" style="display: none;">
-      <select id="district" name="district">
-        <option value="none" disabled selected hidden>Select District</option>
-        <option value="District1">District 1</option>
-        <option value="District2">District 2</option>
-        <option value="District3">District 3</option>
-        <option value="District4">District 4</option>
-        <option value="District5">District 5</option>
-      </select>
-    </div>
-
-    <form id="toggleForm">
-      <table id="basicTable" style="display: none;">
+    <div class="tables-container">
+      <table id="permissionTable">
         <thead>
           <tr>
+            <th>Type</th>
+            <th>Person</th>
+            <th>Viewing</th>
+            <th>Editing</th>
+            <th>Creating</th>
+            <th>Deleting</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>Consultant</td>
+            <td>Adi Cohen</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle1">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle1">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle1">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle1">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>Consultant</td>
+            <td>David Levi</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle2">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle2">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle2">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle2">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>Consultant</td>
+            <td>Eitan Ben-Shaul</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle3">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle3">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle3">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle3">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>Consultant</td>
+            <td>Nati Goldberg
+            </td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle4">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle4">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle4">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle4">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>Consultant</td>
+            <td>Yael Cohen
+            </td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle5">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle5">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle5">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle5">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>Consultant</td>
+            <td>Noam Cohen-Schneider</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle6">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle6">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle6">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle6">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>Consultant</td>
+            <td>Talia Rosenbaum</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle7">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle7">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle7">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle7">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>Consultant</td>
+            <td>Amit Cohen-Tal</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle8">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle8">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle8">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle8">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>Consultant</td>
+            <td>Roni Abramowitz</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle9">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle9">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle9">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle9">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>Consultant</td>
+            <td>Alon Levy-Sharoni</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle10">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle10">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle10">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle10">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <table id="permissionTable">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Person</th>
             <th>Viewing</th>
             <th>Editing</th>
             <th>Creating</th>
@@ -70,63 +279,213 @@
         </thead>
         <tbody>
           <tr>
+            <td><b><span style="font-size: 20px;">Administration</span></b></td>
+            <td>Super Admin</td>
             <td><label class="switch">
-                <input type="checkbox" id="viewingToggleBasic">
+                <input type="checkbox" id="viewingToggle11">
                 <span class="slider round"></span>
               </label></td>
             <td><label class="switch">
-                <input type="checkbox" id="editingToggleBasic">
+                <input type="checkbox" id="editingToggle11">
                 <span class="slider round"></span>
               </label></td>
             <td><label class="switch">
-                <input type="checkbox" id="creatingToggleBasic">
+                <input type="checkbox" id="creatingToggle11">
                 <span class="slider round"></span>
               </label></td>
             <td><label class="switch">
-                <input type="checkbox" id="deletingToggleBasic">
+                <input type="checkbox" id="deletingToggle11">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td><b><span style="font-size: 20px;">Administration</span></b></td>
+            <td>Manager</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle12">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle12">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle12">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle12">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>District</td>
+            <td>The Haifa District
+            </td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle13">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle13">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle13">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle13">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>District</td>
+            <td>Jerusalem District</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle14">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle14">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle14">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle14">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>District</td>
+            <td>The Central District</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle15">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle15">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle15">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle15">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>District</td>
+            <td>The Northern District</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle16">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle16">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle16">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle16">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>District</td>
+            <td>Judea and Samaria District</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle17">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle17">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle17">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle17">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>District</td>
+            <td>The Southern District</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle18">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle18">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle18">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle18">
+                <span class="slider round"></span>
+              </label></td>
+          </tr>
+          <tr>
+            <td>District</td>
+            <td>Tel-Aviv District</td>
+            <td><label class="switch">
+                <input type="checkbox" id="viewingToggle19">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="editingToggle19">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="creatingToggle19">
+                <span class="slider round"></span>
+              </label></td>
+            <td><label class="switch">
+                <input type="checkbox" id="deletingToggle19">
                 <span class="slider round"></span>
               </label></td>
           </tr>
         </tbody>
       </table>
-      <table id="highTable" style="display: none;">
-        <thead>
-          <tr>
-            <th>Viewing</th>
-            <th>Editing</th>
-            <th>Creating</th>
-            <th>Deleting</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><label class="switch">
-                <input type="checkbox" id="viewingToggleHigh">
-                <span class="slider round"></span>
-              </label></td>
-            <td><label class="switch">
-                <input type="checkbox" id="editingToggleHigh">
-                <span class="slider round"></span>
-              </label></td>
-            <td><label class="switch">
-                <input type="checkbox" id="creatingToggleHigh">
-                <span class="slider round"></span>
-              </label></td>
-            <td><label class="switch">
-                <input type="checkbox" id="deletingToggleHigh">
-                <span class="slider round"></span>
-              </label></td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
+    </div>
+    <br>
   </main>
-  <footer>
-    <script src="../index.js"></script>
-    <div class="sign-out">
-      <button onclick="signOut()" class="button">Sign Out</button>
-    </div>
-  </footer>
 </body>
+<footer>
+  <script src="../index.js"></script>
+  <div class="sign-out">
+    <button onclick="signOut()" class="button">Sign Out</button>
+  </div>
+</footer>
+<script>
+  // Retrieve and apply the saved toggle state when the page loads
+  window.addEventListener('DOMContentLoaded', function () {
+    var toggles = document.querySelectorAll('input[type="checkbox"]');
+    toggles.forEach(function (toggle) {
+      var toggleId = toggle.getAttribute('id');
+      var savedState = localStorage.getItem(toggleId);
+      if (savedState) {
+        toggle.checked = savedState === 'true';
+      }
+      toggle.addEventListener('change', function () {
+        localStorage.setItem(toggleId, toggle.checked);
+      });
+    });
+  });
+</script>
 
 </html>
