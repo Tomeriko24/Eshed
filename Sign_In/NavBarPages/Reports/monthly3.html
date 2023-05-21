@@ -36,6 +36,7 @@
                 </div>
                 <div class="row" style="justify-content: center">
                     <button onclick="SnackAndReset2()">Produce Report</button>
+                    <button onclick="downloadTable()">Download CSV</button> <!-- New button for downloading the table -->
                 </div>
             </div>
         </div>
@@ -184,6 +185,16 @@
         
             // Call the function to populate the table
             populateTable();
+            function downloadTable() {
+                const csvContent = tableData.map(row => row.join(',')).join('\n');
+                const blob = new Blob([csvContent], { type: 'text/csv' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'table.csv';
+                link.click();
+                URL.revokeObjectURL(url);
+            }
         </script>
         
     </main>
