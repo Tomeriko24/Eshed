@@ -27,11 +27,11 @@
                 <div class="row">
                     <div class="column">
                         <div class="title">Start Date:</div>
-                        <input type="date" id="startDate" class="textbox" value="2020-01-01">
+                        <input type="date" id="startDate" class="textbox" value="2023-03-01">
                     </div>
                     <div class="column">
                       <div class="title">End Date:</div>
-                      <input type="date" id="endDate" class="textbox" value="2023-01-01">
+                      <input type="date" id="endDate" class="textbox" value="2023-06-01">
                         </div>
                 </div>
                 <div class="row" style="justify-content: center">
@@ -114,7 +114,7 @@
                 tableBody.innerHTML = '';
         
                 // Iterate over the rows for the current page
-                for (let i = startIndex; i < endIndex && i < tableData.length; i++) {
+                for (let i = startIndex; i < endIndex && i < tableData.length-1; i++) {
                     const cells = tableData[i];
         
                     // Create a new table row with a unique ID
@@ -138,7 +138,7 @@
                     const button = document.createElement('button');
                     button.textContent = 'View Project';
                     button.addEventListener('click', () => {
-                        const projectNumber = cells[0].trim(); // Get the project number from the first cell (index 0)
+                        const projectNumber = cells[1].trim(); // Get the project number from the first cell (index 0)
                         const projectPageURL = `../Projects/all_projects/project${projectNumber}.html`;
                         window.location.href = projectPageURL;
                     });
