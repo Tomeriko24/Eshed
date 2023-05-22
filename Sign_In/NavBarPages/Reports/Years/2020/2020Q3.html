@@ -4,46 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <title>My Home Page</title>
-    <link rel="stylesheet" href="../stylehome.css">
+    <link rel="stylesheet" href="../../../stylehome.css">
 </head>
 
 <body>
     <header>
     </header>
     <main>
-        <h1>Monthly Report filter 1</h1>
+        <h1>2020 Q3</h1>
         <p>This is some sample text for the home page.</p>
         <div class="sidebar">
-            <iframe src="../../../Components/sidebar.html"></iframe>
+            <iframe src="../../../../../Components/sidebar.html"></iframe>
         </div>
         <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-            <a href="monthly.html" class="btnLink" style="background-color: rgb(4, 142, 247);">Monthly Report</a>
+            <a href="../../MonthlyReport/monthly.html" class="btnLink" >Monthly Report</a>
             <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
-            <a href="quarterly.html" class="btnLink">Quarterly Report</a>
+            <a href="../../quarterly.html" class="btnLink" style="background-color: rgb(4, 142, 247);">Quarterly Report</a>
             <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
             <a href="projectsRepo.html" class="btnLink">Projects Reports</a>
         </div>
 
-        <div class="container">
+        <div class="container" style="display: flex; justify-content: center; align-items: center;">
             <div class="box">
-                <div class="row">
-                    <div class="column">
-                        <div class="title">Start Date:</div>
-                        <input type="date" id="startDate" class="textbox" value="2023-04-01">
-                    </div>
-                    <div class="column">
-                        <div class="title">End Date:</div>
-                        <input type="date" id="endDate" class="textbox" value="2023-04-30">
-                    </div>
+              <div class="row" style="display: flex; justify-content: center;">
+                <div class="column">
+                  <div class="title" style="text-align: center;">Choose year:</div>
+                  <div style="text-align: center;">
+                    <a href="./2020Q1.html" class="btnLink1" style="background-color: rgb(4, 142, 247);">2020</a>
+                    <a href="../2021/2021Q1.html" class="btnLink1">2021</a>
+                    <a href="../2022/2022Q1.html" class="btnLink1">2022</a>
+                    <a href="../2023/2023Q1.html" class="btnLink1">2023</a>
+                  </div>
+                  
+                  <br>
+                  <div class="title" style="text-align: center;">Choose A Quarter:</div>
+                  <div style="text-align: center;">
+                    <a href="./2020Q1.html" class="btnLink1" >Q1</a>
+                    <a href="./2020Q2.html" class="btnLink1">Q2</a>
+                    <a href="./2020Q3.html" class="btnLink1"style="background-color: rgb(4, 142, 247);">Q3</a>
+                    <a href="./2020Q4.html" class="btnLink1">Q4</a>
+                  </div>
                 </div>
-                <div class="row" style="justify-content: center">
-                    <button onclick="SnackAndReset2()">Produce Report</button>
-                    <button onclick="downloadTable()">Download CSV</button>
-                    <!-- New button for downloading the table -->
-                </div>
+              </div>
             </div>
-        </div>
-
+          </div>
         <div class="pagination"></div>
 
         <div>
@@ -60,16 +64,17 @@
                         <th>Link to Project</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
-
+                <tbody>
+                </tbody>
             </table>
         </div>
 
         <script>
             // Global variables
             let currentPage = 1;
-            const rowsPerPage = 300;
+            const rowsPerPage =60;
             let tableData = [];
+
             function SnackAndReset2() {
                 var x = document.getElementById("snackbar");
                 x.className = "show";
@@ -86,7 +91,7 @@
 
             function populateTable() {
                 // Fetch the CSV file
-                fetch('./monthlyRepoFil1.csv')
+                fetch('./monthlyRepo.csv')
                     .then(response => response.text())
                     .then(data => {
                         // Split the data into rows
@@ -116,7 +121,7 @@
                 tableBody.innerHTML = '';
 
                 // Iterate over the rows for the current page
-                for (let i = startIndex; i < endIndex && i < tableData.length - 1; i++) {
+                for (let i = startIndex; i < endIndex && i < tableData.length-1; i++) {
                     const cells = tableData[i];
 
                     // Create a new table row with a unique ID
@@ -151,38 +156,8 @@
                     tableBody.appendChild(newRow);
                 }
 
-                // Add row with sum of column 6
-                const sumRow = document.createElement('tr');
-                const sumCell = document.createElement('td');
-                sumCell.setAttribute('colspan', '8');
-                const totalSalary = calculateColumnSum(6);
-                sumCell.textContent = `Total Salary is: ${totalSalary.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0, useGrouping: true })}`; // Column index is 5 (0-based index)
-                sumCell.style.fontWeight = 'bold';
-                sumCell.style.fontSize = 'larger';
-                sumCell.style.textAlign = 'center';
-                sumRow.appendChild(sumCell);
-                // Insert the sumRow as the first row in tableBody
-                if (tableBody.firstChild) {
-                    tableBody.insertBefore(sumRow, tableBody.firstChild);
-                } else {
-                    tableBody.appendChild(sumRow);
-                }
-
                 // Update the pagination links
                 updatePagination();
-
-            }
-
-            function calculateColumnSum(columnIndex) {
-                let sum = 0;
-                for (let i = 0; i < tableData.length - 1; i++) {
-                    const row = tableData[i];
-                    const cellValue = parseFloat(row[columnIndex]);
-                    if (!isNaN(cellValue)) {
-                        sum += cellValue;
-                    }
-                }
-                return sum.toFixed(2);
             }
 
             function updatePagination() {
@@ -215,19 +190,13 @@
                 }
             }
 
-            function downloadTable() {
-                const csvContent = tableData.map(row => row.join(',')).join('\n');
-                const blob = new Blob([csvContent], { type: 'text/csv' });
-                const url = URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = 'table.csv';
-                link.click();
-                URL.revokeObjectURL(url);
-            }
-
             // Call the function to populate the table
             populateTable();
+            document.addEventListener('keydown', function (event) {
+                if (event.code === 'Space') {
+                    window.location.href = 'monthly2.html'; // Replace 'monthly.html' with the desired page URL
+                }
+            });
         </script>
 
     </main>
