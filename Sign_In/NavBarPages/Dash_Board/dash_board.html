@@ -6,104 +6,102 @@
   <title id="page-title">My Home Page</title>
   <link rel="stylesheet" href="../stylehome.css">
 
+
 </head>
 
 <body>
   <header>
   </header>
   <main>
-    <h1>home page!</h1>
+    <h1>HOME PAGE!</h1>
     <p>Welcome to The Transportation Administration system!<br>
       Here you can watch current work data:
-      שימי לב שיש בעיה באחד הברים
     </p>
     <div class="sidebar">
       <iframe src="../../../Components/sidebar.html"></iframe>
     </div>
-    <div>
+    <div class="chart-container" style="display: flex; justify-content: center;">
+      <div style="width: 50%; text-align: center;">
+
+        <h2>Projects By Status:</h2>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <canvas id="barChart"></canvas>
+        <script>
+          var xValues = ["Active Projects", "Ended This Year", "Ended Last Year"];
+          var yValues = [29, 6, 19];
+          var barColors = ["orange", "green", "gray"];
+
+          new Chart("barChart", {
+            type: "bar",
+            data: {
+              labels: xValues,
+              datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+              }]
+            },
+            options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: "Status:",
+                fontSize: 20
+
+              }
+            }
+          });
+        </script>
+      </div>
+
       <div class="chart-container" style="display: flex; justify-content: center;">
-        <div style="width: 50%; text-align: center;">
-
-          <h2>Projects By Status:</h2>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-          <canvas id="barChart"></canvas>
+        <div style="width: 50%;text-align: -webkit-center;">
+          <h2>Consultants</h2>
+          <div class="centered-text">
+          </div>
+          <canvas id="pieChart" style="width: 50%; max-width: 300px;"></canvas>
           <script>
-            var xValues = ["Active Projects", "Ended This Year", "Ended Last Year"];
-            var yValues = [29, 6, 19];
-            var barColors = ["orange", "green", "gray"];
+            var consultants = ["Adi Cohen", "David Levi", "Eitan Ben-Shaul", "Nati Goldberg", "Yael Cohen", "Noam Cohen-Schneider", "Talia Rosenbaum", "Amit Cohen-Tal", "Roni Abramowitz", "Alon Levy-Sharoni"];
+            var projects = [5, 7, 6, 8, 5, 5, 9, 6, 4];
+            var barColors = ["black", "green", "blue", "white", "orange", "red", "grey", "pink", "brown", "white"];
 
-            new Chart("barChart", {
-              type: "bar",
+            var pieChart = new Chart("pieChart", {
+              type: "pie",
               data: {
-                labels: xValues,
+                labels: consultants,
                 datasets: [{
                   backgroundColor: barColors,
-                  data: yValues
+                  data: projects
                 }]
               },
               options: {
                 legend: { display: false },
                 title: {
                   display: true,
-                  text: "Status:"
+                  text: "Amount of Projects Per Consultant:",
+                  fontSize: 20
+
                 }
               }
             });
+
+            var filterSelect = document.getElementById("filter-select");
+            filterSelect.addEventListener("change", function () {
+              var selectedValue = filterSelect.value;
+              if (selectedValue === "projects") {
+                pieChart.data.labels = consultants;
+                pieChart.data.datasets[0].data = projects;
+              } else if (selectedValue === "consultants") {
+                pieChart.data.labels = projects;
+                pieChart.data.datasets[0].data = consultants;
+              }
+
+              pieChart.update();
+            });
           </script>
         </div>
-
-        <div class="chart-container" style="display: flex; justify-content: center;">
-          <div style="width: 50%; text-align: center;">
-            <h2>Consultants</h2>
-            <div class="centered-text">
-              <!-- <label for="filter-select">Show:</label>
-              <select id="filter-select">
-                <option value="projects">on</option>
-                <option value="consultants">off</option>
-              </select> -->
-            </div>
-            <canvas id="pieChart" style="width: 50%; max-width: 300px;"></canvas>
-            <script>
-              var consultants = ["Adi Cohen", "David Levi", "Eitan Ben-Shaul", "Nati Goldberg", "Yael Cohen", "Noam Cohen-Schneider", "Talia Rosenbaum", "Amit Cohen-Tal", "Roni Abramowitz", "Alon Levy-Sharoni"];
-              var projects = [5, 7, 6, 8, 5, 5, 9, 6, 4];
-              var barColors = ["black", "green", "blue", "white", "orange", "red", "grey", "pink", "brown", "white"];
-
-              var pieChart = new Chart("pieChart", {
-                type: "pie",
-                data: {
-                  labels: consultants,
-                  datasets: [{
-                    backgroundColor: barColors,
-                    data: projects
-                  }]
-                },
-                options: {
-                  legend: { display: false },
-                  title: {
-                    display: true,
-                    text: "Amount of Projects Per Consultant:"
-                  }
-                }
-              });
-
-              var filterSelect = document.getElementById("filter-select");
-              filterSelect.addEventListener("change", function () {
-                var selectedValue = filterSelect.value;
-                if (selectedValue === "projects") {
-                  pieChart.data.labels = consultants;
-                  pieChart.data.datasets[0].data = projects;
-                } else if (selectedValue === "consultants") {
-                  pieChart.data.labels = projects;
-                  pieChart.data.datasets[0].data = consultants;
-                }
-
-                pieChart.update();
-              });
-            </script>
-          </div>
-        </div>
       </div>
-
+    </div>
+    <div>
       <div>
         <table>
           <thead>
@@ -179,52 +177,48 @@
         </table>
       </div>
 
-      <div class="chart-container" style="display: flex; justify-content: center;">
-        <div>
-          <h2 style="display: flex; justify-content: center; font-size: 30px;">Orders by Districts</h2>
-          <canvas id="horizontalBarChart" style="width: 800px; height: 400px;"></canvas>
-          <script>
-            var regions = ["Judea & Samira", "The Haife District", "Jerusalem District", "The Northern District", "The Central District", "The Southern District", "Tel-Aviv District"];
-            var orders = [7, 17, 10, 9, 8, 4, 5];
-            var barColors = ["blue", "green", "orange", "red", "black", "yellow", "white"];
-            new Chart("horizontalBarChart", {
-              type: "horizontalBar",
-              data: {
-                labels: regions,
-                datasets: [{
-                  backgroundColor: barColors,
-                  data: orders
-                }]
-              },
-              options: {
-                legend: { display: false },
-                scales: {
-                  x: {
-                    grid: { display: false },
-                    ticks: { beginAtZero: true }
-                  },
-                  y: {
-                    grid: { display: false }
-                  }
-                },
-                plugins: {
-                  title: {
-                    display: true,
-                    text: "Districts By Colour:",
-                    font: {
-                      size: 28
-                    }
-                  }
-                }
-              }
-            });
-          </script>
+
+
+
+      <div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <div style="text-align: center;">
+          <canvas id="myChart"></canvas>
         </div>
+      
+        <script>
+          var xValues = ["Judea & Samira", "The Haifa District", "Jerusalem District", "The Northen District", "The Central District", "The Southern District", "Tel-Aviv District"];
+          var yValues = [7, 17, 10, 9, 8, 4, 5];
+          var barColors = [
+            "#ff7f00",
+            "#ff4081",
+            "#00c853",
+            "#9c27b0",
+            "#f9d423",
+            "#1e3314"
+          ];
+      
+          new Chart("myChart", {
+            type: "doughnut",
+            data: {
+              labels: xValues,
+              datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: "Amount Of Projects By District:",
+                fontSize: 24
+              }
+            }
+          });
+        </script>
       </div>
       
       
-
-
   </main>
   <footer>
     <script src="../index.js"></script>

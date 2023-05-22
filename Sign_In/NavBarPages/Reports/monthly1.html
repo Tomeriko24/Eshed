@@ -68,9 +68,8 @@
         <script>
             // Global variables
             let currentPage = 1;
-            const rowsPerPage = 60;
+            const rowsPerPage = 300;
             let tableData = [];
-
             function SnackAndReset2() {
                 var x = document.getElementById("snackbar");
                 x.className = "show";
@@ -117,7 +116,7 @@
                 tableBody.innerHTML = '';
 
                 // Iterate over the rows for the current page
-                for (let i = startIndex; i < endIndex && i < tableData.length-1; i++) {
+                for (let i = startIndex; i < endIndex && i < tableData.length - 1; i++) {
                     const cells = tableData[i];
 
                     // Create a new table row with a unique ID
@@ -152,12 +151,39 @@
                     tableBody.appendChild(newRow);
                 }
 
+                // Add row with sum of column 6
+                const sumRow = document.createElement('tr');
+                const sumCell = document.createElement('td');
+                sumCell.setAttribute('colspan', '8');
+                const totalSalary = calculateColumnSum(6);
+                sumCell.textContent = `Total Salary is: ${totalSalary.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0, useGrouping: true })}`; // Column index is 5 (0-based index)
+                sumCell.style.fontWeight = 'bold';
+                sumCell.style.fontSize = 'larger';
+                sumCell.style.textAlign = 'center';
+                sumRow.appendChild(sumCell);
+                // Insert the sumRow as the first row in tableBody
+                if (tableBody.firstChild) {
+                    tableBody.insertBefore(sumRow, tableBody.firstChild);
+                } else {
+                    tableBody.appendChild(sumRow);
+                }
+
                 // Update the pagination links
                 updatePagination();
 
             }
 
-
+            function calculateColumnSum(columnIndex) {
+                let sum = 0;
+                for (let i = 0; i < tableData.length - 1; i++) {
+                    const row = tableData[i];
+                    const cellValue = parseFloat(row[columnIndex]);
+                    if (!isNaN(cellValue)) {
+                        sum += cellValue;
+                    }
+                }
+                return sum.toFixed(2);
+            }
 
             function updatePagination() {
                 // Get the total number of pages

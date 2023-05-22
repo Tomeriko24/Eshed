@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>My Home Page</title>
     <link rel="stylesheet" href="../stylehome.css">
 </head>
+
 <body>
     <header>
     </header>
@@ -21,7 +23,7 @@
             <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
             <a href="projectsRepo.html" class="btnLink">Projects Reports</a>
         </div>
-    
+
         <div class="container">
             <div class="box">
                 <div class="row">
@@ -30,13 +32,14 @@
                         <input type="date" id="startDate" class="textbox" value="2023-03-01">
                     </div>
                     <div class="column">
-                      <div class="title">End Date:</div>
-                      <input type="date" id="endDate" class="textbox" value="2023-06-01">
-                        </div>
+                        <div class="title">End Date:</div>
+                        <input type="date" id="endDate" class="textbox" value="2023-06-01">
+                    </div>
                 </div>
                 <div class="row" style="justify-content: center">
                     <button onclick="SnackAndReset2()">Produce Report</button>
-                    <button onclick="downloadTable()">Download CSV</button> <!-- New button for downloading the table -->
+                    <button onclick="downloadTable()">Download CSV</button>
+                    <!-- New button for downloading the table -->
                 </div>
             </div>
         </div>
@@ -60,28 +63,26 @@
                 </tbody>
             </table>
         </div>
-        
+
         <script>
             // Global variables
             let currentPage = 1;
-            const rowsPerPage = 60;
+            const rowsPerPage = 300;
             let tableData = [];
-        
             function SnackAndReset2() {
                 var x = document.getElementById("snackbar");
                 x.className = "show";
-                setTimeout(function () {
-                    x.className = x.className.replace("show", "");
-                }, 2000);
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+                setTimeout(function () { location.href = "./monthly1.html"; }, 3000);
             }
-        
+
             function signOut() {
                 // perform sign out operations here
                 alert('Signed out successfully!');
                 // location.href ="sign_in_page.html";
                 location.href = "../../../Sign_In/sign_in_page.html";
             }
-        
+
             function populateTable() {
                 // Fetch the CSV file
                 fetch('./monthlyRepoFil2.csv')
@@ -89,13 +90,13 @@
                     .then(data => {
                         // Split the data into rows
                         const rows = data.split('\n');
-        
+
                         // Get the table body element
                         const tableBody = document.querySelector('tbody');
-        
+
                         // Store the data in the tableData variable
                         tableData = rows.map(row => row.split(','));
-        
+
                         // Update the table
                         updateTable();
                     })
@@ -103,36 +104,36 @@
                         console.error('Error:', error);
                     });
             }
-        
+
             function updateTable() {
                 // Get the starting and ending indices of the rows for the current page
                 const startIndex = (currentPage - 1) * rowsPerPage;
                 const endIndex = startIndex + rowsPerPage;
-        
+
                 // Clear the table body
                 const tableBody = document.querySelector('tbody');
                 tableBody.innerHTML = '';
-        
+
                 // Iterate over the rows for the current page
-                for (let i = startIndex; i < endIndex && i < tableData.length-1; i++) {
+                for (let i = startIndex; i < endIndex && i < tableData.length - 1; i++) {
                     const cells = tableData[i];
-        
+
                     // Create a new table row with a unique ID
                     const newRow = document.createElement('tr');
                     newRow.id = `row-${i}`;
-        
+
                     // Iterate over the cells
                     for (let j = 0; j < 7; j++) {
                         // Create a new table cell
                         const newCell = document.createElement('td');
-        
+
                         // Set the cell's text content to the cell value
                         newCell.textContent = cells[j];
-        
+
                         // Append the cell to the row
                         newRow.appendChild(newCell);
                     }
-        
+
                     // Add button in the last cell of each row
                     const buttonCell = document.createElement('td');
                     const button = document.createElement('button');
@@ -144,25 +145,56 @@
                     });
                     buttonCell.appendChild(button);
                     newRow.appendChild(buttonCell);
-        
+
                     // Append the row to the table body
                     tableBody.appendChild(newRow);
                 }
-        
+
+                // Add row with sum of column 6
+                const sumRow = document.createElement('tr');
+                const sumCell = document.createElement('td');
+                sumCell.setAttribute('colspan', '8');
+                const totalSalary = calculateColumnSum(6);
+                sumCell.textContent = `Total Salary is: ${totalSalary.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0, useGrouping: true })}`; // Column index is 5 (0-based index)
+                sumCell.style.fontWeight = 'bold';
+                sumCell.style.fontSize = 'larger';
+                sumCell.style.textAlign = 'center';
+                sumRow.appendChild(sumCell);
+
+                // Insert the sumRow as the first row in tableBody
+                if (tableBody.firstChild) {
+                    tableBody.insertBefore(sumRow, tableBody.firstChild);
+                } else {
+                    tableBody.appendChild(sumRow);
+                }
+
                 // Update the pagination links
                 updatePagination();
+
             }
-        
+
+            function calculateColumnSum(columnIndex) {
+                let sum = 0;
+                for (let i = 0; i < tableData.length - 1; i++) {
+                    const row = tableData[i];
+                    const cellValue = parseFloat(row[columnIndex]);
+                    if (!isNaN(cellValue)) {
+                        sum += cellValue;
+                    }
+                }
+                return sum.toFixed(2);
+            }
+
             function updatePagination() {
                 // Get the total number of pages
                 const totalPages = Math.ceil(tableData.length / rowsPerPage);
-        
+
                 // Get the pagination container
                 const paginationContainer = document.querySelector('.pagination');
-        
+
                 // Clear the pagination container
                 paginationContainer.innerHTML = '';
-        
+
                 // Create the pagination links
                 for (let i = 1; i <= totalPages; i++) {
                     const link = document.createElement('a');
@@ -172,19 +204,17 @@
                         currentPage = i;
                         updateTable();
                     });
-        
+
                     // Add the active class to the current page
                     if (i === currentPage) {
                         link.classList.add('active');
                     }
-        
+
                     // Append the link to the pagination container
                     paginationContainer.appendChild(link);
                 }
             }
-        
-            // Call the function to populate the table
-            populateTable();
+
             function downloadTable() {
                 const csvContent = tableData.map(row => row.join(',')).join('\n');
                 const blob = new Blob([csvContent], { type: 'text/csv' });
@@ -195,8 +225,11 @@
                 link.click();
                 URL.revokeObjectURL(url);
             }
+
+            // Call the function to populate the table
+            populateTable();
         </script>
-        
+
     </main>
     <footer>
         <div class="sign-out">
@@ -210,97 +243,99 @@
         border-collapse: collapse;
         width: 100%;
     }
+
     th,
-td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-}
-
-.box {
-    width: 45%;
-    padding: 10px;
-    border: 10px solid #0000ff;
-    margin-bottom: 10px;
-}
-
-.row {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.column {
-    width: 50%;
-    padding: 5px;
-}
-
-.title {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.textbox {
-    width: 100%;
-    padding: 5px;
-}
-
-select {
-    width: 100%;
-    padding: 5px;
-}
-
-#snackbar {
-    visibility: hidden;
-    min-width: 250px;
-    margin-left: -125px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    bottom: 30px;
-    font-size: 17px;
-}
-
-#snackbar.show {
-    visibility: visible;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
+    td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
     }
 
-    to {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20vh;
+    }
+
+    .box {
+        width: 45%;
+        padding: 10px;
+        border: 10px solid #0000ff;
+        margin-bottom: 10px;
+    }
+
+    .row {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .column {
+        width: 50%;
+        padding: 5px;
+    }
+
+    .title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .textbox {
+        width: 100%;
+        padding: 5px;
+    }
+
+    select {
+        width: 100%;
+        padding: 5px;
+    }
+
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
         bottom: 30px;
-        opacity: 1;
-    }
-}
-
-@keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
+        font-size: 17px;
     }
 
-    to {
-        bottom: 0;
-        opacity: 0;
+    #snackbar.show {
+        visibility: visible;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
     }
-}
-.pagination {
+
+    @keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+
+    .pagination {
         display: flex;
         justify-content: center;
         margin-top: 10px;
@@ -324,8 +359,5 @@ select {
         color: white;
     }
 </style>
+
 </html>
-
-
-
-    
