@@ -137,7 +137,7 @@
                     button.textContent = 'View Project';
                     button.addEventListener('click', () => {
                         const projectNumber = cells[1].trim(); // Get the project number from the first cell (index 0)
-                        const projectPageURL = `../Projects/all_projects/project${projectNumber}.html`;
+                        const projectPageURL = `../../Projects/all_projects/project${projectNumber}.html`;
                         window.location.href = projectPageURL;
                     });
                     buttonCell.appendChild(button);

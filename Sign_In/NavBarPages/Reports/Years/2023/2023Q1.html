@@ -12,8 +12,8 @@
     </header>
     <main>
         <h1>2023 Q1</h1>
-        <p>The Months of this Quarter are:</p>
-        <p><b>January until March</b></p>        <div class="sidebar">
+        <p>The Months of this Quarter are:<b> January until March.</b></p>
+        <div class="sidebar">
             <iframe src="../../../../../Components/sidebar.html"></iframe>
         </div>
         <div style="display: flex; justify-content: center; margin-bottom: 20px;">
@@ -34,7 +34,8 @@
                             <a href="../2020/2020Q1.html" class="btnLink1">2020</a>
                             <a href="../2021/2021Q1.html" class="btnLink1">2021</a>
                             <a href="../2022/2022Q1.html" class="btnLink1">2022</a>
-                            <a href="../2023/2023Q1.html" class="btnLink1" style="background-color: rgb(4, 142, 247);">2023</a>
+                            <a href="../2023/2023Q1.html" class="btnLink1"
+                                style="background-color: rgb(4, 142, 247);">2023</a>
                         </div>
 
                         <br>
@@ -48,6 +49,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+
         </div>
         <div class="pagination"></div>
 
@@ -122,7 +125,7 @@
                 tableBody.innerHTML = '';
 
                 // Iterate over the rows for the current page
-                for (let i = startIndex; i < endIndex && i < tableData.length-1; i++) {
+                for (let i = startIndex; i < endIndex && i < tableData.length - 1; i++) {
                     const cells = tableData[i];
 
                     // Create a new table row with a unique ID
@@ -147,7 +150,7 @@
                     button.textContent = 'View Project';
                     button.addEventListener('click', () => {
                         const projectNumber = cells[1].trim(); // Get the project number from the first cell (index 0)
-                            const projectPageURL = `../../../Projects/all_projects/project${projectNumber}.html`;
+                        const projectPageURL = `../../../Projects/all_projects/project${projectNumber}.html`;
                         window.location.href = projectPageURL;
                     });
                     buttonCell.appendChild(button);
@@ -199,6 +202,7 @@
                 }
             });
         </script>
+
 
     </main>
     <footer>
