@@ -3,7 +3,7 @@ const navLinks = document.querySelectorAll('.sidenav a');
 
 const users = [
   { username: "Admin", password: "Adminpswd", redirectPage: "NavBarPages/dash_board/dash_board.html"},
-  { username: "user1", password: "user1pswd", redirectPage: "user1_page.html" },
+  { username: "Conso", password: "ConsoPswd", redirectPage: "NavBarPages copy/dash_board/dash_board.html" },
   { username: "user3", password: "password3", redirectPage: "user3_page.html" },
 ];
 
