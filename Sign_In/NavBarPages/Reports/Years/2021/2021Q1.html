@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>My Home Page</title>
     <link rel="stylesheet" href="../../../stylehome.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -50,6 +51,32 @@
                 </div>
             </div>
         </div>
+        <div class="chart-container">
+            <div class="container2">
+                <h2 style="display: flex; justify-content: center">Budget in Comparison to Actual Spent</h2>
+                <div>
+                    <canvas id="myChart1"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById("myChart1").getContext('2d');
+                    var myChart1 = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ["01/01/2021", "01/02/2021", "01/03/2021", "01/04/2021", "01/05/2021", "01/06/2021", "01/07/2021", "01/08/2021", "01/09/2021", "01/10/2021", "01/11/2021", "01/12/2021"],
+                            datasets: [{
+                                label: 'Budget',
+                                data: [25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000,],
+                                backgroundColor: "rgba(153,255,51,1)"
+                            }, {
+                                label: 'Actual Spent',
+                                data: [84367.71, 16382.01, 16885.67, 10669.01, 39801.31, 0, 0, 0, 0, 0, 0, 0],
+                                backgroundColor: "rgba(255,153,0,1)"
+                            }]
+                        }
+                    });  
+                </script>
+            </div>
+        </div>
         <div class="pagination"></div>
 
         <div>
@@ -74,7 +101,7 @@
         <script>
             // Global variables
             let currentPage = 1;
-            const rowsPerPage = 60;
+            const rowsPerPage = 15;
             let tableData = [];
 
             function SnackAndReset2() {
@@ -201,7 +228,36 @@
                 }
             });
         </script>
+<div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <div style="text-align: center;">
+        <canvas id="myChart"></canvas>
+    </div>
 
+    <script>
+        var xValues = ["Standard movement and safety procedures", "Transportation checks - pedestrians", "Transportation regulation", "Local railway", "Traffic and safety regulations - other", "Safety reviews", "Risk centers", "Editing and graphic design", "Project management", "Performance measurement", "Quality control Extra", "Funding and budgeting", "Management and training", "Quality control", "Risk management and assessment"];
+        var yValues = [3, 6, 3, 3, 4, 5, 0, 0, 3, 5, 5, 1, 2, 4, 2];
+        var barColors = ["#2c3e50", "#f1c40f", "#3498db", "#e74c8c", "#16a085", "#c0392b", "#2980b9", "#f39c12", "#27ae60", "#d35400", "#8e44ad", "#2ecc71", "#e67e22", "#1abc9c", "#9b59b6"];
+
+        new Chart("myChart", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Amount Of Projects By District:",
+                    fontSize: 24
+                }
+            }
+        });
+    </script>
+</div>
     </main>
     <footer>
         <div class="sign-out">
@@ -214,6 +270,22 @@
     table {
         border-collapse: collapse;
         width: 100%;
+    }
+
+    .chart-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container2 {
+        width: 50%;
+        text-align: center;
+    }
+
+    .container3 {
+        width: 50%;
+        text-align: -webkit-center;
     }
 
     th,
