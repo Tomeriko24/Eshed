@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title id="page-title">My Home Page</title>
+  <link rel="stylesheet" href="../stylehome.css">
+
+
+</head>
+
+<body>
+  <header>
+  </header>
+  <main>
+    <h1>HOME PAGE!</h1>
+    <p>Welcome to The Transportation Administration system!<br>
+      Here you can watch current work data:
+    </p>
+    <div class="sidebar">
+      <iframe src="../../../Components/sidebar.html"></iframe>
+    </div>
+    <div class="chart-container" style="display: flex; justify-content: center;">
+      <div style="width: 50%; text-align: center;">
+
+        <h2>Projects By Status:</h2>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <canvas id="barChart"></canvas>
+        <script>
+          var xValues = ["Active Projects", "Ended This Year", "Ended Last Year"];
+          var yValues = [29, 6, 19];
+          var barColors = ["orange", "green", "gray"];
+
+          new Chart("barChart", {
+            type: "bar",
+            data: {
+              labels: xValues,
+              datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+              }]
+            },
+            options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: "Status:",
+                fontSize: 20
+
+              }
+            }
+          });
+        </script>
+      </div>
+
+      <div class="chart-container" style="display: flex; justify-content: center;">
+        <div style="width: 50%;text-align: -webkit-center;">
+          <h2>Consultants</h2>
+          <div class="centered-text">
+          </div>
+          <canvas id="pieChart" style="width: 50%; max-width: 300px;"></canvas>
+          <script>
+            var consultants = ["Adi Cohen", "David Levi", "Eitan Ben-Shaul", "Nati Goldberg", "Yael Cohen", "Noam Cohen-Schneider", "Talia Rosenbaum", "Amit Cohen-Tal", "Roni Abramowitz", "Alon Levy-Sharoni"];
+            var projects = [5, 7, 6, 8, 5, 5, 9, 6, 4];
+            var barColors = ["black", "green", "blue", "white", "orange", "red", "grey", "pink", "brown", "white"];
+
+            var pieChart = new Chart("pieChart", {
+              type: "pie",
+              data: {
+                labels: consultants,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: projects
+                }]
+              },
+              options: {
+                legend: { display: false },
+                title: {
+                  display: true,
+                  text: "Amount of Projects Per Consultant:",
+                  fontSize: 20
+
+                }
+              }
+            });
+
+            var filterSelect = document.getElementById("filter-select");
+            filterSelect.addEventListener("change", function () {
+              var selectedValue = filterSelect.value;
+              if (selectedValue === "projects") {
+                pieChart.data.labels = consultants;
+                pieChart.data.datasets[0].data = projects;
+              } else if (selectedValue === "consultants") {
+                pieChart.data.labels = projects;
+                pieChart.data.datasets[0].data = consultants;
+              }
+
+              pieChart.update();
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Project Id</th>
+              <th>Consultant ID</th>
+              <th>Project Name</th>
+              <th>Status</th>
+              <th>District</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Duration (Months)</th>
+              <th>Customer POC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>31</td>
+              <td>5</td>
+              <td>The Trans-Alaska Pipeline System</td>
+              <td>Active</td>
+              <td>The Haifa District</td>
+              <td>17/01/2020</td>
+              <td><b>08/07/2023</b></td>
+              <td>12</td>
+              <td>Yotam Levi</td>
+            </tr>
+            <tr>
+              <td>44</td>
+              <td>9</td>
+              <td>The Northen Luzon Expressway</td>
+              <td>Active</td>
+              <td>The Haifa District</td>
+              <td>09/06/2021</td>
+              <td><b>16/07/2023</b></td>
+              <td>25</td>
+              <td>Yotam Levi</td>
+            </tr>
+            <tr>
+              <td>28</td>
+              <td>10</td>
+              <td>The Sydney Harbour Tunnel</td>
+              <td>Active</td>
+              <td>The Haifa District</td>
+              <td>07/12/2020</td>
+              <td><b>22/07/2023</b></td>
+              <td>31</td>
+              <td>Yotam Levi</td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td>9</td>
+              <td>The Jubilee Line Extension</td>
+              <td>Active</td>
+              <td>The Southern District</td>
+              <td>01/03/2021</td>
+              <td><b>20/08/2023</b></td>
+              <td>29</td>
+              <td>Yair Dahan</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>1</td>
+              <td>The North-South Commuter Railway</td>
+              <td>Active</td>
+              <td>The Northern District</td>
+              <td>25/02/2021</td>
+              <td><b>16/11/2023</b></td>
+              <td>32</td>
+              <td>Shira Cohen-David</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+      <div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <div style="text-align: center;">
+          <canvas id="myChart"></canvas>
+        </div>
+      
+        <script>
+          var xValues = ["Judea & Samira", "The Haifa District", "Jerusalem District", "The Northen District", "The Central District", "The Southern District", "Tel-Aviv District"];
+          var yValues = [7, 17, 10, 9, 8, 4, 5];
+          var barColors = [
+            "#ff7f00",
+            "#ff4081",
+            "#00c853",
+            "#9c27b0",
+            "#f9d423",
+            "#1e3314"
+          ];
+      
+          new Chart("myChart", {
+            type: "doughnut",
+            data: {
+              labels: xValues,
+              datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: "Amount Of Projects By District:",
+                fontSize: 24
+              }
+            }
+          });
+        </script>
+      </div>
+      
+      
+  </main>
+  <footer>
+    <script src="../index.js"></script>
+    <div class="sign-out">
+      <button onclick="signOut()" class="button">Sign Out</button>
+    </div>
+  </footer>
+</body>
+
+
+
+</html>
+
+<style>
+  .chart-container {
+    display: flex;
+  }
+
+  .chart-container>div {
+    width: 50%;
+  }
+
+  .centered-text {
+    display: flex;
+    justify-content: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+</style>

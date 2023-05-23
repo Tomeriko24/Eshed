@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Home Page</title>
+  <link rel="stylesheet" href="../../../stylehome.css">
+  <style>
+    img {
+
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(8, 0, 255, 0.3);
+    }
+
+    img.zoom {
+      padding: 30px;
+      background-color: rgb(135, 222, 244);
+      opacity: 0.8;
+      transition: transform 0.2s;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    img.zoom:hover {
+      -ms-transform: scale(2);
+      -webkit-transform: scale(2);
+      transform: scale(2);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+  </header>
+  <main>
+    <h1>David Levi</h1>
+    <div>
+      <p>Hey! My name is David Levi. I will be happy to join your project.</p>
+      <p><b>
+          little about me:
+        </b>
+        Results-driven project manager with a proven track record of delivering complex projects on time and within
+        budget. Skilled in risk management, stakeholder management, and change management, with a focus on driving
+        project
+        success.
+        <br>
+        Excellent problem-solving abilities, able to address challenges and obstacles to achieve project objectives.
+        <br>
+        Strong organizational and time management skills, able to prioritize tasks and manage resources effectively.
+        <br>
+        Passionate about delivering quality results and exceeding customer expectations.
+      </p>
+      <b><span style="font-size: larger;">My expertises</span></b>
+      <ul>
+        <li>Standard movement and safety procedures</li>
+        <li>Safety reviews</li>
+        <li>Transportation regulation</li>
+        <li>Quality control Extra</li>
+        <li>Risk management and assessment</li>
+      </ul>
+    </div>
+
+    <div class="sidebar">
+      <iframe src="../../../../../../Components/sidebar.html"></iframe>
+
+    </div>
+    <div>
+      <a href="../Projects/Active_Projects/A_P_2.html" class="btnLink">Active Projects</a>
+      <a href="../Projects/Past_Projects/P_P_2.html" class="btnLink">Past Projects</a>
+      <a href="../Projects/All_Projects/AL_P_2.html" class="btnLink">All Projects</a>
+    </div>
+
+    <div style="width: 90%; text-align:right; margin-top: -170px;">
+      <img src="../CleanPicsOfConso/const2.jpeg" class="zoom" alt="My Profile Photo: const2">
+    </div>
+  </main>
+
+  <footer>
+    <button class="button-1" role="button" onclick="history.back()">Back To Consultants List</button>
+  </footer>
+
+  <script src="../index.js"></script>
+</body>
+
+</html>

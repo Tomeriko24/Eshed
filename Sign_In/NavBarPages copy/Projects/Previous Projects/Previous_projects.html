@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Home Page</title>
+  <link rel="stylesheet" href="../../stylehome.css">
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <h1 id="main-heading">Previous Projects</h1>
+    <p>On this page, you can watch all the past projects that have been held through the Transportation
+      Administration System.
+      <br>If you want to watch a project's details, click on the <b><i>more</i></b> button.
+    </p>
+    <div class="sidebar">
+      <iframe src="../../../../Components/sidebar.html"></iframe>
+    </div>
+
+    <div class="centered-content">
+      <a href="../Active Projects/Active_Projects.html" class="button" target="_parent">Active Projects</a>
+      <a href="../Create New Project/stage1.html" class="button" target="_parent">Create New Project</a>
+      <a href="../Previous Projects/Previous_projects.html" class="button" target="_parent">Past Projects</a>
+      <a href="../project_page.html" class="button" target="_parent">All Projects</a>
+    </div>
+    <input type="text" id="search-input" placeholder="Search Project by Name" oninput="searchTable()">
+<br>
+    <label for="district-select"><b>Districts List:</b></label>
+    <select id="district-select" onchange="filterByDistrict()">
+      <option value="" style="display: none;">All Districts</option>
+      <option value="District 1">Jerusalem District</option>
+      <option value="District 2">Tel-Aviv District</option>
+      <option value="District 3">South District</option>
+      <option value="District 4">Judea and Samaria District</option>
+      <option value="District 5">The Central District </option>
+      <option value="District 6">The Haifa District</option>
+      <option value="District 7">The Northern District</option>
+      			
+      			
+    </select>
+
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Project Id</th>
+            <th>consultant ID</th>
+            <th>Project Name</th>
+            <th>Status</th>
+            <th>District</th>
+            <th>Start date</th>
+            <th>Duration-Months</th>
+          <th>End Date</th>
+            <th>Duration-Days</th>
+            <th>Link to Project</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+function populateTable() {
+  // Fetch the CSV file
+  fetch('../Projects.csv')
+    .then(response => response.text())
+    .then(data => {
+      // Split the data into rows
+      const rows = data.split('\n');
+
+      // Get the table body element
+      const tableBody = document.querySelector('tbody');
+
+      // Iterate over the rows
+      for (let i = 1; i < rows.length; i++) {
+              // Split the row into cells
+              const cells = rows[i].split(',');
+    
+              // Check if the project status is "A"
+              const projectStatus = cells[3];
+              if (projectStatus === "P") {
+                // Create a new table row with a unique ID
+                const newRow = document.createElement('tr');
+                newRow.id = `row-${i}`;
+    
+                // Iterate over the cells
+                for (let j = 0; j < 9; j++) {
+                  // Create a new table cell
+                  const newCell = document.createElement('td');
+    
+                  // Set the cell's text content to the cell value
+                  newCell.textContent = cells[j];
+    
+                  // Append the cell to the row
+                  newRow.appendChild(newCell);
+                }
+    
+                // Add button in the last cell of each row
+                const buttonCell = document.createElement('td');
+                const button = document.createElement('button');
+                button.textContent = 'View Project';
+                button.addEventListener('click', () => {
+                  const projectNumber = cells[0].trim(); // Get the project number from the first cell (index 0)
+                  const projectPageURL = `../all_projects/project${projectNumber}.html`;
+                  window.location.href = projectPageURL;
+                });
+                buttonCell.appendChild(button);
+                newRow.appendChild(buttonCell);
+    
+                // Append the row to the table body
+                tableBody.appendChild(newRow);
+              }
+            }
+          })
+    
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+      // Call the function to populate the table
+      populateTable();
+
+      function sortTable() {
+        // Get the table element
+        const table = document.querySelector('table');
+
+        // Get the table body element
+        const tableBody = table.querySelector('tbody');
+
+        // Get the rows to be sorted
+        const rows = Array.from(tableBody.querySelectorAll('tr'));
+
+        // Sort the rows based on the Project Name column
+        rows.sort((a, b) => {
+          const aName = a.querySelector('#project_name').textContent;
+          const bName = b.querySelector('#project_name').textContent;
+          return aName.localeCompare(bName);
+        });
+
+        // Remove existing rows from the table
+        tableBody.innerHTML = '';
+
+        // Append the sorted rows to the table
+        rows.forEach(row => {
+          tableBody.appendChild(row);
+        });
+      }
+
+      function searchTable() {
+  // Get the search input value
+  const searchValue = document.getElementById('search-input').value.trim().toLowerCase();
+
+  // Get the table body element
+  const tableBody = document.querySelector('tbody');
+
+  // Get all the rows in the table
+  const rows = tableBody.querySelectorAll('tr');
+
+  // Clear the previous search results
+  rows.forEach(row => {
+    row.style.display = 'none';
+  });
+
+  // Iterate over the rows and show matching rows based on the search value
+  rows.forEach(row => {
+    const cells = row.querySelectorAll('td');
+    let foundMatch = false;
+
+    // Check if any cell in the row contains the search value
+    cells.forEach(cell => {
+      if (cell.textContent.toLowerCase().includes(searchValue)) {
+        foundMatch = true;
+      }
+    });
+
+    // Show the row if a match is found
+    if (foundMatch) {
+      row.style.display = 'table-row';
+    }
+  });
+}
+
+    </script>
+  </main>
+  <footer>
+    <script src="../index.js"></script>
+    <div class="sign-out">
+      <button onclick="signOut()" class="button">Sign Out</button>
+    </div>
+  </footer>
+</body>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+</style>
+</html>

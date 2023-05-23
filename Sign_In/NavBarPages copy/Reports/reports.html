@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Home Page</title>
+  <link rel="stylesheet" href="../stylehome.css">
+</head>
+
+<body>
+  <header>
+  </header>
+  <main>
+    <h1>Reports page</h1>
+    <p>This is some sample text for the home page.</p><br>
+    <p>The filters are gonna be: 01/04/2023 until 01/05/2023<br>
+    the second one is: 01/03/2023 until TODAY(26.07.23)</p><br>
+    <div class="sidebar">
+      <iframe src="../../../Components/sidebar.html"></iframe>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <a href="./MonthlyReport/monthly.html" class="btnLink">Monthly Report</a>
+      <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
+      <a href="quarterly.html" class="btnLink">Quarterly Report</a>
+      <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
+      <a href="projectsRepo.html" class="btnLink">Projects Reports</a>
+  </div>
+
+    </main>
+  <footer>
+    <script src="../index.js"></script>
+    <div class="sign-out">
+      <button onclick="signOut()" class="button">Sign Out</button>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
