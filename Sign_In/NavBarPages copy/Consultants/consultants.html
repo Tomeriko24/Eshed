@@ -28,7 +28,6 @@
           <th>Email</th>
           <th>Phone Number</th>
           <th>Info</th>
-          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -48,7 +47,7 @@
             const tableBody = document.querySelector('tbody');
 
             // Iterate over the rows, limited to 10 rows
-            for (let i = 1; i < 11; i++) {
+            for (let i = 1; i < 2; i++) {
               // Split the row into cells
               const cells = rows[i].split(',');
 
@@ -83,8 +82,6 @@
               deleteButton.onclick = function () {
                 deleteRow(this);
               };
-              deleteCell.appendChild(deleteButton);
-              newRow.appendChild(deleteCell);
 
               // Append the row to the table body
               tableBody.appendChild(newRow);
