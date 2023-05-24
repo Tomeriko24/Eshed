@@ -12,9 +12,10 @@
   <header>
   </header>
   <main>
-    <h1>Project 2</h1>
+    <h1>Project 1</h1>
     <p>Here are all the projects that I have been working on since I joined!<br>
-      Feel free to contact me!</p>
+      Feel free to contact me!<br>
+    להוסיף שורה שלמה של מי אישר את הפרוייקט</p>
     <table id="projectsTable">
       <thead>
         <tr>
@@ -35,7 +36,8 @@
     </table>
     </div>
     <div class="sidebar">
-<iframe src="../../sidebar copy.html"></iframe>    </div>
+      <iframe src="../../sidebar copy.html"></iframe>
+    </div>
   </main>
 
   <script>
@@ -54,7 +56,7 @@
             const cells = row.split(',');
             const projectID = cells[1].trim(); // Get consultant_ID from the second cell (index 1)
 
-            if (projectID === '2') { // Adjust the consultant_ID condition here
+            if (projectID === '1') { // Adjust the consultant_ID condition here
               const newRow = table.insertRow();
 
               cells.forEach((cell, index) => {

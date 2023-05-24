@@ -12,10 +12,9 @@
   <header>
   </header>
   <main>
-    <h1>Project 1</h1>
+    <h1>Project 58</h1>
     <p>Here are all the projects that I have been working on since I joined!<br>
-      Feel free to contact me!<br>
-      להוסיף שורה שלמה של מי אישר את הפרוייקט</p>
+      Feel free to contact me!</p>
     <table id="projectsTable">
       <thead>
         <tr>
@@ -36,7 +35,7 @@
     </table>
     </div>
     <div class="sidebar">
-      <iframe src="../../sidebar copy.html"></iframe>
+<iframe src="../../sidebar copy.html"></iframe>
     </div>
   </main>
 
@@ -56,7 +55,7 @@
             const cells = row.split(',');
             const projectID = cells[1].trim(); // Get consultant_ID from the second cell (index 1)
 
-            if (projectID === '1') { // Adjust the consultant_ID condition here
+            if (projectID === '58') { // Adjust the consultant_ID condition here
               const newRow = table.insertRow();
 
               cells.forEach((cell, index) => {
@@ -98,36 +97,29 @@
   table {
     border-collapse: collapse;
     width: 100%;
-    table-layout: fixed;
-    /* Set table layout to fixed */
+    table-layout: fixed; /* Set table layout to fixed */
   }
 
-  th,
-  td {
+  th,td {
     border: 1px solid black;
     padding: 8px;
-    text-align: center;
-    /* Center align the cell content */
+    text-align: center; /* Center align the cell content */
   }
 
   th {
-    font-size: 20px;
-    /* Increase the font size of the table header */
+    font-size: 20px; /* Increase the font size of the table header */
   }
-
   tfoot td {
     font-weight: bold;
-    text-align: center;
-    /* Center align the cell content in the footer */
+    text-align: center; /* Center align the cell content in the footer */
   }
 
   #totalRow td {
-    font-size: 18px;
-    /* Increase the font size of the total row */
+    font-size: 18px; /* Increase the font size of the total row */
     font-weight: bold;
-    background-color: #f2f2f2;
-    /* Set a background color for the total row */
+    background-color: #f2f2f2; /* Set a background color for the total row */
   }
+
 </style>
 
 </html>

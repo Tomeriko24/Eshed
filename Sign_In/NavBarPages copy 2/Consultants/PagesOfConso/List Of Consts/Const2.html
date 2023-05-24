@@ -55,36 +55,107 @@
         <br>
         Passionate about delivering quality results and exceeding customer expectations.
       </p>
-      <b><span style="font-size: larger;">My expertises</span></b>
-      <ul>
-        <li>Standard movement and safety procedures</li>
-        <li>Safety reviews</li>
-        <li>Transportation regulation</li>
-        <li>Quality control Extra</li>
-        <li>Risk management and assessment</li>
-      </ul>
-    </div>
 
-    <div class="sidebar">
-      <iframe src="../../../../../../Components/sidebar.html"></iframe>
-
+      <div>
+        <b><span style="font-size: larger;">My expertises</span></b>
+        <ul>
+          <li>Standard movement and safety procedures</li>
+          <li>Safety reviews</li>
+          <li>Transportation regulation</li>
+          <li>Quality control Extra</li>
+          <li>Risk management and assessment</li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <a href="../Projects/Active_Projects/A_P_2.html" class="btnLink">Active Projects</a>
-      <a href="../Projects/Past_Projects/P_P_2.html" class="btnLink">Past Projects</a>
-      <a href="../Projects/All_Projects/AL_P_2.html" class="btnLink">All Projects</a>
-    </div>
-
-    <div style="width: 90%; text-align:right; margin-top: -170px;">
+    <div style="width: 90%; text-align:right; margin-top: -190px;">
       <img src="../CleanPicsOfConso/const2.jpeg" class="zoom" alt="My Profile Photo: const2">
     </div>
+
+    <div>   
+      <table id="projectsTable">
+     <thead>
+       <tr>
+         <th>Project Id</th>
+         <th>consultant ID</th>
+         <th>Project Name</th>
+         <th>Status</th>
+         <th>District</th>
+         <th>Start date</th>
+         <th>End date</th>
+         <th>Duration(Month)</th>
+         <th>Customer poc</th>
+         <th>Link to Project</th>
+       </tr>
+
+     </thead>
+     <tbody></tbody>
+   </table>
+   <script>
+     window.addEventListener('DOMContentLoaded', () => {
+       const districtName = document.querySelector('h1').textContent.trim();
+
+       fetch('projects.csv')
+         .then(response => response.text())
+         .then(data => {
+           const table = document.getElementById('projectsTable');
+           const rows = data.trim().split('\n').slice(1); // Exclude header row
+
+           rows.forEach(row => {
+             const cells = row.split(',');
+             const projectConsultantID = cells[1].trim(); // Get consultant_ID from the second cell (index 1)
+
+             if (projectConsultantID === '2') { // Adjust the consultant_ID condition here
+               const newRow = table.insertRow();
+
+               cells.forEach(cell => {
+                 if (cell.trim() !== '') {
+                   const newCell = newRow.insertCell();
+                   newCell.textContent = cell;
+                 }
+               });
+
+               // Add button in the last cell of each row
+               const buttonCell = newRow.insertCell(); const button = document.createElement('button');
+               button.textContent = 'View Project';
+               button.addEventListener('click', () => {
+                 const projectNumber = cells[0].trim(); // Get the project number from the first cell (index 0)
+                 const projectPageURL = `../../../Projects/all_projects/project${projectNumber}.html`;
+                 window.location.href = projectPageURL;
+               });
+               buttonCell.appendChild(button);
+             }
+           });
+         })
+         .catch(error => {
+           console.log('Error fetching projects data:', error);
+         });
+     });
+   </script></div>
+
+    <div class="sidebar">
+      <iframe src="../../../sidebar copy.html"></iframe>
+
+    </div>
+
   </main>
 
   <footer>
-    <button class="button-1" role="button" onclick="history.back()">Back To Consultants List</button>
+    <button onclick="signOut()" class="button">Sign Out</button>
   </footer>
 
-  <script src="../index.js"></script>
-</body>
+  <script src="../../../index.js"></script>
+  </body>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
 
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+</style>
 </html>
