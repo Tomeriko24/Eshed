@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Home Page</title>
+    <link rel="stylesheet" href="../../stylehome.css">
+</head>
+
+<body>
+    <main>
+        <div>
+            <h1 id="main-heading">Stage 2</h1>
+            <p id="sample-text">This is some sample text for the home page.</p>
+            <p id="lorem-ipsum">Lorem ipsum dolor</p>
+
+        </div>
+        <div class="sidebar">
+            <iframe src="../../../../Components/sidebar.html"></iframe>
+        </div>
+        <div>
+            <ul class="breadcrumb">
+                <li><a href="./stage1.html">Stage 1 </a></li>
+                <li>Stage 2</li>
+            </ul>
+        </div>
+
+
+        <div class="container">
+
+            <div class="box">
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="title">Is there a need in medical insurance?:</div>
+                        <select>
+                            <option value="none" disabled selected hidden>Choose Yes or No</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="title">Additional information:</div>
+                        <input type="text" class="textbox" placeholder="Write here">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="title">Did a protocol meeting occurred?</div>
+                        <select>
+                            <option value="none" disabled selected hidden>Choose Yes or No</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="title">Insert PDF File:</div>
+                        <input type="file" id="file-input">
+                        <button onclick="loadFile()">see File</button>
+                        <div id="file-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button onclick="SnackAndReset()">Submit Project</button>
+        </div>
+        <div id="snackbar">Project Submitted!</div>
+        <script>
+            function SnackAndReset1() {
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+                setTimeout(function () { location.href = "results.html"; }, 3000);
+                var expertiseDropdown = document.getElementById("expertise");
+      var selectedExpertise = expertiseDropdown.options[expertiseDropdown.selectedIndex].value;
+      
+    }
+                function RestValues() {
+                    var projectName = document.getElementById('projectName').value;
+                    var poc = document.getElementById('poc').value;
+                    var projectDescription = document.getElementById('projectDescription').value;
+                    var startDate = document.getElementById('startDate').value;
+                    var endDate = document.getElementById('endDate').value;
+                    var expertise = document.getElementById('expertise').value;
+                    var medicalInsurance = document.getElementById('medicalInsurance').value;
+                    var predictedHours = document.getElementById('predictedHours').value;
+                }
+                // Create an object to store the values
+                var values = {
+                    projectName: "",
+                    poc: "",
+                    projectDescription: "",
+                    startDate: "",
+                    endDate: "",
+                    expertise: "",
+                    medicalInsurance: "",
+                    predictedHours: ""
+                };
+
+            
+        </script>
+    </main>
+    <footer>
+        <script src="../../index.js"></script>
+        <div class="sign-out">
+            <button class="button-1" role="button" onclick="history.back()">Back To Stage 1</button>
+        </div>
+    
+    </footer>
+</body>
+<style>
+    ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+    }
+
+    ul.breadcrumb li {
+        display: inline;
+        font-size: 18px;
+    }
+
+    ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+    }
+
+    ul.breadcrumb li a {
+        color: #0275d8;
+        text-decoration: none;
+    }
+
+    ul.breadcrumb li a:hover {
+        color: #01447e;
+        text-decoration: underline;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .box {
+        width: 45%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .column {
+        width: 50%;
+        padding: 5px;
+    }
+
+    .title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .textbox {
+        width: 100%;
+        padding: 5px;
+    }
+
+    select {
+        width: 100%;
+        padding: 5px;
+    }
+
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+    }
+
+    #snackbar.show {
+        visibility: visible;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    @keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+</style>
+
+</html>

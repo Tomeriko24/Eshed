@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Home Page</title>
+  <link rel="stylesheet" href="../../stylehome.css">
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <h1 id="main-heading">Stage 1</h1>
+    <p id="sample-text">This is some sample text for the home page.</p>
+    <p id="lorem-ipsum">Lorem ipsum dolor</p>
+    <div class="sidebar">
+      <iframe src="../../../../Components/sidebar copy.html"></iframe>
+    </div>
+    <ul class="breadcrumb">
+      <li>Stage 1</li>
+      <li></li>
+    </ul>
+    <div class="container">
+      <div class="box">
+        <div class="row">
+          <div class="column">
+            <div class="title">Project Name:</div>
+            <input type="text" id="projectName" class="textbox" placeholder="Enter Project Name">
+          </div>
+          <div class="column">
+            <div class="title">POC:</div>
+            <input type="text" id="poc" class="textbox" placeholder="Enter Person Of Contact Info">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="title">Project Description:</div>
+            <input type="text" id="projectDescription" class="textbox" placeholder="Write Here The Project Description">
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="row">
+          <div class="column">
+            <div class="title">Start Date:</div>
+            <input type="date" id="startDate" class="textbox">
+          </div>
+          <div class="column">
+            <div class="title">End Date:</div>
+            <input type="date" id="endDate" class="textbox">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="title">Choose Expertise:</div>
+            <select id="expertise">
+              <option value="none" disabled selected hidden>Choose Consultant</option>
+              <option value="option1">Adi Cohen</option>
+              <option value="option2">David Levi</option>
+              <option value="option3">Eitan Ben-Shaul</option>
+              <option value="option4">Nati Goldberg</option>
+              <option value="option5">Yael Cohen</option>
+              <option value="option6">Noam Cohen-Schneider</option>
+              <option value="option7">Talia Rosenbaum</option>
+              <option value="option8">Amit Cohen-Tal</option>
+              <option value="option9">Roni Abramowitz</option>
+              <option value="option10">Alon Levy-Sharoni</option>
+            </select>
+          </div>
+          <div class="column">
+            <div class="title">Is there a need in medical insurance?:</div>
+            <select id="medicalInsurance">
+              <option value="none" disabled selected hidden>Choose Yes or No</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="title">Amount Of Hours Predicted:</div>
+            <input type="number" id="predictedHours" class="textbox" placeholder="Enter Amount Of Hours Predicted"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="./stage2.html" class="btnLink" onclick="saveValues()">Next Step</a>
+  </main>
+  <footer>
+    <script src="../../index.js"></script>
+    <div class="sign-out">
+      <button class="button-1" role="button" onclick="history.back()">Back To Projects List</button>
+    </div>
+
+  </footer>
+</body>
+<style>
+  ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+  }
+
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .box {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+
+  .row {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .column {
+    width: 50%;
+    padding: 5px;
+  }
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .textbox {
+    width: 100%;
+    padding: 5px;
+  }
+
+  select {
+    width: 100%;
+    padding: 5px;
+  }
+</style>
+
+</html>
