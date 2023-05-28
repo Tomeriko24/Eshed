@@ -15,9 +15,35 @@
     <h1>Project 53</h1>
     <p>Here are all the projects that I have been working on since I joined!<br>
       Feel free to contact me!</p>
-      <div class="submit-button-container">
-        <button onclick="location.reload()" class="btnLink">Submit</button>
-      </div>
+    <div class="submit-button-container">
+      <button onclick="location.reload()" class="btnLink" style="margin-right: 20px;">Submit</button>
+      <button onclick="askQuestions()" class="btnLink">Error</button>
+    </div>
+
+    <script>
+      function askQuestions() {
+        var workDate = prompt("What is the Work Date?");
+        var issue = prompt("What is the Issue");
+        var projectId = document.getElementById("h1").innerText;
+    
+        console.log("WorkDate: " + workDate);
+        console.log("Issue: " + issue);
+    
+        // Replace the email address, subject, and body with your desired values
+        var emailAddress = 'Support@Eshed.com';
+        var subject = 'Error Report: '+projectId;
+        var body ='The Work Date is: '+ workDate+ '\nThe Issue was: '+ issue +'\nThere was a problem on: '+projectId;
+    
+        // Construct the email link
+        var mailtoLink = 'mailto:' + encodeURIComponent(emailAddress) +
+                         '?subject=' + encodeURIComponent(subject) +
+                         '&body=' + encodeURIComponent(body);
+    
+        // Redirect to the email client
+        window.location.href = mailtoLink;
+      }
+    </script>
+
   
       <table id="projectsTable">
         <thead>
