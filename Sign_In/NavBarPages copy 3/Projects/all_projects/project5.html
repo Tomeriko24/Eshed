@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <title>My Home Page</title>
   <link rel="stylesheet" href="../../stylehome.css">
-
 </head>
 
 <body>
@@ -15,6 +14,10 @@
     <h1>Project 5</h1>
     <p>Here are all the projects that I have been working on since I joined!<br>
       Feel free to contact me!</p>
+    <div class="submit-button-container">
+      <button onclick="location.reload()" class="btnLink">Submit</button>
+    </div>
+
     <table id="projectsTable">
       <thead>
         <tr>
@@ -24,29 +27,32 @@
           <th>Start Hour</th>
           <th>End Hour</th>
           <th>Total Hours of Work</th>
+          <th>Approved?</th>
         </tr>
       </thead>
       <tbody></tbody>
       <tfoot>
         <tr id="totalRow">
-          <td colspan="6"></td>
+          <td colspan="7"></td>
         </tr>
       </tfoot>
     </table>
     </div>
     <div class="sidebar">
-<iframe src="../../sidebar copy.html"></iframe>
+      <iframe src="../../sidebar copy.html"></iframe>
     </div>
   </main>
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const districtName = document.querySelector('h1').textContent.trim();
+      const table = document.getElementById('projectsTable');
+
+      const checkboxState = {}; // Initialize an empty object to store checkbox states
 
       fetch('hours.csv')
         .then(response => response.text())
         .then(data => {
-          const table = document.getElementById('projectsTable');
           const rows = data.trim().split('\n').slice(1); // Exclude header row
 
           let totalHours = 0; // Variable to store the sum of total hours
@@ -70,6 +76,24 @@
                   }
                 }
               });
+
+              const lastCell = newRow.insertCell();
+              lastCell.style.textAlign = 'center';
+
+              const checkbox = document.createElement('input');
+              checkbox.type = 'checkbox';
+              checkbox.dataset.projectid = projectID; // Set data-projectid attribute
+
+              // Set checkbox state based on saved state
+              checkbox.checked = checkboxState[projectID] || false;
+
+              // Save checkbox state on change for the specific projectID
+              checkbox.addEventListener('change', () => {
+                checkboxState[projectID] = checkbox.checked;
+                saveCheckboxState();
+              });
+
+              lastCell.appendChild(checkbox);
             }
           });
 
@@ -77,49 +101,75 @@
           const totalRow = table.querySelector('#totalRow');
           const totalCell = totalRow.querySelector('td');
           totalCell.textContent = `Total Hours: ${totalHours}`;
+
+          // Retrieve the saved checkbox state from localStorage
+          const savedState = localStorage.getItem('checkboxState');
+          if (savedState) {
+            Object.assign(checkboxState, JSON.parse(savedState));
+          }
+
+          // Update checkbox states based on saved state
+          updateCheckboxStates();
+
+          function updateCheckboxStates() {
+            const checkboxes = table.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+              const projectID = checkbox.dataset.projectid;
+              checkbox.checked = checkboxState[projectID] || false;
+            });
+          }
+
+          function saveCheckboxState() {
+            localStorage.setItem('checkboxState', JSON.stringify(checkboxState));
+          }
         })
         .catch(error => {
           console.log('Error fetching projects data:', error);
         });
     });
   </script>
-  </main>
+
   <footer>
     <script src="../index.js"></script>
     <div class="sign-out">
       <button class="button-1" role="button" onclick="history.back()">Back To Projects List </button>
     </div>
-
   </footer>
-
 </body>
 <style>
   table {
     border-collapse: collapse;
     width: 100%;
-    table-layout: fixed; /* Set table layout to fixed */
+    table-layout: fixed;
   }
 
-  th,td {
+  th,
+  td {
     border: 1px solid black;
     padding: 8px;
-    text-align: center; /* Center align the cell content */
+    text-align: center;
   }
 
   th {
-    font-size: 20px; /* Increase the font size of the table header */
+    font-size: 20px;
   }
+
   tfoot td {
     font-weight: bold;
-    text-align: center; /* Center align the cell content in the footer */
+    text-align: center;
   }
 
   #totalRow td {
-    font-size: 18px; /* Increase the font size of the total row */
+    font-size: 18px;
     font-weight: bold;
-    background-color: #f2f2f2; /* Set a background color for the total row */
+    background-color: #f2f2f2;
   }
 
+  .submit-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
 
 </html>
