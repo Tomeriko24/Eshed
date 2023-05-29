@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>My Home Page</title>
     <link rel="stylesheet" href="../../../stylehome.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -12,197 +13,290 @@
     </header>
     <main>
         <h1>2020 Q2</h1>
-        <p>The Months of this Quarter are:<b> April until June.</b></p>
+        <p>The Months of this Quarter are:<b> April - May - June.</b></p>
         <div class="sidebar">
-            <div class="sidebar">
-                <iframe src="../../../../../Components/sidebar.html"></iframe>
-            </div>
-            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-                <a href="../../MonthlyReport/monthly.html" class="btnLink">Monthly Report</a>
-                <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
-                <a href="../../quarterly.html" class="btnLink" style="background-color: rgb(4, 142, 247);">Quarterly
-                    Report</a>
-                <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
-                <a href="projectsRepo.html" class="btnLink">Projects Reports</a>
-            </div>
+            <iframe src="../../../../../Components/sidebar.html"></iframe>
+        </div>
+        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <a href="../../MonthlyReport/monthly.html" class="btnLink">Monthly Report</a>
+            <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
+            <a href="../../quarterly.html" class="btnLink" style="background-color: rgb(4, 142, 247);">Quarterly
+                Report</a>
+            <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
+            <a href="projectsRepo.html" class="btnLink">Projects Reports</a>
+        </div>
 
-            <div class="container" style="display: flex; justify-content: center; align-items: center;">
-                <div class="box">
-                    <div class="row" style="display: flex; justify-content: center;">
-                        <div class="column">
-                            <div class="title" style="text-align: center;">Choose year:</div>
-                            <div style="text-align: center;">
-                                <a href="./2020Q1.html" class="btnLink1"
-                                    style="background-color: rgb(4, 142, 247);">2020</a>
-                                <a href="../2021/2021Q1.html" class="btnLink1">2021</a>
-                                <a href="../2022/2022Q1.html" class="btnLink1">2022</a>
-                                <a href="../2023/2023Q1.html" class="btnLink1">2023</a>
-                            </div>
+        <div class="container" style="display: flex; justify-content: center; align-items: center;">
+            <div class="box">
+                <div class="row" style="display: flex; justify-content: center;">
+                    <div class="column">
+                        <div class="title" style="text-align: center;">Choose year:</div>
+                        <div style="text-align: center;">
+                            <a href="./2020Q1.html" class="btnLink1"
+                                style="background-color: rgb(4, 142, 247);">2020</a>
+                            <a href="../2021/2021Q1.html" class="btnLink1">2021</a>
+                            <a href="../2022/2022Q1.html" class="btnLink1">2022</a>
+                            <a href="../2023/2023Q1.html" class="btnLink1">2023</a>
+                        </div>
 
-                            <br>
-                            <div class="title" style="text-align: center;">Choose A Quarter:</div>
-                            <div style="text-align: center;">
-                                <a href="./2020Q1.html" class="btnLink1">Q1</a>
-                                <a href="./2020Q2.html" class="btnLink1"
-                                    style="background-color: rgb(4, 142, 247);">Q2</a>
-                                <a href="./2020Q3.html" class="btnLink1">Q3</a>
-                                <a href="./2020Q4.html" class="btnLink1">Q4</a>
-                            </div>
+                        <br>
+                        <div class="title" style="text-align: center;">Choose A Quarter:</div>
+                        <div style="text-align: center;">
+                            <a href="./2020Q1.html" class="btnLink1">Q1</a>
+                            <a href="./2020Q2.html" class="btnLink1" style="background-color: rgb(4, 142, 247);">Q2</a>
+                            <a href="./2020Q3.html" class="btnLink1">Q3</a>
+                            <a href="./2020Q4.html" class="btnLink1">Q4</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="pagination"></div>
-
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Consultant ID</th>
-                            <th>Project ID</th>
-                            <th>Being Approved By</th>
-                            <th>Work Date</th>
-                            <th>Total Hours</th>
-                            <th>Consultant Type</th>
-                            <th>Salary</th>
-                            <th>Link to Project</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+        </div>
+        <div>
+            <div class="chart-container" style="display: flex; justify-content: center">
+            <div style="width: 80%;text-align: -webkit-center;">
+            <div class="container2">
+                <h2>Budget in Comparison to Actual Spent: 2020</h2>
+                <div>
+                    <canvas id="myChart1" width="50%"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById("myChart1").getContext('2d');
+                    var myChart1 = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ["JAN-2020", "FEB-2020", "MAR-2020", "APR-2020", "MAY-2020", "JUN-2020", "JUL-2020", "AUG-2020", "SEP-2020", "OCT-2020", "NOV-2020", "DEC-2020"],
+                            datasets: [{
+                                label: 'Budget',
+                                data: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000],
+                                backgroundColor: "rgba(153,255,51,1)"
+                            }, {
+                                label: 'Actual Spent',
+                                data: [0, 0, 0, 1626.28, 545.000000000001, 0, 0, 0, 0, 0, 0, 0],
+                                backgroundColor: "rgba(255,153,0,1)"
+                            }]
+                        }
+                    });  
+                </script>
             </div>
-
-            <script>
-                // Global variables
-                let currentPage = 1;
-                const rowsPerPage = 60;
-                let tableData = [];
-
-                function SnackAndReset2() {
-                    var x = document.getElementById("snackbar");
-                    x.className = "show";
-                    setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
-                    setTimeout(function () { location.href = "./monthly1.html"; }, 3000);
-                }
-
-                function signOut() {
-                    // perform sign out operations here
-                    alert('Signed out successfully!');
-                    // location.href ="sign_in_page.html";
-                    location.href = "../../../Sign_In/sign_in_page.html";
-                }
-
-                function populateTable() {
-                    // Fetch the CSV file
-                    fetch('2020_Q2.csv')
-                        .then(response => response.text())
-                        .then(data => {
-                            // Split the data into rows
-                            const rows = data.split('\n');
-
-                            // Get the table body element
-                            const tableBody = document.querySelector('tbody');
-
-                            // Store the data in the tableData variable
-                            tableData = rows.map(row => row.split(','));
-
-                            // Update the table
-                            updateTable();
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
+            </div>
+            </div>
+        </div>
+        <div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+                <div class="chart-container">
+                    <div class="container2">
+                        <h2 style="display: flex; justify-content: center">Amount of Projects by Expertises:</h2>
+                        <div style="text-align: center;">
+                            <canvas id="myChart" width="50%"></canvas>
+                        </div>
+                    
+                    <script>
+                
+                        var xValues = ["Standard movement and safety procedures", "Performance measurement", "Quality control", "Transportation checks - pedestrians", "Transportation regulation", "Local railway", "Risk centers", "Project management", "Quality control Extra", "Management and training", "Traffic and safety regulations - other", "Safety reviews", "Editing and graphic design", "Funding and budgeting", "Risk management and assessment"];
+                        var yValues = [2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0];
+                        var barColors = ["#08AC27", "#0AC22D", "#0ACC2F", "#0AD430", "#0BDF33", "#0CEE37", "#24F44C", "#2FF555", "#40F663", "#50F670", "#5FF77C", "#78F890", "#87F99D", "#90FAA4", "#A7FBB7"];
+                
+                        new Chart("myChart", {
+                            type: 'horizontalBar',
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: barColors,
+                                    data: yValues
+                                }]
+                            },
+                            options: {
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    x: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
                         });
-                }
+                    </script>
+                </div>
+            </div>
+        </div>
 
-                function updateTable() {
-                    // Get the starting and ending indices of the rows for the current page
-                    const startIndex = (currentPage - 1) * rowsPerPage;
-                    const endIndex = startIndex + rowsPerPage;
-
-                    // Clear the table body
-                    const tableBody = document.querySelector('tbody');
-                    tableBody.innerHTML = '';
-
-                    // Iterate over the rows for the current page
-                    for (let i = startIndex; i < endIndex && i < tableData.length - 1; i++) {
-                        const cells = tableData[i];
-
-                        // Create a new table row with a unique ID
-                        const newRow = document.createElement('tr');
-                        newRow.id = `row-${i}`;
-
-                        // Iterate over the cells
-                        for (let j = 0; j < 7; j++) {
-                            // Create a new table cell
-                            const newCell = document.createElement('td');
-
-                            // Set the cell's text content to the cell value
-                            newCell.textContent = cells[j];
-
-                            // Append the cell to the row
-                            newRow.appendChild(newCell);
+        <div class="chart-container" style="display: flex; justify-content: center">
+            <div class="container2">
+                <h2>Projects Status</h2>
+                <div>
+                    <canvas id="myChart2" width="50%"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById("myChart2").getContext('2d');
+                    var myChart2 = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ["Active", "Closed projects", "New projects"],
+                            datasets: [{
+                                label: 'Active',
+                                data: [5],
+                                backgroundColor: "rgba(153,255,51,1)"
+                                }, 
+                                {label: 'New / Closed Projects',
+                                data: [2, 0, 3],
+                                backgroundColor: ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)", "rgba(0, 255, 0, 1)"]
+                            }]
                         }
+                    });  
+                </script>
+            </div>
+        </div>
+        <div class="pagination"></div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Consultant ID</th>
+                        <th>Project ID</th>
+                        <th>Being Approved By</th>
+                        <th>Work Date</th>
+                        <th>Total Hours</th>
+                        <th>Consultant Type</th>
+                        <th>Salary</th>
+                        <th>Link to Project</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
 
-                        // Add button in the last cell of each row
-                        const buttonCell = document.createElement('td');
-                        const button = document.createElement('button');
-                        button.textContent = 'View Project';
-                        button.addEventListener('click', () => {
-                            const projectNumber = cells[1].trim(); // Get the project number from the first cell (index 0)
-                            const projectPageURL = `../../../Projects/all_projects/project${projectNumber}.html`;
-                            window.location.href = projectPageURL;
-                        });
-                        buttonCell.appendChild(button);
-                        newRow.appendChild(buttonCell);
+        <script>
+            // Global variables
+            let currentPage = 1;
+            const rowsPerPage = 15;
+            let tableData = [];
 
-                        // Append the row to the table body
-                        tableBody.appendChild(newRow);
+            function SnackAndReset2() {
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+                setTimeout(function () { location.href = "./monthly1.html"; }, 3000);
+            }
+
+            function signOut() {
+                // perform sign out operations here
+                alert('Signed out successfully!');
+                // location.href ="sign_in_page.html";
+                location.href = "../../../Sign_In/sign_in_page.html";
+            }
+
+            function populateTable() {
+                // Fetch the CSV file
+                fetch('2020_Q2.csv')
+
+                    .then(response => response.text())
+                    .then(data => {
+                        // Split the data into rows
+                        const rows = data.split('\n');
+
+                        // Get the table body element
+                        const tableBody = document.querySelector('tbody');
+
+                        // Store the data in the tableData variable
+                        tableData = rows.map(row => row.split(','));
+
+                        // Update the table
+                        updateTable();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+
+            function updateTable() {
+                // Get the starting and ending indices of the rows for the current page
+                const startIndex = (currentPage - 1) * rowsPerPage;
+                const endIndex = startIndex + rowsPerPage;
+
+                // Clear the table body
+                const tableBody = document.querySelector('tbody');
+                tableBody.innerHTML = '';
+
+                // Iterate over the rows for the current page
+                for (let i = startIndex; i < endIndex && i < tableData.length - 1; i++) {
+                    const cells = tableData[i];
+
+                    // Create a new table row with a unique ID
+                    const newRow = document.createElement('tr');
+                    newRow.id = `row-${i}`;
+
+                    // Iterate over the cells
+                    for (let j = 0; j < 7; j++) {
+                        // Create a new table cell
+                        const newCell = document.createElement('td');
+
+                        // Set the cell's text content to the cell value
+                        newCell.textContent = cells[j];
+
+                        // Append the cell to the row
+                        newRow.appendChild(newCell);
                     }
 
-                    // Update the pagination links
-                    updatePagination();
+                    // Add button in the last cell of each row
+                    const buttonCell = document.createElement('td');
+                    const button = document.createElement('button');
+                    button.textContent = 'View Project';
+                    button.addEventListener('click', () => {
+                        const projectNumber = cells[1].trim(); // Get the project number from the first cell (index 0)
+                        const projectPageURL = `../../../Projects/all_projects/project${projectNumber}.html`;
+                        window.location.href = projectPageURL;
+                    });
+                    buttonCell.appendChild(button);
+                    newRow.appendChild(buttonCell);
+
+                    // Append the row to the table body
+                    tableBody.appendChild(newRow);
                 }
 
-                function updatePagination() {
-                    // Get the total number of pages
-                    const totalPages = Math.ceil(tableData.length / rowsPerPage);
+                // Update the pagination links
+                updatePagination();
+            }
 
-                    // Get the pagination container
-                    const paginationContainer = document.querySelector('.pagination');
+            function updatePagination() {
+                // Get the total number of pages
+                const totalPages = Math.ceil(tableData.length / rowsPerPage);
 
-                    // Clear the pagination container
-                    paginationContainer.innerHTML = '';
+                // Get the pagination container
+                const paginationContainer = document.querySelector('.pagination');
 
-                    // Create the pagination links
-                    for (let i = 1; i <= totalPages; i++) {
-                        const link = document.createElement('a');
-                        link.href = '#';
-                        link.textContent = i;
-                        link.addEventListener('click', () => {
-                            currentPage = i;
-                            updateTable();
-                        });
+                // Clear the pagination container
+                paginationContainer.innerHTML = '';
 
-                        // Add the active class to the current page
-                        if (i === currentPage) {
-                            link.classList.add('active');
-                        }
+                // Create the pagination links
+                for (let i = 1; i <= totalPages; i++) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.textContent = i;
+                    link.addEventListener('click', () => {
+                        currentPage = i;
+                        updateTable();
+                    });
 
-                        // Append the link to the pagination container
-                        paginationContainer.appendChild(link);
+                    // Add the active class to the current page
+                    if (i === currentPage) {
+                        link.classList.add('active');
                     }
+
+                    // Append the link to the pagination container
+                    paginationContainer.appendChild(link);
                 }
+            }
 
-                // Call the function to populate the table
-                populateTable();
-                document.addEventListener('keydown', function (event) {
-                    if (event.code === 'Space') {
-                        window.location.href = 'monthly2.html'; // Replace 'monthly.html' with the desired page URL
-                    }
-                });
-            </script>
-
+            // Call the function to populate the table
+            populateTable();
+            document.addEventListener('keydown', function (event) {
+                if (event.code === 'Space') {
+                    window.location.href = 'monthly2.html'; // Replace 'monthly.html' with the desired page URL
+                }
+            });
+        </script>
     </main>
     <footer>
         <div class="sign-out">
@@ -215,6 +309,22 @@
     table {
         border-collapse: collapse;
         width: 100%;
+    }
+
+    .chart-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container2 {
+        width: 50%;
+        text-align: center;
+    }
+
+    .container3 {
+        width: 50%;
+        text-align: -webkit-center;
     }
 
     th,
