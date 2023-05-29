@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>My Home Page</title>
-  <link rel="stylesheet" href="../../stylehome.css">
+  <link rel="stylesheet" href="./stylehome.css">
 
 </head>
 
@@ -24,7 +24,7 @@
         Samaria District.</p>
       <b><span style="font-size: larger;">District's Projects:</span></b><br><br><br><br><br><br><br>
       <div style="width: 90%; text-align:center; margin-top: -170px;"><br>
-        <img src="../CleanPicsOfDists/DIST1.png" class="zoom" alt="My Profile Photo: const1">
+        <img src="./DIST1.png" class="zoom" alt="My Profile Photo: const1">
       </div>
       <table id="projectsTable">
         <thead>
@@ -35,8 +35,8 @@
             <th>Status</th>
             <th>District</th>
             <th>Start date</th>
-            <th>End date</th>
             <th>Duration(Month)</th>
+            <th>End date</th>
             <th>Customer poc</th>
             <th>Link to Project</th>
         </tr>
@@ -45,7 +45,7 @@
       </table>
     </div>
     <div class="sidebar">
-      <iframe src="../../sidebar copy.html"></iframe>
+      <iframe src="./sidebar copy.html"></iframe>
     </div>
   </main>
 
@@ -53,7 +53,7 @@
     window.addEventListener('DOMContentLoaded', () => {
       const districtName = document.querySelector('h1').textContent.trim();
 
-      fetch('../projects.csv')
+      fetch('projects.csv')
         .then(response => response.text())
         .then(data => {
           const table = document.getElementById('projectsTable');
@@ -78,7 +78,7 @@
               button.textContent = 'View Project';
               button.addEventListener('click', () => {
                 const projectNumber = cells[0].trim(); // Get the project number from the first cell (index 0)
-                const projectPageURL = `../../Projects/all_projects/project${projectNumber}.html`;
+                const projectPageURL = `./project${projectNumber}.html`;
                 window.location.href = projectPageURL;
               });
               buttonCell.appendChild(button);
@@ -93,7 +93,7 @@
 
   <footer>
     <script src="../../index.js"></script>
-    <button class="button-1" role="button" onclick="history.back()">Sign Out From The System</button>
+    <button class="button-1" role="button" onclick="signOut()">Sign Out From The System</button>
   </footer>
 </body>
 <style>

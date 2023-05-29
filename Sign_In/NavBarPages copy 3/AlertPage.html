@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Home Page</title>
+  <link rel="stylesheet" href="./stylehome.css">
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center; /* Center the text */
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+  </header>
+  <main>
+    <h1>Alert Page</h1>
+    <div>
+      <p>In this page you can choose which consultants you want to alert regarding the time insertion.<br>
+        It is possible to alert specific consultant or all of them .</p>
+      <b><span style="font-size: larger;">District's Projects:</span></b><br><br><br><br><br><br><br>
+
+      <div style="display: flex; justify-content: center;">
+        <button class="button" role="button" onclick="sendEmailToAll()">Alert All </button>
+      </div>
+      
+      <table id="projectsTable">
+        <thead>
+          <tr>
+            <th>Project Id</th>
+            <th>Consultant ID</th>
+            <th>Project Name</th>
+            <th>Start date</th>
+            <th>Duration(Month)</th>
+            <th>End date</th>
+            <th>Link to Project</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="sidebar">
+      <iframe src="../NavBarPages copy 3/sidebar copy.html"></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        fetch('./projects.csv')
+          .then(response => response.text())
+          .then(data => {
+            const table = document.getElementById('projectsTable');
+            const rows = data.trim().split('\n').slice(1); // Exclude header row
+
+            rows.forEach(row => {
+              const cells = row.split(',');
+              const projectDistrict = cells[4].trim();
+
+              if (projectDistrict === 'Jerusalem District') {
+                const newRow = table.insertRow();
+
+                [0, 1, 2, 5, 6, 7].forEach(index => {
+                  const cell = cells[index].trim();
+                  if (cell !== '') {
+                    const newCell = newRow.insertCell();
+                    newCell.textContent = cell;
+                  }
+                });
+
+                // Add button in the last cell of each row
+                const buttonCell = newRow.insertCell();
+                const button = document.createElement('button');
+                button.textContent = 'Alert Consultant!';
+                button.addEventListener('click', () => {
+                  const projectNumber = cells[0].trim(); // Get the project number from the first cell (index 0)
+
+                  fetch('./alert.csv')
+                    .then(response => response.text())
+                    .then(alertData => {
+                      const alertRows = alertData.trim().split('\n').slice(1); // Exclude header row
+                      const consultantId = cells[1].trim(); // Get the consultant ID from the second cell (index 1)
+
+                      // Find the matching consultant in the alert.csv file
+                      const consultantRow = alertRows.find(row => {
+                        const alertCells = row.split(',');
+                        const alertConsultantId = alertCells[0].trim();
+                        return alertConsultantId === consultantId;
+                      });
+
+                      if (consultantRow) {
+                        const alertCells = consultantRow.split(',');
+                        const consultantFullName = alertCells[1].trim();
+                        const consultantEmail = alertCells[2].trim();
+
+                        const emailSubject = `Hello ${consultantFullName}`;
+                        const emailBody = `You need to insert hours about project ID ${projectNumber} which is "${cells[2].trim()}".\n\n\nThank you in advance,\n\nThe Jerusalem District.\n\n\n\n\n\n\n\n\n\n\n`;
+                        const emailURL = `mailto:${consultantEmail}?subject=${encodeURIComponent(
+                          emailSubject
+                        )}&body=${encodeURIComponent(emailBody)}`;
+
+                        window.location.href = emailURL;
+                      }
+                    })
+                    .catch(error => {
+                      console.log('Error fetching alert data:', error);
+                    });
+                });
+                buttonCell.appendChild(button);
+              }
+            });
+          })
+          .catch(error => {
+            console.log('Error fetching projects data:', error);
+          });
+      });
+
+      function sendEmailToAll() {
+        fetch('./alert.csv')
+          .then(response => response.text())
+          .then(alertData => {
+            const alertRows = alertData.trim().split('\n').slice(1); // Exclude header row
+            const emailAddresses = alertRows.map(row => {
+              const alertCells = row.split(',');
+              return alertCells[2].trim(); // Extract the email address from the third cell (index 2)
+            });
+
+            const emailSubject = 'Hello all';
+            const emailBody = 'This is a message sent to all consultants.\n\n\nPlease Fill your monthly hours on the projects you are working on.\n\n\nThank you in advance,\n\nThe Jerusalem District\n\n\n\n\n\n\n\n\n\n\n';
+            const emailURL = `mailto:${emailAddresses.join(',')}?subject=${encodeURIComponent(
+              emailSubject
+            )}&body=${encodeURIComponent(emailBody)}`;
+
+            window.location.href = emailURL;
+          })
+          .catch(error => {
+            console.log('Error fetching alert data:', error);
+          });
+      }
+    </script>
+    <script src="./index.js"></script>
+    <button class="button-1" role="button" onclick="signOut()">Sign Out From The System</button>
+  </footer>
+</body>
+
+</html>

@@ -5,7 +5,7 @@ const users = [
   { username: "Admin", password: "Adminpswd", redirectPage: "NavBarPages/dash_board/dash_board.html"},
   { username: "Conso1", password: "Consopswd", redirectPage: "NavBarPages copy/Consultants/PagesOfConso/List Of Consts/Const1.html" },
   { username: "Conso2", password: "Consopswd", redirectPage: "NavBarPages copy 2/Consultants/PagesOfConso/List Of Consts/Const2.html" },
-  { username: "Dist1", password: "Distpswd", redirectPage: "NavBarPages copy 3/Approval/PagesOfApproval/Dist1.html" },
+  { username: "Dist1", password: "Distpswd", redirectPage: "NavBarPages copy 3/Dist1.html" },
 ];
 
 form.addEventListener('submit', (event) => {
