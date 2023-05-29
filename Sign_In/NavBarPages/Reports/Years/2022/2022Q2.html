@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>My Home Page</title>
     <link rel="stylesheet" href="../../../stylehome.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -12,7 +13,7 @@
     </header>
     <main>
         <h1>2022 Q2</h1>
-        <p>The Months of this Quarter are:<b> April until June.</b></p>
+        <p>The Months of this Quarter are:<b> April - May - June.</b></p>
         <div class="sidebar">
             <iframe src="../../../../../Components/sidebar.html"></iframe>
         </div>
@@ -22,7 +23,7 @@
             <a href="../../quarterly.html" class="btnLink" style="background-color: rgb(4, 142, 247);">Quarterly
                 Report</a>
             <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
-            <a href="projectsRepo.html" class="btnLink">Projects Reports</a>
+            <a href="../../../Dash_Board/dash_board.html" class="btnLink">Projects Reports</a>
         </div>
 
         <div class="container" style="display: flex; justify-content: center; align-items: center;">
@@ -33,7 +34,8 @@
                         <div style="text-align: center;">
                             <a href="../2020/2020Q1.html" class="btnLink1">2020</a>
                             <a href="../2021/2021Q1.html" class="btnLink1">2021</a>
-                            <a href="./2022Q1.html" class="btnLink1" style="background-color: rgb(4, 142, 247);">2022</a>
+                            <a href="./2022Q1.html" class="btnLink1" 
+                                style="background-color: rgb(4, 142, 247);">2022</a>
                             <a href="../2023/2023Q1.html" class="btnLink1">2023</a>
                         </div>
 
@@ -49,8 +51,103 @@
                 </div>
             </div>
         </div>
-        <div class="pagination"></div>
+        <div>
+            <div class="chart-container" style="display: flex; justify-content: center">
+            <div style="width: 80%;text-align: -webkit-center;">
+            <div class="container2">
+                <h2>Budget in Comparison to Actual Spent: 2022</h2>
+                <div>
+                    <canvas id="myChart1" width="50%"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById("myChart1").getContext('2d');
+                    var myChart1 = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ["JAN-2022", "FEB-2022", "MAR-2022", "APR-2022", "MAY-2022", "JUN-2022", "JUL-2022", "AUG-2022", "SEP-2022", "OCT-2022", "NOV-2022", "DEC-2022"],
+                            datasets: [{
+                                label: 'Budget',
+                                data: [20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000],
+                                backgroundColor: "rgba(153,255,51,1)"
+                            }, {
+                                label: 'Actual Spent',
+                                data: [19171.6933333333, 28363.4533333333, 18002.28, 15183.2266666667, 21814.0533333333, 23386.1066666667, 0, 0, 0, 0, 0, 0],
+                                backgroundColor: "rgba(255,153,0,1)"
+                            }]
+                        }
+                    });  
+                </script>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+                <div class="chart-container">
+                    <div class="container2">
+                        <h2 style="display: flex; justify-content: center">Amount of Projects by Expertises:</h2>
+                        <div style="text-align: center;">
+                            <canvas id="myChart" width="50%"></canvas>
+                        </div>
+                    
+                    <script>
+                
+                        var xValues = ["Safety reviews", "Transportation checks - pedestrians", "Performance measurement", "Quality control Extra", "Quality control", "Traffic and safety regulations - other", "Standard movement and safety procedures", "Project management", "Local railway", "Management and training", "Risk management and assessment", "Transportation regulation", "Risk centers", "Editing and graphic design", "Funding and budgeting"];
+                        var yValues = [17, 15, 13, 13, 11, 10, 9, 9, 7, 7, 7, 6, 2, 2, 1];
+                        var barColors = ["#08AC27", "#0AC22D", "#0ACC2F", "#0AD430", "#0BDF33", "#0CEE37", "#24F44C", "#2FF555", "#40F663", "#50F670", "#5FF77C", "#78F890", "#87F99D", "#90FAA4", "#A7FBB7"];
+                
+                        new Chart("myChart", {
+                            type: 'horizontalBar',
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: barColors,
+                                    data: yValues
+                                }]
+                            },
+                            options: {
+                                legend: {
+                                    display: false
+                                },
+                                scales: {
+                                    x: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
 
+        <div class="chart-container" style="display: flex; justify-content: center">
+            <div class="container2">
+                <h2>Projects Status</h2>
+                <div>
+                    <canvas id="myChart2" width="50%"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById("myChart2").getContext('2d');
+                    var myChart2 = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ["Active", "Closed projects", "New projects"],
+                            datasets: [{
+                                label: 'Active',
+                                data: [47],
+                                backgroundColor: "rgba(153,255,51,1)"
+                                }, 
+                                {label: 'New / Closed Projects',
+                                data: [39, 4, 4],
+                                backgroundColor: ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)", "rgba(0, 255, 0, 1)"]
+                            }]
+                        }
+                    });  
+                </script>
+            </div>
+        </div>
+        <div class="pagination"></div>
         <div>
             <table>
                 <thead>
@@ -73,7 +170,7 @@
         <script>
             // Global variables
             let currentPage = 1;
-            const rowsPerPage = 60;
+            const rowsPerPage = 15;
             let tableData = [];
 
             function SnackAndReset2() {
@@ -200,7 +297,6 @@
                 }
             });
         </script>
-
     </main>
     <footer>
         <div class="sign-out">
@@ -213,6 +309,22 @@
     table {
         border-collapse: collapse;
         width: 100%;
+    }
+
+    .chart-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container2 {
+        width: 50%;
+        text-align: center;
+    }
+
+    .container3 {
+        width: 50%;
+        text-align: -webkit-center;
     }
 
     th,
