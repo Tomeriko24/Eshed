@@ -25,7 +25,6 @@
             <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
 
         </div>
-        <br>
         <div class="container" style="display: flex; justify-content: center; align-items: center;">
             <div class="box">
                 <div class="row" style="display: flex; justify-content: center;">
@@ -51,9 +50,11 @@
                 </div>
             </div>
         </div>
+        <!-- graphs below -->
+
         <div>
             <div class="chart-container" style="display: flex; justify-content: center;">
-                <div style="width: 50%; text-align: center;">
+                <div style="width: 50%; text-align: center; margin-right: 50PX;">
                     <h2>Budget in Comparison to Actual Spent: 2021</h2>
                     <canvas id="myChart1" width="50%"></canvas>
                     <script>
@@ -61,7 +62,7 @@
                         var myChart1 = new Chart(ctx, {
                             type: 'bar',
                             data: {
-                                labels: ["JAN-2021", "FEB-2021", "MAR-2021", "APR-2021", "MAY-2021", "JUN-2021", "JUL-2021", "AUG-2021", "SEP-2021", "OCT-2021", "NOV-2021", "DEC-2021"],
+                                labels: ["JAN-2023", "FEB-2023", "MAR-2023", "APR-2023", "MAY-2023", "JUN-2023", "JUL-2023", "AUG-2023", "SEP-2023", "OCT-2023", "NOV-2023", "DEC-2023"],
                                 datasets: [{
                                     label: 'Budget',
                                     data: [25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000],
@@ -86,7 +87,7 @@
 
                         <script>
 
-                            var xValues = ["Safety reviews", "Transportation checks - pedestrians", "Quality control Extra", "Performance measurement", "Quality control", "Standard movement and safety procedures", "Traffic and safety regulations - other", "Project management", "Local railway", "Transportation regulation", "Management and training", "Risk management and assessment", "Risk centers", "Funding and budgeting", "Editing and graphic design"];
+                            var xValues = ["Transportation checks - pedestrians", "Safety reviews", "Performance measurement", "Quality control Extra", "Project management", "Quality control", "Transportation regulation", "Local railway", "Traffic and safety regulations - other", "Management and training", "Risk management and assessment", "Standard movement and safety procedures", "Risk centers", "Editing and graphic design", "Funding and budgeting"];
                             var yValues = [12, 12, 12, 11, 7, 7, 6, 6, 6, 6, 5, 4, 2, 2, 1];
                             var barColors = ["#08AC27", "#0AC22D", "#0ACC2F", "#0AD430", "#0BDF33", "#0CEE37", "#24F44C", "#2FF555", "#40F663", "#50F670", "#5FF77C", "#78F890", "#87F99D", "#90FAA4", "#A7FBB7"];
 
@@ -113,75 +114,6 @@
                         </script>
                     </div>
                 </div>
-            </div>
-        </div>
-
-
-        </div>
-        <div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-                <div class="chart-container">
-                    <div class="container2">
-                        <h2 style="display: flex; justify-content: center">Amount of Projects by Expertises:</h2>
-                        <div style="text-align: center;">
-                            <canvas id="myChart" width="50%"></canvas>
-                        </div>
-                    
-                    <script>
-                
-                        var xValues = ["Transportation checks - pedestrians", "Safety reviews", "Performance measurement", "Quality control Extra", "Project management", "Quality control", "Transportation regulation", "Local railway", "Traffic and safety regulations - other", "Management and training", "Risk management and assessment", "Standard movement and safety procedures", "Risk centers", "Editing and graphic design", "Funding and budgeting"];
-                        var yValues = [12, 12, 12, 11, 7, 7, 6, 6, 6, 6, 5, 4, 2, 2, 1];
-                        var barColors = ["#08AC27", "#0AC22D", "#0ACC2F", "#0AD430", "#0BDF33", "#0CEE37", "#24F44C", "#2FF555", "#40F663", "#50F670", "#5FF77C", "#78F890", "#87F99D", "#90FAA4", "#A7FBB7"];
-                
-                        new Chart("myChart", {
-                            type: 'horizontalBar',
-                            data: {
-                                labels: xValues,
-                                datasets: [{
-                                    backgroundColor: barColors,
-                                    data: yValues
-                                }]
-                            },
-                            options: {
-                                legend: {
-                                    display: false
-                                },
-                                scales: {
-                                    x: {
-                                        beginAtZero: true
-                                    }
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container" style="display: flex; justify-content: center">
-            <div class="container2">
-                <h2>Projects Status</h2>
-                <div>
-                    <canvas id="myChart2" width="50%"></canvas>
-                </div>
-                <script>
-                    var ctx = document.getElementById("myChart2").getContext('2d');
-                    var myChart2 = new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                            labels: ["Active", "Closed projects", "New projects"],
-                            datasets: [{
-                                label: 'Active',
-                                data: [35],
-                                backgroundColor: "rgba(153,255,51,1)"
-                                }, 
-                                {label: 'New / Closed Projects',
-                                data: [33, 2, 0],
-                                backgroundColor: ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)", "rgba(0, 255, 0, 1)"]
-                            }]
-                        }
-                    });  
-                </script>
             </div>
         </div>
 
@@ -339,9 +271,10 @@
         </script>
     </main>
     <footer>
-                <div class="sign-out">
+        <div class="sign-out">
             <a href="../../quarterly.html"  class="button">Yearly View</a>
             <div id="snackbar">Report Produced!</div>
+        </div>
     </footer>
 </body>
 <style>
