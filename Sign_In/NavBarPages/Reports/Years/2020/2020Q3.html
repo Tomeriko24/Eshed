@@ -25,7 +25,6 @@
             <span style="margin: 0 10px;"></span> <!-- Add space between buttons -->
             <a href="projectsRepo.html" class="btnLink">Projects Reports</a>
         </div>
-
         <div class="container" style="display: flex; justify-content: center; align-items: center;">
             <div class="box">
                 <div class="row" style="display: flex; justify-content: center;">
@@ -51,102 +50,75 @@
                 </div>
             </div>
         </div>
+        <!-- graphs below --> 
+
         <div>
             <div class="chart-container" style="display: flex; justify-content: center">
-            <div style="width: 80%;text-align: -webkit-center;">
-            <div class="container2">
-                <h2>Budget in Comparison to Actual Spent: 2020</h2>
-                <div>
+                <div style="width: 50%; text-align: center; margin-right: 50PX;">
+                    <h2>Budget in Comparison to Actual Spent: 2020</h2>
                     <canvas id="myChart1" width="50%"></canvas>
+                    <script>
+                        var ctx = document.getElementById("myChart1").getContext('2d');
+                        var myChart1 = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ["JAN-2020", "FEB-2020", "MAR-2020", "APR-2020", "MAY-2020", "JUN-2020", "JUL-2020", "AUG-2020", "SEP-2020", "OCT-2020", "NOV-2020", "DEC-2020"],
+                                datasets: [{
+                                    label: 'Budget',
+                                    data: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000],
+                                    backgroundColor: "rgba(153,255,51,1)"
+                                }, {
+                                    label: 'Actual Spent',
+                                    data: [0, 0, 0, 1626.28, 545.000000000001, 0, 1770.26666666667, 9431.62666666667, 2852.38666666667, 0, 0, 0],
+                                    backgroundColor: "rgba(255,153,0,1)"
+                                }]
+                            }
+                        });  
+                    </script>
                 </div>
-                <script>
-                    var ctx = document.getElementById("myChart1").getContext('2d');
-                    var myChart1 = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: ["JAN-2020", "FEB-2020", "MAR-2020", "APR-2020", "MAY-2020", "JUN-2020", "JUL-2020", "AUG-2020", "SEP-2020", "OCT-2020", "NOV-2020", "DEC-2020"],
-                            datasets: [{
-                                label: 'Budget',
-                                data: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000],
-                                backgroundColor: "rgba(153,255,51,1)"
-                            }, {
-                                label: 'Actual Spent',
-                                data: [0, 0, 0, 1626.28, 545.000000000001, 0, 1770.26666666667, 9431.62666666667, 2852.38666666667, 0, 0, 0],
-                                backgroundColor: "rgba(255,153,0,1)"
-                            }]
-                        }
-                    });  
-                </script>
-            </div>
-            </div>
-            </div>
-        </div>
-        <div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-                <div class="chart-container">
-                    <div class="container2">
-                        <h2 style="display: flex; justify-content: center">Amount of Projects by Expertises:</h2>
+                <div style="width: 50%; text-align: center;">
+                    <h2 style="display: flex; justify-content: center">Amount of Projects by Expertises:</h2>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+                    <div class="chart-container">
                         <div style="text-align: center;">
                             <canvas id="myChart" width="50%"></canvas>
                         </div>
-                    
-                    <script>
-                
-                        var xValues = ["Performance measurement", "Quality control Extra", "Transportation checks - pedestrians", "Safety reviews", "Standard movement and safety procedures", "Quality control", "Local railway", "Traffic and safety regulations - other", "Risk centers", "Project management", "Management and training", "Transportation regulation", "Risk management and assessment", "Editing and graphic design", "Funding and budgeting"];
-                        var yValues = [7, 7, 6, 6, 5, 5, 3, 3, 3, 3, 2, 1, 1, 0, 0];
-                        var barColors = ["#08AC27", "#0AC22D", "#0ACC2F", "#0AD430", "#0BDF33", "#0CEE37", "#24F44C", "#2FF555", "#40F663", "#50F670", "#5FF77C", "#78F890", "#87F99D", "#90FAA4", "#A7FBB7"];
-                
-                        new Chart("myChart", {
-                            type: 'horizontalBar',
-                            data: {
-                                labels: xValues,
-                                datasets: [{
-                                    backgroundColor: barColors,
-                                    data: yValues
-                                }]
-                            },
-                            options: {
-                                legend: {
-                                    display: false
+
+                        <script>
+        
+                            var xValues = ["Performance measurement", "Quality control Extra", "Transportation checks - pedestrians", "Safety reviews", "Standard movement and safety procedures", "Quality control", "Local railway", "Traffic and safety regulations - other", "Risk centers", "Project management", "Management and training", "Transportation regulation", "Risk management and assessment", "Editing and graphic design", "Funding and budgeting"];
+                            var yValues = [7, 7, 6, 6, 5, 5, 3, 3, 3, 3, 2, 1, 1, 0, 0];
+                            var barColors = ["#08AC27", "#0AC22D", "#0ACC2F", "#0AD430", "#0BDF33", "#0CEE37", "#24F44C", "#2FF555", "#40F663", "#50F670", "#5FF77C", "#78F890", "#87F99D", "#90FAA4", "#A7FBB7"];
+
+                            new Chart("myChart", {
+                                type: 'horizontalBar',
+                                data: {
+                                    labels: xValues,
+                                    datasets: [{
+                                        backgroundColor: barColors,
+                                        data: yValues
+                                    }]
                                 },
-                                scales: {
-                                    x: {
-                                        beginAtZero: true
+                                options: {
+                                    legend: {
+                                        display: false
+                                    },
+                                    scales: {
+                                        x: {
+                                            beginAtZero: true
+                                        }
                                     }
                                 }
-                            }
-                        });
-                    </script>
+                            });
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="chart-container" style="display: flex; justify-content: center">
-            <div class="container2">
-                <h2>Projects Status</h2>
-                <div>
-                    <canvas id="myChart2" width="50%"></canvas>
-                </div>
-                <script>
-                    var ctx = document.getElementById("myChart2").getContext('2d');
-                    var myChart2 = new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                            labels: ["Active", "Closed projects", "New projects"],
-                            datasets: [{
-                                label: 'Active',
-                                data: [19],
-                                backgroundColor: "rgba(153,255,51,1)"
-                                }, 
-                                {label: 'New / Closed Projects',
-                                data: [5, 0, 14],
-                                backgroundColor: ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)", "rgba(0, 255, 0, 1)"]
-                            }]
-                        }
-                    });  
-                </script>
-            </div>
-        </div>
+
+
         <div class="pagination"></div>
         <div>
             <table>
