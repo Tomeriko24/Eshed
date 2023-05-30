@@ -117,12 +117,13 @@ tomer - changes according to commin NAME: dont delete{the view project button is
 לעדכן פרוייקטים, אקטיבב, פאסיב. 
 
 add another button to navbar that will state the changes need to be approved
-add option to choose up to 3 exp[ertises] in stage 1  
-להוסיף לחצן של שליחת מייל לפי רשימת תפוצה
+<!-- add option to choose up to 3 exp[ertises] in stage 1   -->
+<!-- להוסיף לחצן של שליחת מייל לפי רשימת תפוצה -->
 אחרי הזנת שעות, להציג מייל שנשלח למחוז המתאים
 להוסיף לחצן שאומר חוסר אישור שעות, פרומפט, ההודעה הזאת נשלחת במייל ליועץ.
 להוסיף לחצן אררור לכולם 
 DIST1
 להחליף את לחצן ההתנקות בלחצן ראייה שנתית - רפורטס, רבעוני
-דוח רבעוני - לסדר את הגרפים חצי חצי
-להוריד כפתור פרוג'קט ריפורט
+<!-- דוח רבעוני - לסדר את הגרפים חצי חצי -->
+<!-- להוריד כפתור פרוג'קט ריפורט -->
+לעדכן את התרשימים בשנת 2020 ושנת 2023
