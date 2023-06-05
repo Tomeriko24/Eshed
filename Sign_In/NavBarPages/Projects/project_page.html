@@ -25,20 +25,11 @@
       <a href="../Projects/Previous Projects/Previous_projects.html" class="button" target="_parent">Past Projects</a>
       <a href="../Projects/project_page.html" class="button" target="_parent">All Projects</a>
     </div>
-    <input type="text" id="search-input" placeholder="Search Project by Name" oninput="searchTable()">
     <br>
-    <label for="district-select"><b>Districts List:</b></label>
-    <select id="district-select" onchange="filterByDistrict()">
-      <option value="" style="display: none;">All Districts</option>
-      <option value="District 1">Jerusalem District</option>
-      <option value="District 2">Tel-Aviv District</option>
-      <option value="District 3">The Southern District</option>
-      <option value="District 4">Judea and Samaria District</option>
-      <option value="District 5">The Central District </option>
-      <option value="District 6">The Haifa District</option>
-      <option value="District 7">The Northern District</option>
-    </select>
-
+    <div>
+      <label for="district-select"><b>Search Here:</b></label>
+      <input type="text" id="search-input" placeholder="Search Project by Name" oninput="searchTable()">
+    </div>
     <div>
       <table>
         <thead>

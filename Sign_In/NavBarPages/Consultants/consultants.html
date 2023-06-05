@@ -28,7 +28,6 @@
           <th>Email</th>
           <th>Phone Number</th>
           <th>Info</th>
-          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -78,13 +77,8 @@
 
               // Create the "Delete" cell with a button
               const deleteCell = document.createElement('td');
-              const deleteButton = document.createElement('button');
-              deleteButton.textContent = 'Delete';
-              deleteButton.onclick = function () {
-                deleteRow(this);
-              };
-              deleteCell.appendChild(deleteButton);
-              newRow.appendChild(deleteCell);
+              // deleteCell.appendChild(deleteButton);
+
 
               // Append the row to the table body
               tableBody.appendChild(newRow);
@@ -95,13 +89,6 @@
           });
       }
 
-      function deleteRow(button) {
-        var confirmation = confirm("Are you sure you want to delete this consultant?");
-        if (confirmation) {
-          var row = button.parentNode.parentNode;
-          row.parentNode.removeChild(row);
-        }
-      }
 
       // Call the function to populate the table
       populateTable();
