@@ -11,17 +11,15 @@
     <main>
         <div>
             <h1 id="main-heading">Stage 2</h1>
-            <p id="sample-text">This is some sample text for the home page.</p>
-            <p id="lorem-ipsum">Lorem ipsum dolor</p>
-
-        </div>
+            <p id="sample-text">Fill in the Data.</p>
+</div>
         <div class="sidebar">
             <iframe src="../../../../Components/sidebar.html"></iframe>
         </div>
         <div>
             <ul class="breadcrumb">
-                <li><a href="./stage1.html">Stage 1 </a></li>
-                <li>Stage 2</li>
+                <li><a href="./stage1.html"><b>Stage 1</b> </a></li>
+                <li><B>Stage 2</B></li>
             </ul>
         </div>
 
@@ -64,15 +62,15 @@
                 <div class="row">
                     <div class="column">
                         <div class="title">Insert PDF File:</div>
-                        <input type="file" id="file-input">
-                        <button onclick="loadFile()">see File</button>
+                        <input type="file" id="file-input" >
+                        <button onclick="loadFile()" >see File</button>
                         <div id="file-content"></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <button onclick="SnackAndReset()">Submit Project</button>
+        <button onclick="SnackAndReset()" class="btnLink">Submit Project</button>
         </div>
         <div id="snackbar">Project Submitted!</div>
         <script>

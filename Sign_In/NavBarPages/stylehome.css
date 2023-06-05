@@ -231,11 +231,11 @@ tbody:hover tr:hover td {
 .btnLink {
   cursor: pointer;
   outline: 0;
+  background-color: #b9fbda;
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
-  background-color: transparent;
   border: 1px solid transparent;
   padding: 6px 12px;
   font-size: 1rem;
@@ -245,10 +245,11 @@ tbody:hover tr:hover td {
   border-color: #7c8491;
 }
 
+
 .btnLink:hover {
   color: #fff;
-  background-color: #0dfda5;
-  border-color: #0d6efd;
+  background-color: #00ff33;
+  border-color: #000000;
 
 }
 .btnLink1 {
@@ -308,11 +309,11 @@ img.zoom:hover {
 
 /* CSS */
 .button-1 {
-  background-color: #F082AC;
+  background-color: orange;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #000000;
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -336,7 +337,7 @@ img.zoom:hover {
 
 .button-1:hover,
 .button-1:focus {
-  background-color: #fd0061;
+  background-color: #fd8700;
   color: #000000;
 }
 

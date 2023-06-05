@@ -57,13 +57,14 @@
               <button onclick="ToastAndReset()" class="btnLink">Submit Hours Here!</button>
               <div id="snackbar">Hours Submited</div>
             </div>
+            <div class="container2">
+              <canvas id="analogClock">Clock</canvas>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container2">
-      <canvas id="analogClock" width="102" height="102">Clock</canvas>
-    </div>
+
     <script>	setupAnalogClock(document.getElementById("analogClock"), 100);
       function setupAnalogClock(canvas, clockWidth) {
         //		var canvas = document.getElementById("analogClock");

@@ -16,17 +16,20 @@
       <iframe src="../../../../Components/sidebar.html"></iframe>
     </div>
     <ul class="breadcrumb">
-      <li>Stage 1</li>
+      <li><b>Stage 1</b> </li>
       <li></li>
     </ul>
     <div class="container">
       <div class="box">
         <div class="row">
-          <div class="column">
-            <div class="title">Project Name:</div>
+          <div class="column" style="margin-right: 100px;">
+            <div class="title" >Project Name:</div>
             <input type="text" id="projectName" class="textbox" placeholder="Enter Project Name">
           </div>
-          <div class="column">
+        </div>
+          <div class="row">
+            <div class="column" style="margin-right: 100px;">
+
             <div class="title">POC:</div>
             <input type="text" id="poc" class="textbox" placeholder="Enter Person Of Contact Info">
           </div>
@@ -40,7 +43,7 @@
       </div>
       <div class="box">
         <div class="row">
-          <div class="column">
+          <div class="column" style="margin-right: 100px;">
             <div class="title">Start Date:</div>
             <input type="date" id="startDate" class="textbox">
           </div>
@@ -126,7 +129,10 @@
         </div>
       </div>
     </div>
-    <a href="./stage2.html" class="btnLink" onclick="saveValues()">Next Step</a>
+    <div style="display: flex; justify-content: center;">
+      <a href="./stage2.html" class="btnLink" onclick="saveValues()">Next Step</a>
+    </div>
+    
   </main>
   <footer>
     <script src="../../index.js"></script>
@@ -183,7 +189,6 @@
   .column {
     width: 50%;
     padding: 5px;
-    margin-right: 5px;
   }
 
   .title {
