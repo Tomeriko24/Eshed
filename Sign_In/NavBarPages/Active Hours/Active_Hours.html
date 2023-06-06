@@ -50,21 +50,22 @@
         <div class="textarea">
           <div class="title">Details:</div>
           <textarea id="projectDescription" class="textbox" placeholder="Write Here The Details"></textarea>
+          <canvas id="analogClock">Clock</canvas>
         </div><br>
         <div class="row">
           <div class="column">
             <div class="center">
               <button onclick="ToastAndReset()" class="btnLink">Submit Hours Here!</button>
-              <div id="snackbar">Hours Submited</div>
-            </div>
-            <div class="container2">
-              <canvas id="analogClock">Clock</canvas>
+              <div id="snackbar">Hours Submited</div><br><br>
             </div>
           </div>
         </div>
+        <div class="row">
+          <br><br>
+</div>
       </div>
     </div>
-
+    
     <script>	setupAnalogClock(document.getElementById("analogClock"), 100);
       function setupAnalogClock(canvas, clockWidth) {
         //		var canvas = document.getElementById("analogClock");
